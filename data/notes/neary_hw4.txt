@@ -6,6 +6,8 @@ have already noted below.
 ...are too many inline comments, like one on every single line, considered extraneous?
 	ugh.
 	
+Checked up to Assignment: 199 
+	
 ================================ Specific Assignments ================================
 
 After the loop to produce the hailstone, some students check to see if the variable 
