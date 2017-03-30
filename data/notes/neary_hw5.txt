@@ -6,6 +6,8 @@ condition update similar to what you must do in a while loop are definitely extr
 You really take the "one letter variable names are bad" rule for granted until you
 have to read 500 some assignments in one pass.
 
+Checked up to Assignment: 199 
+
 ================================ Specific Assignments ================================
 
 Consecutive similar conditions could be considered an extraneous line of code
