@@ -6,7 +6,7 @@ have already noted below.
 ...are too many inline comments, like one on every single line, considered extraneous?
 	ugh.
 	
-Checked up to Assignment: 199 
+Checked up to Assignment: 215
 	
 ================================ Specific Assignments ================================
 
@@ -17,7 +17,9 @@ true that the variable will be 1, that is the condition that the loop must stop 
      - hw4_104.py
      - hw4_123.py
      - hw4_132.py
-
+     - hw4_203.py (mutiple extraneous checks to see if the height is 1 before and inside the loop)
+     - hw4_207.py
+     
 Explicitly casting a single number to a string before printing out that number 
 is unecessary, python takes cast of that cast implicitly. This shows a misunderstanding of
 how the print function works.
@@ -26,7 +28,6 @@ how the print function works.
 An else clause that is unecessary, because a number can be either even or odd. There is no
 third option.
      - hw4_118.py
-
 
 The first condition of the for loop within the while loop is NEVER True. Perhaps a 
 misunderstanding of logic here, very weird extraneous check.
@@ -37,9 +38,47 @@ as just writing an else. I would consider this to be extraneous.
      - hw4_133.py
      - hw4_138.py
      - hw4_139.py
+     - hw4_200.py
+     - hw4_201.py
+     - hw4_203.py (uses two if's)
+     - hw4_207.py
+     - hw4_211.py (uses two if's)
+     - hw4_213.py (uses if, elif, else)
 
+Redundant prints (the same print statement) in each if/else 
+     - hw4_200.py
+     - hw4_201.py
+     - hw4_204.py
+     - hw4_205.py
+     - hw4_206.py
+     - hw4_207.py
+     - hw4_208.py
+     - hw4_21.py
+     - hw4_211.py
+     - hw4_213.py
+     - hw4_214.py
+     - hw4_215.py
+
+Extra condition for the while loop (while num != 1 or num % 2 == 0) 
+     - hw4_204.py
+     - hw4_205.py
+     - hw4_208.py
+     
+Check that height was 1 before the while loop
+     - hw4_21.py
+
+Created a new variable and assigned the user input variable to it
+     - hw4_205.py (does this twice?)
+
+Incomplete
+     - hw4_202.py
 
 hw4_143.py ... welp, nothing extraneous really just a completely flawed way to do it.
 
 hw4_169.py ... code could be condensed very easily. I consider this a logic error not 
 extraneos, however I am making a note of it for a potential future paper
+
+hw4_208.py ... uses while loops instead of if statements inside the outter loop 
+
+hw4_210.py ... double while loop? Outside while loop is extraneous 
+
