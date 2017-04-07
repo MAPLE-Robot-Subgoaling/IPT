@@ -37,12 +37,12 @@ logical error: would give wrong result if height is 1 and width is anything othe
 logical error:  in the for i in range (0, height): the elif with i !=height is unnecessary 
 because that will always be true. they might have meant height-1. Also, if/elif/if shows 
 possible misunderstanding of if/elif/else
-    -	hw5_217.py
+    - hw5_217.py
 
 very inefficient coding with errors.  first for loop with range(width+1) would give one 
 more than necessary. Also confused why they decided to print the middle and x as they 
 go through the second for loop? Having 3 for loops for this problem is excessive
-    -	hw5_220.py
+    - hw5_220.py
 
 extraneous to have a for loop with range(1)
     - hw5_221.py
@@ -53,9 +53,9 @@ wrong answer if width is 1
 
 logical errors: only works if height and width aren’t 1, also ...the directions 
 explicitly say not to use any while loops...and they used only while loops
-	  - hw5_235.py
+    - hw5_235.py
 
 seems excessive to turn everything into a list and solve the problem that way. 
 not sure if that’s extraneous or just differing opinions on how to solve it
-	  - hw_239.py
+    - hw_239.py
     - hw_244.py
