@@ -32,6 +32,7 @@ logical error: would give wrong result if height is 1 and width is anything othe
     - hw_236.py
     - hw_237.py
     - hw_238.py
+    - hw_250.py
     - stopped keeping track of these..
     
 logical error:  in the for i in range (0, height): the elif with i !=height is unnecessary 
