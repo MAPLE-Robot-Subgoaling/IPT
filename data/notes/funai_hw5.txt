@@ -9,7 +9,7 @@ students code will show:                            instead of:
                           xx                                     x
                           x                                      x
 
-checked assignments: 200-250
+checked assignments: 200-299
 ================================ Specific Assignments ================================
 
 unnecessary cast of str() with input()
@@ -27,12 +27,16 @@ the 2nd if statement and the 3rd if statement
 unnecessarily initialization of a variable to use in for, unnecessary casting of list()
     - hw_213.py
 
-logical error: would give wrong result if height is 1 and width is anything other than 1
+logical error: would give wrong result if width is 1 and height is anything other than 1
     - hw_214.py
     - hw_236.py
     - hw_237.py
     - hw_238.py
     - hw_250.py
+    - hw_251.py
+    - hw_252.py
+    - hw_253.py
+    - hw_254.py
     - stopped keeping track of these..
     
 logical error:  in the for i in range (0, height): the elif with i !=height is unnecessary 
@@ -47,6 +51,7 @@ go through the second for loop? Having 3 for loops for this problem is excessive
 
 extraneous to have a for loop with range(1)
     - hw5_221.py
+    - hw5_294.py
 
 unnecessary initialization of variables to 0 prior to input(), logic error would give 
 wrong answer if width is 1
@@ -60,3 +65,15 @@ seems excessive to turn everything into a list and solve the problem that way.
 not sure if that’s extraneous or just differing opinions on how to solve it
     - hw_239.py
     - hw_244.py
+
+student set range to (0, height, 1), setting the start and step were unnecessary 
+because it defaults at 0 and 1. shows potential misunderstanding of range
+     - hw_266.py
+     - hw_267.py
+     
+unnecessary to initailize a variable to represent the range(heightNum)
+     - hw_285.py
+     
+function definitions within a function seems extraneous, could have easily solved
+the problem without it....could be treated similarly to hw_178.py?
+     - hw_297.py
