@@ -9,7 +9,7 @@ students code will show:                            instead of:
                           xx                                     x
                           x                                      x
 
-checked assignments: 200-299
+checked assignments: 200-350
 ================================ Specific Assignments ================================
 
 unnecessary cast of str() with input()
@@ -18,25 +18,25 @@ unnecessary cast of str() with input()
 logical error: not sure why they set a condition based on boxWidth when the range deals 
 with boxHeight, I’m assuming this is a mistake. This code would also give an error if 
 the user inputs a width of 1
-    - hw_209.py
+    - hw5_209.py
 
 logical errors: would give wrong answer is height = 2 or if width = 1 due to errors in 
 the 2nd if statement and the 3rd if statement
-    - hw_211.py
+    - hw5_211.py
 
 unnecessarily initialization of a variable to use in for, unnecessary casting of list()
-    - hw_213.py
+    - hw5_213.py
 
 logical error: would give wrong result if width is 1 and height is anything other than 1
-    - hw_214.py
-    - hw_236.py
-    - hw_237.py
-    - hw_238.py
-    - hw_250.py
-    - hw_251.py
-    - hw_252.py
-    - hw_253.py
-    - hw_254.py
+    - hw5_214.py
+    - hw5_236.py
+    - hw5_237.py
+    - hw5_238.py
+    - hw5_250.py
+    - hw5_251.py
+    - hw5_252.py
+    - hw5_253.py
+    - hw5_254.py
     - stopped keeping track of these..
     
 logical error:  in the for i in range (0, height): the elif with i !=height is unnecessary 
@@ -61,19 +61,21 @@ logical errors: only works if height and width aren’t 1, also ...the direction
 explicitly say not to use any while loops...and they used only while loops
     - hw5_235.py
 
-seems excessive to turn everything into a list and solve the problem that way. 
-not sure if that’s extraneous or just differing opinions on how to solve it
-    - hw_239.py
-    - hw_244.py
+overall implementation method seems extraneous, could have simplified their coding
+    - hw5_239.py
+    - hw5_244.py
 
 student set range to (0, height, 1), setting the start and step were unnecessary 
 because it defaults at 0 and 1. shows potential misunderstanding of range
-     - hw_266.py
-     - hw_267.py
+     - hw5_266.py
+     - hw5_267.py
      
 unnecessary to initailize a variable to represent the range(heightNum)
-     - hw_285.py
+     - hw5_285.py
      
 function definitions within a function seems extraneous, could have easily solved
 the problem without it....could be treated similarly to hw_178.py?
-     - hw_297.py
+     - hw5_297.py
+
+wrong assignment:
+     - hw5_300.py
