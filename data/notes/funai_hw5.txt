@@ -72,10 +72,25 @@ because it defaults at 0 and 1. shows potential misunderstanding of range
      
 unnecessary to initailize a variable to represent the range(heightNum)
      - hw5_285.py
+     - hw5_358.py
      
 function definitions within a function seems extraneous, could have easily solved
 the problem without it....could be treated similarly to hw_178.py?
      - hw5_297.py
+     
+don't understand why they created a separate box() function, when all they do is call it
+in main...
+     - hw5_397.py
 
-wrong assignment:
+wrong assignment/incomplete:
      - hw5_300.py
+     - hw5_391.py
+     
+use of break in CMSC201 is against the coding standards:
+     - hw5_377.py
+     
+empty print() statements?
+     - hw5_428.py
+     
+empty for loop?
+     - hw5_434.py
