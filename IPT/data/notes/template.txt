@@ -1,0 +1,8 @@
+name this file yourname_assignment.txt
+==================================== General Notes ===================================
+
+<notes here>
+
+================================ Specific Assignments ================================
+
+<moar notes plz>

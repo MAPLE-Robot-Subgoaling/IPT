@@ -1,0 +1,67 @@
+==================================== General Notes ===================================
+
+Making edits to the loop variable of a for loop, especially ones that look like a 
+condition update similar to what you must do in a while loop are definitely extraneous
+
+You really take the "one letter variable names are bad" rule for granted until you
+have to read 500 some assignments in one pass.
+
+Checked up to Assignment: 199 
+
+================================ Specific Assignments ================================
+
+Consecutive similar conditions could be considered an extraneous line of code
+     - See hw5_100.py.
+
+Some students are confusing while and for loops. In their for loop, they are uselessly
+incrementing a counter, which is not necessary in python.
+     - hw5_115.py
+
+Students feel the need to initialize the variable used in a for loop prior to the 
+declaration of the for loop. This is clearly extraneous, and shows a misunderstanding
+of of a for loop works in Python.
+     - hw5_102.py
+     - hw5_140.py
+
+Students use the range() function often with an explicit start are 0. By default,
+range(0,10)and range(10) produce the same list. This has no effect on how it runs,
+but doesn't necessarily demonstrate an understanding on the range function. Not sure
+if this should be included or not.
+     - hw5_123.py
+     - hw5_155.py
+     - hw5_156.py
+     - hw5_175.py
+     - lots more, I stopped adding them
+
+if <cond> :
+   	<code>
+else:
+	if <cond2>:
+		<code>
+	else:
+		<code>
+
+The above is extraneous, showing lack of understanding of the if-elif-else construct.
+As seen in:
+     - hw5_133.py
+
+Casting a call to input() with str() shows a lack of understanding of the return type
+of input(), which returns a string in Python3 rendering a cast to str() unecessary. 
+As seen in:
+     - hw5_139.py
+     - hw5_159.py
+
+hw5_16.py ... would you consider the use of range here extraneous?
+
+hw5_173.py ... I would consider this extraneous, maybe slight misconception on
+the purpose of functions? I will not be looking for this with the method that I come
+up with. 
+
+hw5_176.py ... reassigning the for loop variable to be something completely different
+10000% extraneous reassignment of the loop variable to something else, but then
+just pritning that something else and enver using the looop variable again. clear
+misunderstanding of something but I can't quite articulate what. ugh. 
+
+hw5_178.py ... honestly what even why. defines a fucntion within an function, and then
+just calls it once. clearly misunderstood functions and their purpose, not sure how to
+handle this one.
