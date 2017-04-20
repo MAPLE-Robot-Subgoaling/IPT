@@ -1,6 +1,6 @@
 ==================================== General Notes ===================================
 
-Checked assignments: 200-399
+Checked assignments: 200-482
 
 ================================ Specific Assignments ================================
 
@@ -19,3 +19,6 @@ unnecessary usage of exit()
       
 variables were initialized but never used... (C and K)
       - hw_388.py
+
+unnecessary to have a seperate print() when it could be done in input()
+      - hw_405.py

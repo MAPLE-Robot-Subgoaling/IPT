@@ -1,6 +1,9 @@
 #emacs autosave
 *~
 
+#Pycharm stuff
+*.idea
+
 #students pickle
 students.txt
 
