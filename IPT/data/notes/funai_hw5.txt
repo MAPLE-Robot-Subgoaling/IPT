@@ -1,0 +1,96 @@
+==================================== General Notes ===================================
+
+A LOT of students had logical errors that didn't consider the case where width is 1 and
+the height is NOT 1.
+
+so for example, if the user inputs width 1 and height 3 with outline symbol of x
+students code will show:                            instead of:
+                          x                                      x
+                          xx                                     x
+                          x                                      x
+
+checked assignments: 200-350
+================================ Specific Assignments ================================
+
+unnecessary cast of str() with input()
+    - hw5_203.py
+	
+logical error: not sure why they set a condition based on boxWidth when the range deals 
+with boxHeight, I’m assuming this is a mistake. This code would also give an error if 
+the user inputs a width of 1
+    - hw5_209.py
+
+logical errors: would give wrong answer is height = 2 or if width = 1 due to errors in 
+the 2nd if statement and the 3rd if statement
+    - hw5_211.py
+
+unnecessarily initialization of a variable to use in for, unnecessary casting of list()
+    - hw5_213.py
+
+logical error: would give wrong result if width is 1 and height is anything other than 1
+    - hw5_214.py
+    - hw5_236.py
+    - hw5_237.py
+    - hw5_238.py
+    - hw5_250.py
+    - hw5_251.py
+    - hw5_252.py
+    - hw5_253.py
+    - hw5_254.py
+    - stopped keeping track of these..
+    
+logical error:  in the for i in range (0, height): the elif with i !=height is unnecessary 
+because that will always be true. they might have meant height-1. Also, if/elif/if shows 
+possible misunderstanding of if/elif/else
+    - hw5_217.py
+
+very inefficient coding with errors.  first for loop with range(width+1) would give one 
+more than necessary. Also confused why they decided to print the middle and x as they 
+go through the second for loop? Having 3 for loops for this problem is excessive
+    - hw5_220.py
+
+extraneous to have a for loop with range(1)
+    - hw5_221.py
+    - hw5_294.py
+
+unnecessary initialization of variables to 0 prior to input(), logic error would give 
+wrong answer if width is 1
+    - hw5_231.py
+
+logical errors: only works if height and width aren’t 1, also ...the directions 
+explicitly say not to use any while loops...and they used only while loops
+    - hw5_235.py
+
+overall implementation method seems extraneous, could have simplified their coding
+    - hw5_239.py
+    - hw5_244.py
+
+student set range to (0, height, 1), setting the start and step were unnecessary 
+because it defaults at 0 and 1. shows potential misunderstanding of range
+     - hw5_266.py
+     - hw5_267.py
+     
+unnecessary to initailize a variable to represent the range(heightNum)
+     - hw5_285.py
+     - hw5_358.py
+     
+function definitions within a function seems extraneous, could have easily solved
+the problem without it....could be treated similarly to hw_178.py?
+     - hw5_297.py
+     
+don't understand why they created a separate box() function, when all they do is call it
+in main...
+     - hw5_397.py
+
+wrong assignment/incomplete:
+     - hw5_300.py
+     - hw5_391.py
+     
+use of break in CMSC201 is against the coding standards:
+     - hw5_377.py
+     
+empty print() statements?
+     - hw5_428.py
+     
+empty for loop?
+     - hw5_434.py
