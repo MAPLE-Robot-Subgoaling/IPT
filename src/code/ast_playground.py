@@ -30,6 +30,37 @@ class NameLister(ast.NodeVisitor):
             '''
 
 
+class AssignVisitor(ast.NodeVisitor):
+
+    def visit_Assign(self, node):
+        for target in node.targets:
+            # if the node in the target is a Store, and the value being assigned is a number
+            if isinstance(target.ctx, ast.Store):
+
+                if isinstance(node.value, ast.Num):
+                    print("Storing {} in id '{}'".format(node.value.n, target.id))
+                if isinstance(node.value, ast.BinOp):
+                    s = binOpToString(node.value)
+                    print("Storing '{}' in id '{}'".format(s, target.id))
+
+def binOpToString(binop):
+
+    if isinstance(binop, ast.Name):
+        return binop.id
+    if isinstance(binop, ast.Num):
+        return str(binop.n)
+    if not isinstance(binop, ast.BinOp):
+        return ""
+
+    if isinstance(binop.op, ast.Add):
+        op = " + "
+    else:
+        op = " ? "
+
+    return binOpToString(binop.left) + op + binOpToString(binop.right)
+
+
+
 def main():
 
     with open(file_name) as f:
@@ -37,7 +68,8 @@ def main():
 
     try:
         root = ast.parse(source)
-        NameLister().visit(root)
+        #NameLister().visit(root)
+        AssignVisitor().visit(root)
 
     except SyntaxError:
         err_file_name = file_name.split("/")[-1]
