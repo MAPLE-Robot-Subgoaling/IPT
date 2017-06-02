@@ -1,8 +1,7 @@
 import ast
 
 # a list of all python keywords and exempt names
-exempt_names = list(dir(__builtins__)) + ["main"]
-
+exempt_names = list(dir(__builtins__)) + ["main", "print"]
 
 class Visitor(ast.NodeVisitor):
 
@@ -11,11 +10,9 @@ class Visitor(ast.NodeVisitor):
         self.results = []
 
     def visit_Name(self, node):
-        #print(node.id)
-        self.results.append(node.id)
+        if node.id not in exempt_names:
+            self.results.append(node.id)
 
-    def visit_Expr(self, node):
-        pass
 
     def get_result(self):
         return self.results

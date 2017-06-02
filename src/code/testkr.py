@@ -1,6 +1,7 @@
 from kanren import Relation, facts, run, var, conde
 from itertools import combinations
 
+# TODO: what about empty lines?
 
 def dependent(line1, line2, name):
     """
@@ -34,12 +35,18 @@ def dependent2(line1, line2):
                   isBefore(line1, line2)])
 
 
+def transdepend(a, b, c):
+    n = var()
+    return conde([dependent(a,b,n), dependent(b,c,n)])
+
 n = var()
 l1 = var()
 l2 = var()
+l3 = var()
 
 hasID = Relation()
 isBefore = Relation()
+isAssigned = Relation()
 
 # quick bootstrap of knowledge base
 # line # has name
@@ -61,7 +68,8 @@ facts(isBefore, *combinations(range(1, 7), 2))
 result1 = run(0, (l1, l2), hasID(l1, "x"), hasID(l2, "x"))
 result2 = run(0, (l1, l2), dependent(l1, l2, "y"))
 result3 = run(0, (l1, l2), dependent2(l1, l2))
-
+result4 = run(0, (l1, l2, l3), transdepend(l1, l2, l3))
+print(result4)
 
 # this is how you remove duplicates in the results
 s = set([tuple(sorted(l)) for l in result1])
