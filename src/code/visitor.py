@@ -3,6 +3,7 @@ import ast
 # a list of all python keywords and exempt names
 exempt_names = list(dir(__builtins__)) + ["main", "print"]
 
+
 class Visitor(ast.NodeVisitor):
 
     def __init__(self):
@@ -13,7 +14,5 @@ class Visitor(ast.NodeVisitor):
         if node.id not in exempt_names:
             self.results.append(node.id)
 
-
     def get_result(self):
         return self.results
-
