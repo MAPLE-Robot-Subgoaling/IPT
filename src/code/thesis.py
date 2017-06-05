@@ -85,7 +85,8 @@ def main():
     val, l1 = var(), var()
 
     print("Line that has the correct output: ")
-    print(run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output)))
+    correct_line = run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))[0]
+    print(correct_line)
 
     print()
 
@@ -96,7 +97,7 @@ def main():
     print(results)
 
     # dependency chain to goal
-    goal_line = 5  # TODO: change this to a logic rule
+    goal_line = correct_line[0]
 
     # directed graph, flipped line pairs
     graph = nx.DiGraph()
