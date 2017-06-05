@@ -1,16 +1,18 @@
 from handlers import *
 
-from kanren import Relation, facts, run, var, conde
+from kanren import Relation, facts, run, var, conde, eq
 from itertools import combinations
 
 import ast
 import networkx as nx
+import subprocess
 
 filename = "test.py"
 has_id = Relation()
 is_before = Relation()
 assigns = Relation()
 uses = Relation()
+hasOutput = Relation()  # line L has output of value V
 
 
 def depends(a, b):
@@ -23,9 +25,19 @@ def depends(a, b):
     return conde([is_before(a, b), assigns(a, shared_id), uses(b, shared_id)])
 
 
+def run_code(name):
+    p = subprocess.Popen("python3 " + name, stdout=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out_str = out.decode("utf-8")
+    return out_str.strip()
+
+
 def main():
     with open(filename) as f:
         src = f.readlines()
+
+    # run the student's code to get their output
+    code_result = run_code(filename)
 
     facts(is_before, *combinations(range(len(src)), 2))
 
@@ -56,11 +68,27 @@ def main():
             v = ExprVisitor()
             v.visit(astsrc)
             vs = v.get_vars_used()
+            out = v.isOut()
             if vs:
                 facts(uses, *[(lineno, name) for name in vs])
 
+            # add output as a fact
+            # this will need to be fixed for programs with >1 print statement
+            if out:
+                facts(hasOutput, (lineno, code_result))
+
 
     print()
+    print("Solution result:", code_result)
+    print()
+    goal_output = "31"
+    val, l1 = var(), var()
+
+    print("Line that has the correct output: ")
+    print(run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output)))
+
+    print()
+
     a, b = var(), var()
     results = run(0, (a, b), depends(a, b))
 

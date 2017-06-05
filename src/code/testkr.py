@@ -130,3 +130,7 @@ print()
 print("New depends function:")
 result5 = run(0, (l1, l2), depends(l1, l2))
 print(result5)
+
+# desired output value VAL on line L
+output_line = var()
+
