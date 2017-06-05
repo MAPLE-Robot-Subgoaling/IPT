@@ -4,7 +4,7 @@ from kanren import Relation, facts, run, var, conde
 from itertools import combinations
 
 import ast
-
+import networkx as nx
 
 filename = "test.py"
 has_id = Relation()
@@ -67,8 +67,21 @@ def main():
     print("The lines that have dependencies are:")
     print(results)
 
-    graph = {}
-    for result in results:
+    # dependency chain to goal
+    goal_line = 5  # TODO: change this to a logic rule
+
+    # directed graph, flipped line pairs
+    graph = nx.DiGraph()
+    graph.add_nodes_from(list(range(len(src))))
+    graph.add_edges_from([(b, a) for a, b in results])
+    paths = nx.single_source_shortest_path(graph, goal_line)
+    unused_nodes = graph.nodes()
+
+    for node in paths:
+        unused_nodes.remove(node)
+
+    print("Extraneous lines of code:")
+    print(unused_nodes)
 
 if __name__ == "__main__":
     main()
