@@ -6,7 +6,7 @@ import ast
 from pretty_dump import dump
 
 # file_name = "../../data/HW3/hw3_121.py"
-file_name = "test.py"
+file_name = "test1.py"
 lines = {}
 vars_to_lines = {}
 

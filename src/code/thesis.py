@@ -1,4 +1,4 @@
-from handlers import *
+from visitor import Visitor
 
 from kanren import Relation, facts, run, var, conde, eq
 from itertools import combinations
@@ -7,7 +7,7 @@ import ast
 import networkx as nx
 import subprocess
 
-filename = "test.py"
+filename = "testfiles/test1.py"
 has_id = Relation()
 is_before = Relation()
 assigns = Relation()
@@ -33,16 +33,18 @@ def run_code(name):
 
 
 def main():
+
     with open(filename) as f:
-        src = f.readlines()
+        src = f.read()
 
     # run the student's code to get their output
     code_result = run_code(filename)
 
+    # add the is_beofre fact for every valid pair of lines
     facts(is_before, *combinations(range(len(src)), 2))
 
     print("The input program is:")
-    for lineno, line in enumerate(src):
+    for lineno, line in enumerate(src.split("\n"), 1):
 
         if line == "\n":
             print("Empty line")
@@ -50,34 +52,44 @@ def main():
 
         outstr = "[{0: >2}]: {1}".format(lineno, line.strip())
         print(outstr)
-        astsrc = ast.parse(line)
-        line_type = astsrc.body[0]
-
-        if isinstance(line_type, ast.Assign):
-            v = AssignVisitor()
-            v.visit(astsrc)
-            left, right = v.get_results()
-
-            if left:
-                facts(assigns, (lineno, left))
-
-            if right:
-                facts(uses, *[(lineno, name) for name in right])
-
-        elif isinstance(line_type, ast.Expr):
-            v = ExprVisitor()
-            v.visit(astsrc)
-            vs = v.get_vars_used()
-            out = v.isOut()
-            if vs:
-                facts(uses, *[(lineno, name) for name in vs])
-
-            # add output as a fact
-            # this will need to be fixed for programs with >1 print statement
-            if out:
-                facts(hasOutput, (lineno, code_result))
 
 
+    src_ast = ast.parse(src)
+
+    # walk the AST to give each node a parent
+    for node in ast.walk(src_ast):
+        for child in ast.iter_child_nodes(node):
+            child.parent = node
+
+    ast_visitor = Visitor()
+    ast_visitor.visit(src_ast)
+
+    assignments, usages, outputs = ast_visitor.get_data()
+
+    # add assignment facts to the KB
+    for variable in assignments:
+        # print(*[(lineno, var) for lineno in assignments[var]])
+        facts(assigns, *[(lineno, variable) for lineno in assignments[variable]])
+
+    # add usage facts to the KB
+    for variable in usages:
+        # print(*[(lineno, var) for lineno in usages[var]])
+        facts(uses, *[(lineno, variable) for lineno in usages[variable]])
+
+    # add output fact to the KB
+    print(outputs)
+    # evaluate the output line to get the result
+    # if any variable is reused at any point in the program,
+    # copy the program and rename the reuses to different names,
+    # that way they printed expression will not change as is is at
+    # time is was printed
+    # later, you can derive what the expression would have been from
+    # a dependency graph, so you dont have to edit their code at all
+
+
+
+
+    '''
     print()
     print("Solution result:", code_result)
     print()
@@ -111,6 +123,7 @@ def main():
 
     print("Extraneous lines of code:")
     print(unused_nodes)
+    '''
 
 if __name__ == "__main__":
     main()

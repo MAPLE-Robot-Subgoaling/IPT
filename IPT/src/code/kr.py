@@ -10,7 +10,7 @@ def main():
     same_var = Relation()
     var_tracker = {}
 
-    with open("test.py") as f:
+    with open("test1.py") as f:
 
         for num, line in enumerate(f, 1):
 

@@ -18,7 +18,7 @@ def main():
 
     var_tracker = {}
 
-    with open("test.py") as f:
+    with open("test1.py") as f:
 
         for num, line in enumerate(f, 1):
             v = Visitor()
@@ -52,7 +52,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-#test.py
+#test1.py
 #goal: output 34
 
 

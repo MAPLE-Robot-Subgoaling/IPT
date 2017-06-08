@@ -1,5 +1,5 @@
 import ast
-
+from .helpers import binOpToString
 
 class AssignVisitor(ast.NodeVisitor):
 
@@ -22,28 +22,6 @@ class AssignVisitor(ast.NodeVisitor):
                     pass
 
                 if isinstance(node.value, ast.BinOp):
-                    s = self.binOpToString(node.value)
+                    s = binOpToString(node.value)
                     # print("Storing '{}' in id '{}'".format(s, target.id))
 
-    def binOpToString(self, binop):
-
-        if isinstance(binop, ast.Name):
-            self.right_side.append(binop.id)
-            return binop.id
-        if isinstance(binop, ast.Num):
-            return str(binop.n)
-        if not isinstance(binop, ast.BinOp):
-            return "ERR"
-
-        if isinstance(binop.op, ast.Add):
-            op = " + "
-        elif isinstance(binop.op, ast.Sub):
-            op = " - "
-        elif isinstance(binop.op, ast.Mult):
-            op = " * "
-        elif isinstance(binop.op, ast.Div):
-            op = " / "
-        else:
-            op = " ? "
-
-        return self.binOpToString(binop.left) + op + self.binOpToString(binop.right)
