@@ -38,7 +38,7 @@ class Visitor(ast.NodeVisitor):
         self.generic_visit(node)
 
     def visit_Name(self, node):
-
+        #print(type(node), type((node.parent)))
         if isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Store):
             #print("id<{}> assigned a value on {}".format(node.id, node.lineno))
             try:
@@ -53,8 +53,8 @@ class Visitor(ast.NodeVisitor):
             except KeyError:
                 self.usages[node.id] = [node.lineno]
 
-        elif isinstance(node.parent, ast.Call) and node.id not in exempt_names:
-            print("id<{}> used in func call on {}".format(node.id, node.lineno))
+        elif isinstance(node.parent, ast.Call):
+            #print("id<{}> used in func call on {}".format(node.id, node.lineno))
             try:
                 self.usages[node.id].append(node.lineno)
             except KeyError:
@@ -66,3 +66,4 @@ class Visitor(ast.NodeVisitor):
                 self.outputs.append(node.lineno)
             except KeyError:
                 self.outputs = [node.lineno]
+        self.generic_visit(node)

@@ -1,13 +1,17 @@
 from visitor import Visitor
+from handlers import *
+from converter import RewriteVars
 
 from kanren import Relation, facts, run, var, conde, eq
 from itertools import combinations
 
 import ast
+import astor
 import networkx as nx
 import subprocess
 
-filename = "testfiles/test1.py"
+filename = "testfiles/test3.py"
+
 has_id = Relation()
 is_before = Relation()
 assigns = Relation()
@@ -31,99 +35,123 @@ def run_code(name):
     out_str = out.decode("utf-8")
     return out_str.strip()
 
+with open(filename) as f:
+    src = f.read()
+    src_lines = src.split("\n")
 
-def main():
+# run the student's code to get their output
+# code_result = run_code(filename)
 
-    with open(filename) as f:
-        src = f.read()
+src_ast = ast.parse(src)
 
-    # run the student's code to get their output
-    code_result = run_code(filename)
+# set parent nodes for every child
+for node in ast.walk(src_ast):
+    for child in ast.iter_child_nodes(node):
+        child.parent = node
 
-    # add the is_beofre fact for every valid pair of lines
-    facts(is_before, *combinations(range(len(src)), 2))
+t = RewriteVars()
+new_tree = t.visit(src_ast)
 
-    print("The input program is:")
-    for lineno, line in enumerate(src.split("\n"), 1):
+with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py", "w") as w:
+    w.write(astor.to_source(new_tree))
 
-        if line == "\n":
-            print("Empty line")
-            continue
+#reread the source
+with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
+    src = f.read()
+    src_lines = src.split("\n")
 
-        outstr = "[{0: >2}]: {1}".format(lineno, line.strip())
-        print(outstr)
+# add the is_before fact for every valid pair of lines
+facts(is_before, *combinations(range(len(src)), 2))
+
+print("The input program is:")
+for lineno, line in enumerate(src.split("\n"), 1):
+
+    if line == "\n":
+        print("Empty line")
+        continue
+
+    outstr = "[{0: >2}]: {1}".format(lineno, line.strip())
+    print(outstr)
+
+# walk the AST to give each node a parent
+for node in ast.walk(new_tree):
+    for child in ast.iter_child_nodes(node):
+        child.parent = node
+
+ast_visitor = Visitor()
+ast_visitor.visit(new_tree)
+
+assignments, usages, outputs = ast_visitor.get_data()
+
+# add assignment facts to the KB
+for variable in assignments:
+    #print(*[(lineno, variable) for lineno in assignments[variable]])
+    facts(assigns, *[(lineno, variable) for lineno in assignments[variable]])
+
+# print()
+
+# add usage facts to the KB
+for variable in usages:
+    #print(*[(lineno, variable) for lineno in usages[variable]])
+    facts(uses, *[(lineno, variable) for lineno in usages[variable]])
+
+# add output fact to the KB
+# evaluate the output line to get the result
+# if any variable is reused at any point in the program,
+# copy the program and rename the reuses to different names,
+# that way they printed expression will not change as is is at
+# time is was printed
+# later, you can derive what the expression would have been from
+# a dependency graph, so you dont have to edit their code at all
+
+import sys
+old = sys.stdout
+sys.stdout = None
+from testfiles.new_test import *
+sys.stdout = old
+
+for line in outputs:
+    actual_line = src_lines[line - 1]
+    if len(actual_line) == 0:
+        continue
+
+    p = PrintVisitor()
+    p.visit(ast.parse(actual_line))
+    expr = p.get_expr()
+    #print("Expression:", expr)
+    #print("Evals to:", eval(expr))
+    facts(hasOutput, (line, eval(expr)))
 
 
-    src_ast = ast.parse(src)
+goal_output = 72
+val, l1 = var(), var()
 
-    # walk the AST to give each node a parent
-    for node in ast.walk(src_ast):
-        for child in ast.iter_child_nodes(node):
-            child.parent = node
+print("Line that has the correct output: ")
+correct_line = run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))[0]
+print(correct_line)
 
-    ast_visitor = Visitor()
-    ast_visitor.visit(src_ast)
+#print()
 
-    assignments, usages, outputs = ast_visitor.get_data()
+a, b = var(), var()
+results = run(0, (a, b), depends(a, b))
 
-    # add assignment facts to the KB
-    for variable in assignments:
-        # print(*[(lineno, var) for lineno in assignments[var]])
-        facts(assigns, *[(lineno, variable) for lineno in assignments[variable]])
+print("The lines that have dependencies are:")
+print(results)
 
-    # add usage facts to the KB
-    for variable in usages:
-        # print(*[(lineno, var) for lineno in usages[var]])
-        facts(uses, *[(lineno, variable) for lineno in usages[variable]])
+# dependency chain to goal
+goal_line = correct_line[0]
 
-    # add output fact to the KB
-    print(outputs)
-    # evaluate the output line to get the result
-    # if any variable is reused at any point in the program,
-    # copy the program and rename the reuses to different names,
-    # that way they printed expression will not change as is is at
-    # time is was printed
-    # later, you can derive what the expression would have been from
-    # a dependency graph, so you dont have to edit their code at all
+# directed graph, flipped line pairs
+graph = nx.DiGraph()
+graph.add_nodes_from(list(range(1, len(src_lines)+1)))
+graph.add_edges_from([(b, a) for a, b in results])
+paths = nx.single_source_shortest_path(graph, goal_line)
+unused_nodes = graph.nodes()
+#print(paths)
 
+for node in paths:
+    unused_nodes.remove(node)
 
-
-
-    '''
-    print()
-    print("Solution result:", code_result)
-    print()
-    goal_output = "31"
-    val, l1 = var(), var()
-
-    print("Line that has the correct output: ")
-    correct_line = run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))[0]
-    print(correct_line)
-
-    print()
-
-    a, b = var(), var()
-    results = run(0, (a, b), depends(a, b))
-
-    print("The lines that have dependencies are:")
-    print(results)
-
-    # dependency chain to goal
-    goal_line = correct_line[0]
-
-    # directed graph, flipped line pairs
-    graph = nx.DiGraph()
-    graph.add_nodes_from(list(range(len(src))))
-    graph.add_edges_from([(b, a) for a, b in results])
-    paths = nx.single_source_shortest_path(graph, goal_line)
-    unused_nodes = graph.nodes()
-
-    for node in paths:
-        unused_nodes.remove(node)
-
-    print("Extraneous lines of code:")
-    print(unused_nodes)
-    '''
-
-if __name__ == "__main__":
-    main()
+print()
+print("Extraneous lines of code:")
+print(unused_nodes)
