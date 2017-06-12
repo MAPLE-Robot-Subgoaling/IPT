@@ -138,7 +138,7 @@ for goal in goals:
     if len(correct) > 0:
         correct_line = correct[0]
     else:
-        #TODO: issue, if they dont ahve a line that outputs the correct thing, it will think that everything is extraneous
+        # TODO: issue, if they dont have a line that outputs the correct thing, it thinks that everything is extraneous
         correct_line = None
         print("Failed to find correct output line")
         print("Perhaps goal_output is wrong")
@@ -157,16 +157,15 @@ for key, val in dependencies.items():
         results.append(t)
 
 print("The lines that have dependencies are:")
-print("results:", results)
+print(results)
 
-
-# directed graph, flipped line pairs
+# directed graph of dependencies, flipped line pairs so it goes from the goal line(s) to the begining
 graph = nx.DiGraph()
 graph.add_nodes_from(list(range(1, len(src_lines)+1)))
 graph.add_edges_from([(b, a) for a, b in results])
 unused_nodes = graph.nodes()
 
-#for every correct line that was found
+# for every correct line that was found
 for correct_line in correct_lines:
 
     # dependency chain to goal line
