@@ -23,6 +23,7 @@ hasOutput = Relation()  # line L has output of value V
 goal_output = "good" #test2
 #goal_output = 72 #test3
 #goal_output = 2 #test3
+goals = [17, "good"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -116,44 +117,36 @@ for line in outputs:
     actual_line = src_lines[line - 1].strip()
     if len(actual_line) == 0:
         continue
-
-    #print("actual line:", actual_line)
+    #print("actual:", actual_line)
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-    #print("Expression:", expr)
-    #print("Length:", len(expr))
 
     if len(expr) == 0:
         continue
 
-    #print("Evals to:", eval(expr))
-
-
-
     facts(hasOutput, (line, eval(expr)))
-
-
-# TODO: Handle looking for multiple outputs
 
 val, l1 = var(), var()
 
 print()
 print("Line that has the correct output: ")
-correct= run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))
-if len(correct) > 0:
-    correct_line = correct[0]
-else:
-    correct_line = None
-    print("Failed to find correct output line")
-    print("Perhaps goal_output is wrong")
-    sys.exit(1)
+correct_lines = []
+for goal in goals:
+    correct = run(0, (l1, val), hasOutput(l1, val), eq(val, goal))
 
-print(correct_line)
-print()
+    if len(correct) > 0:
+        correct_line = correct[0]
+    else:
+        #TODO: issue, if they dont ahve a line that outputs the correct thing, it will think that everything is extraneous
+        correct_line = None
+        print("Failed to find correct output line")
+        print("Perhaps goal_output is wrong")
+        sys.exit(1)
 
-#print()
+    correct_lines.append(correct_line)
 
+print(correct_lines)
 a, b = var(), var()
 results = list(run(0, (a, b), depends(a, b)))
 
@@ -166,20 +159,27 @@ for key, val in dependencies.items():
 print("The lines that have dependencies are:")
 print("results:", results)
 
-# dependency chain to goal
-goal_line = correct_line[0]
 
 # directed graph, flipped line pairs
 graph = nx.DiGraph()
 graph.add_nodes_from(list(range(1, len(src_lines)+1)))
 graph.add_edges_from([(b, a) for a, b in results])
-paths = nx.single_source_shortest_path(graph, goal_line)
 unused_nodes = graph.nodes()
 
-# remove all nodes that are not in the path from goal to beginning
-# of the file
-for node in paths:
-    unused_nodes.remove(node)
+#for every correct line that was found
+for correct_line in correct_lines:
+
+    # dependency chain to goal line
+    goal_line = correct_line[0]
+    paths = nx.single_source_shortest_path(graph, goal_line)
+
+    # remove all nodes that are not in the path from goal to beginning
+    # of the file
+    for node in paths:
+        try:
+            unused_nodes.remove(node)
+        except ValueError:
+            pass
 
 #thinks that empty lines are extraneous
 for node in unused_nodes:
