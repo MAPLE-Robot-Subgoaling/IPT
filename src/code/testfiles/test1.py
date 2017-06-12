@@ -1,5 +1,5 @@
 var1 = 10
-var2 = 34
-var3 = 5
-val = 1 + var1 + var3 * 4
+var2 = 5
+var3 = var2 - var1
+val = 1 + var1 + var2 * 4
 print(val + var1)

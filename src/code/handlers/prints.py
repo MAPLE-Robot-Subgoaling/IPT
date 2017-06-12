@@ -16,3 +16,5 @@ class PrintVisitor(ast.NodeVisitor):
                     self.expr += binOpToString(arg)
                 elif isinstance(arg, ast.Name):
                     self.expr += arg.id
+                elif isinstance(arg, ast.Str):
+                    self.expr += "'" + arg.s +"'"

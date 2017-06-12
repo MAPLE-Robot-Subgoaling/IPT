@@ -10,7 +10,7 @@ import astor
 import networkx as nx
 import subprocess
 
-filename = "testfiles/test3.py"
+filename = "testfiles/test2.py"
 
 has_id = Relation()
 is_before = Relation()
@@ -18,6 +18,11 @@ assigns = Relation()
 uses = Relation()
 hasOutput = Relation()  # line L has output of value V
 
+#goal_output = 41 #test1
+#goal_output = 17 #test3
+goal_output = "good" #test2
+#goal_output = 72 #test3
+#goal_output = 2 #test3
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -36,13 +41,10 @@ def run_code(name):
     return out_str.strip()
 
 with open(filename) as f:
-    src = f.read()
-    src_lines = src.split("\n")
+    original_src = f.read()
+    original_src_lines = original_src.split("\n")
 
-# run the student's code to get their output
-# code_result = run_code(filename)
-
-src_ast = ast.parse(src)
+src_ast = ast.parse(original_src)
 
 # set parent nodes for every child
 for node in ast.walk(src_ast):
@@ -64,13 +66,13 @@ with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
 facts(is_before, *combinations(range(len(src)), 2))
 
 print("The input program is:")
-for lineno, line in enumerate(src.split("\n"), 1):
+for lineno, line in enumerate(original_src.split("\n"), 1):
 
     if line == "\n":
         print("Empty line")
         continue
 
-    outstr = "[{0: >2}]: {1}".format(lineno, line.strip())
+    outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
     print(outstr)
 
 # walk the AST to give each node a parent
@@ -81,7 +83,7 @@ for node in ast.walk(new_tree):
 ast_visitor = Visitor()
 ast_visitor.visit(new_tree)
 
-assignments, usages, outputs = ast_visitor.get_data()
+assignments, usages, outputs, dependencies = ast_visitor.get_data()
 
 # add assignment facts to the KB
 for variable in assignments:
@@ -111,32 +113,58 @@ from testfiles.new_test import *
 sys.stdout = old
 
 for line in outputs:
-    actual_line = src_lines[line - 1]
+    actual_line = src_lines[line - 1].strip()
     if len(actual_line) == 0:
         continue
 
+    #print("actual line:", actual_line)
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
     #print("Expression:", expr)
+    #print("Length:", len(expr))
+
+    if len(expr) == 0:
+        continue
+
     #print("Evals to:", eval(expr))
+
+
+
     facts(hasOutput, (line, eval(expr)))
 
 
-goal_output = 72
+# TODO: Handle looking for multiple outputs
+
 val, l1 = var(), var()
 
+print()
 print("Line that has the correct output: ")
-correct_line = run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))[0]
+correct= run(0, (l1, val), hasOutput(l1, val), eq(val, goal_output))
+if len(correct) > 0:
+    correct_line = correct[0]
+else:
+    correct_line = None
+    print("Failed to find correct output line")
+    print("Perhaps goal_output is wrong")
+    sys.exit(1)
+
 print(correct_line)
+print()
 
 #print()
 
 a, b = var(), var()
-results = run(0, (a, b), depends(a, b))
+results = list(run(0, (a, b), depends(a, b)))
+
+# add known dependencies to the results
+for key, val in dependencies.items():
+    thing = zip([key]*len(val), val)
+    for t in thing:
+        results.append(t)
 
 print("The lines that have dependencies are:")
-print(results)
+print("results:", results)
 
 # dependency chain to goal
 goal_line = correct_line[0]
@@ -147,10 +175,16 @@ graph.add_nodes_from(list(range(1, len(src_lines)+1)))
 graph.add_edges_from([(b, a) for a, b in results])
 paths = nx.single_source_shortest_path(graph, goal_line)
 unused_nodes = graph.nodes()
-#print(paths)
 
+# remove all nodes that are not in the path from goal to beginning
+# of the file
 for node in paths:
     unused_nodes.remove(node)
+
+#thinks that empty lines are extraneous
+for node in unused_nodes:
+    if len(src_lines[node-1]) == 0:
+        unused_nodes.remove(node)
 
 print()
 print("Extraneous lines of code:")
