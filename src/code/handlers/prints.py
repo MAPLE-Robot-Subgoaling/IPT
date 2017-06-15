@@ -9,12 +9,13 @@ class PrintVisitor(ast.NodeVisitor):
     def get_expr(self):
         return self.expr
 
+
     def visit_Call(self, node):
         if node.func.id == 'print':
             for arg in node.args:
                 if isinstance(arg, ast.BinOp):
-                    self.expr += binOpToString(arg)
+                    self.expr += " + ' ' + str(" + binOpToString(arg) + ")"
                 elif isinstance(arg, ast.Name):
-                    self.expr += arg.id
+                    self.expr += " + ' ' + str(" + arg.id + ")"
                 elif isinstance(arg, ast.Str):
-                    self.expr += "'" + arg.s +"'"
+                    self.expr += "'" + arg.s + "'"

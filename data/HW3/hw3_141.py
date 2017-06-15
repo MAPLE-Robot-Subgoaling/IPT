@@ -1,4 +1,3 @@
-
 def main():
 
     temperature = float(input("What is the termperature?: "))

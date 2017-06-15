@@ -10,7 +10,8 @@ import astor
 import networkx as nx
 import subprocess
 
-filename = "testfiles/test2.py"
+#filename = "testfiles/test2.py"
+filename = "../../data/HW3/hw3_141.py"
 
 has_id = Relation()
 is_before = Relation()
@@ -23,7 +24,9 @@ hasOutput = Relation()  # line L has output of value V
 goal_output = "good" #test2
 #goal_output = 72 #test3
 #goal_output = 2 #test3
-goals = [17, "good"]
+#goals = [17, "good"]
+#goals = ["y is: 19 17"]
+goals = ["At this temperature, water is a liquid"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -43,7 +46,8 @@ def run_code(name):
 
 with open(filename) as f:
     original_src = f.read()
-    original_src_lines = original_src.split("\n")
+    f.seek(0)
+    original_src_lines = f.readlines()
 
 src_ast = ast.parse(original_src)
 
@@ -58,7 +62,7 @@ new_tree = t.visit(src_ast)
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py", "w") as w:
     w.write(astor.to_source(new_tree))
 
-#reread the source
+#reread the sources
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     src = f.read()
     src_lines = src.split("\n")
@@ -107,17 +111,20 @@ for variable in usages:
 # later, you can derive what the expression would have been from
 # a dependency graph, so you dont have to edit their code at all
 
+#redirect stdout to a file the corresponds to the input to the program
 import sys
 old = sys.stdout
-sys.stdout = None
+new_stdout = open("input.txt")
+sys.stdin = new_stdout
 from testfiles.new_test import *
 sys.stdout = old
+new_stdout.close()
 
 for line in outputs:
-    actual_line = src_lines[line - 1].strip()
+    actual_line = original_src_lines[line-1].strip()
     if len(actual_line) == 0:
         continue
-    #print("actual:", actual_line)
+
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
