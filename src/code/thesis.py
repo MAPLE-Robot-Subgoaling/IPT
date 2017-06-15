@@ -37,13 +37,6 @@ def depends(a, b):
     shared_id = var()
     return conde([is_before(a, b), assigns(a, shared_id), uses(b, shared_id)])
 
-
-def run_code(name):
-    p = subprocess.Popen("python3 " + name, stdout=subprocess.PIPE, shell=True)
-    out, err = p.communicate()
-    out_str = out.decode("utf-8")
-    return out_str.strip()
-
 with open(filename) as f:
     original_src = f.read()
     f.seek(0)
