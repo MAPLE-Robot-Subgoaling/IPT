@@ -7,7 +7,7 @@ from kanren import var, eq, Relation, run, facts
 
 hasOutput = Relation()
 
-read_file = "/Users/mneary1/Desktop/IPT/src/code/testfiles/test2.py"
+read_file = "/Users/mneary1/Desktop/IPT/src/code/testfiles/test1.py"
 out_file = "/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py"
 with open(read_file) as f:
     src = f.read()

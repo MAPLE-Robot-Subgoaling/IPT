@@ -10,8 +10,8 @@ import astor
 import networkx as nx
 import subprocess
 
-#filename = "testfiles/test2.py"
-filename = "../../data/HW3/hw3_141.py"
+filename = "testfiles/test1.py"
+#filename = "../../data/HW3/hw3_141.py"
 
 has_id = Relation()
 is_before = Relation()
@@ -21,12 +21,13 @@ hasOutput = Relation()  # line L has output of value V
 
 #goal_output = 41 #test1
 #goal_output = 17 #test3
-goal_output = "good" #test2
+#goal_output = "good" #test2
 #goal_output = 72 #test3
 #goal_output = 2 #test3
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
-goals = ["At this temperature, water is a liquid"]
+#goals = ["At this temperature, water is a liquid"]
+goals = ["41"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -88,7 +89,6 @@ for variable in assignments:
     #print(*[(lineno, variable) for lineno in assignments[variable]])
     facts(assigns, *[(lineno, variable) for lineno in assignments[variable]])
 
-# print()
 
 # add usage facts to the KB
 for variable in usages:
@@ -179,6 +179,7 @@ for correct_line in correct_lines:
             unused_nodes.remove(node)
         except ValueError:
             pass
+
 
 #thinks that empty lines are extraneous
 for node in unused_nodes:

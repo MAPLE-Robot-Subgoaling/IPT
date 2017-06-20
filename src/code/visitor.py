@@ -91,6 +91,7 @@ class Visitor(ast.NodeVisitor):
     def visit_Name(self, node):
         # print(type(node), type((node.parent)))
 
+        # TODO: might have to figure out what to do with main
         if node.id in exempt_names:
             return
 
