@@ -10,7 +10,7 @@ import astor
 import networkx as nx
 import subprocess
 
-filename = "testfiles/test1.py"
+filename = "testfiles/test4.py"
 #filename = "../../data/HW3/hw3_141.py"
 
 has_id = Relation()
@@ -26,8 +26,8 @@ hasOutput = Relation()  # line L has output of value V
 #goal_output = 2 #test3
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
-#goals = ["At this temperature, water is a liquid"]
-goals = ["41"]
+goals = ["At this temperature, water is a liquid"]
+#goals = ["41"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -84,6 +84,8 @@ ast_visitor.visit(new_tree)
 
 assignments, usages, outputs, dependencies = ast_visitor.get_data()
 
+print(outputs)
+
 # add assignment facts to the KB
 for variable in assignments:
     #print(*[(lineno, variable) for lineno in assignments[variable]])
@@ -113,6 +115,7 @@ from testfiles.new_test import *
 sys.stdout = old
 new_stdout.close()
 
+
 for line in outputs:
     actual_line = original_src_lines[line-1].strip()
     if len(actual_line) == 0:
@@ -121,32 +124,32 @@ for line in outputs:
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-
+    print("expr:", expr)
     if len(expr) == 0:
         continue
 
     facts(hasOutput, (line, eval(expr)))
 
+
 val, l1 = var(), var()
 
 print()
-print("Line that has the correct output: ")
+print("Line(s) that have the correct output: ")
 correct_lines = []
 for goal in goals:
     correct = run(0, (l1, val), hasOutput(l1, val), eq(val, goal))
-
-    if len(correct) > 0:
-        correct_line = correct[0]
-    else:
-        # TODO: issue, if they dont have a line that outputs the correct thing, it thinks that everything is extraneous
-        correct_line = None
-        print("Failed to find correct output line")
-        print("Perhaps goal_output is wrong")
-        sys.exit(1)
-
-    correct_lines.append(correct_line)
+    for thing in correct:
+        correct_lines.append(thing)
 
 print(correct_lines)
+
+# if no matches were found, terminate execution
+if len(correct_lines) == 0:
+    print("Failed to find correct output line")
+    print("Perhaps goal_output is wrong")
+    sys.exit(1)
+
+
 a, b = var(), var()
 results = list(run(0, (a, b), depends(a, b)))
 
