@@ -1,5 +1,6 @@
-y = 17
-print("y is:", y + 2, y)
+y = int(input("Enter a number: "))
+
+y = int(y)
 
 if y % 2 == 0:
     print("even")

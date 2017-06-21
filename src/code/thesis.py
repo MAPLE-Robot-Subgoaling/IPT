@@ -10,15 +10,16 @@ import astor
 import networkx as nx
 import os
 
-filename = "testfiles/test2.py"
+filename = "testfiles/test1.py"
 #filename = "../../data/HW3/hw3_141.py"
 
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 outf = open(outf_name)
-code_file_name = "test2.py"
+code_file_name = "test1.py"
 code_name = "/Users/mneary1/Desktop/IPT/src/code/testfiles/" + code_file_name
 inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
+
 cmd = "python3 -m trace --trace {} < {} > {}".format(code_name, inputf_name, outf_name)
 os.system(cmd)
 
@@ -44,8 +45,8 @@ hasOutput = Relation()  # line L has output of value V
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
 #goals = ["At this temperature, water is a liquid"]
-#goals = ["31"]
-goals = ["even", "odd"]
+goals = ["31"]
+#goals = ["even", "odd"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -124,9 +125,10 @@ for variable in usages:
 # that way they printed expression will not change as is is at
 # time is was printed
 # later, you can derive what the expression would have been from
-# a dependency graph, so you dont have to edit their code at all
+# a dependency graph, so you don't have to edit their code at all
 
-#redirect stdout to a file the corresponds to the input to the program
+#redirect stdin to a file the corresponds to the input to the program
+#redirect stdout just so you don't have to see their output
 import sys
 old = sys.stdout
 new_stdout = open("out.txt", "w")
@@ -200,8 +202,7 @@ for correct_line in correct_lines:
     goal_line = correct_line[0]
     paths = nx.single_source_shortest_path(graph, goal_line)
 
-    # remove all nodes that are not in the path from goal to beginning
-    # of the file
+    # remove all nodes that are in the path from goal to beginning of the file
     for node in paths:
         try:
             unused_nodes.remove(node)
@@ -210,10 +211,11 @@ for correct_line in correct_lines:
 
 
 #thinks that empty lines are extraneous
+'''
 for node in unused_nodes:
     if original_src_lines[node-1] == '\n':
         unused_nodes.remove(node)
-
+'''
 print()
 print("Extraneous lines of code:")
 print(unused_nodes)

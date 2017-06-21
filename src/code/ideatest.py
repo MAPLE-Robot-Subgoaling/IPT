@@ -25,3 +25,6 @@ with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py", "w") as w
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     src = f.read()
     src_lines = src.split("\n")
+
+for l in src_lines:
+    print(l)

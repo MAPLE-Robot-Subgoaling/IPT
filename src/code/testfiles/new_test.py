@@ -1,7 +1,5 @@
-y = 17
-print('y is:', y + 2, y)
-if y % 2 == 0:
-    print('even')
-else:
-    print('extraneous')
-    print('odd')
+var1 = 10
+var2 = 5
+var3 = var2 - var1
+val = 1 + var1 + var2 * 4
+print(1 + var1 + var2 * 4)
