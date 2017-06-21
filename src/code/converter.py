@@ -23,6 +23,7 @@ class RewriteVars(ast.NodeTransformer):
                 new_node = ast.copy_location(ast.Name(id=self.prev[node.id], ctx=node.ctx), node)
         elif isinstance(node.ctx, ast.Load) and node.id in self.prev:
             new_node = ast.copy_location(ast.Name(id=self.prev[node.id], ctx=node.ctx), node)
+
         if isinstance(node.parent, ast.BinOp):
             if 'left' not in node.parent.__dict__:
                 node.parent.left = new_node

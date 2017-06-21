@@ -43,8 +43,8 @@ hasOutput = Relation()  # line L has output of value V
 #goal_output = 2 #test3
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
-goals = ["At this temperature, water is a liquid"]
-#goals = ["41"]
+#goals = ["At this temperature, water is a liquid"]
+goals = ["41"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -124,11 +124,14 @@ for variable in usages:
 #redirect stdout to a file the corresponds to the input to the program
 import sys
 old = sys.stdout
-new_stdout = open("input2.txt")
-sys.stdin = new_stdout
+new_stdout = open("out.txt", "w")
+new_stdin = open("input2.txt")
+sys.stdin = new_stdin
+sys.stdout = new_stdout
 from testfiles.new_test import *
 sys.stdout = old
 new_stdout.close()
+new_stdin.close()
 
 
 for line in outputs:
@@ -139,7 +142,7 @@ for line in outputs:
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-    #print("expr:", expr)
+
     if len(expr) == 0:
         continue
 
@@ -174,6 +177,7 @@ for key, val in dependencies.items():
     for t in thing:
         results.append(t)
 
+print()
 print("The lines that have dependencies are:")
 print(results)
 
