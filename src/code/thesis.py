@@ -10,13 +10,13 @@ import astor
 import networkx as nx
 import os
 
-filename = "testfiles/test4.py"
+filename = "testfiles/test2.py"
 #filename = "../../data/HW3/hw3_141.py"
 
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 outf = open(outf_name)
-code_file_name = "test4.py"
+code_file_name = "test2.py"
 code_name = "/Users/mneary1/Desktop/IPT/src/code/testfiles/" + code_file_name
 inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
 cmd = "python3 -m trace --trace {} < {} > {}".format(code_name, inputf_name, outf_name)
@@ -44,7 +44,8 @@ hasOutput = Relation()  # line L has output of value V
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
 #goals = ["At this temperature, water is a liquid"]
-goals = ["41"]
+#goals = ["31"]
+goals = ["even", "odd"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
@@ -90,6 +91,10 @@ for lineno, line in enumerate(original_src.split("\n"), 1):
 
     outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
     print(outstr)
+
+print()
+print("The executed lines are:")
+print(executed_lines)
 
 # walk the AST to give each node a parent
 for node in ast.walk(new_tree):
@@ -142,7 +147,7 @@ for line in outputs:
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-
+    print("expr:", expr)
     if len(expr) == 0:
         continue
 
