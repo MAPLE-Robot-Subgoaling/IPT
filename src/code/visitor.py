@@ -43,8 +43,6 @@ class Visitor(ast.NodeVisitor):
     def visit_If(self, node):
         #print("if statement found on line", node.lineno)
 
-        #print("members of If:")
-        #print(vars(node))
         '''
         if isinstance(node.test, ast.BoolOp):
             print("test is a boolop")

@@ -8,10 +8,27 @@ from itertools import combinations
 import ast
 import astor
 import networkx as nx
-import subprocess
+import os
 
 filename = "testfiles/test4.py"
 #filename = "../../data/HW3/hw3_141.py"
+
+# figure out which lines are actually executed when the code is run
+outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
+outf = open(outf_name)
+code_file_name = "test4.py"
+code_name = "/Users/mneary1/Desktop/IPT/src/code/testfiles/" + code_file_name
+inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
+cmd = "python3 -m trace --trace {} < {} > {}".format(code_name, inputf_name, outf_name)
+os.system(cmd)
+
+# determine the line number of each line that was executed
+executed_lines = []
+for line in outf:
+    if line.startswith(code_file_name):
+        lineno = line[line.index('(')+1:line.index(')')]
+        executed_lines.append(lineno)
+
 
 has_id = Relation()
 is_before = Relation()
@@ -84,8 +101,6 @@ ast_visitor.visit(new_tree)
 
 assignments, usages, outputs, dependencies = ast_visitor.get_data()
 
-print(outputs)
-
 # add assignment facts to the KB
 for variable in assignments:
     #print(*[(lineno, variable) for lineno in assignments[variable]])
@@ -109,7 +124,7 @@ for variable in usages:
 #redirect stdout to a file the corresponds to the input to the program
 import sys
 old = sys.stdout
-new_stdout = open("input.txt")
+new_stdout = open("input2.txt")
 sys.stdin = new_stdout
 from testfiles.new_test import *
 sys.stdout = old
@@ -124,7 +139,7 @@ for line in outputs:
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-    print("expr:", expr)
+    #print("expr:", expr)
     if len(expr) == 0:
         continue
 

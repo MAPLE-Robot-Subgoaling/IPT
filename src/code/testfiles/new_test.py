@@ -8,12 +8,14 @@ def main():
             print('At this temperature, water is a liquid')
         else:
             print('At this temperature, water is a gas')
-    elif temperature <= 273:
-        print('At this temperature, water is a solid')
-    elif temperature > 273 and temperature < 373:
-        print('At this temperature, water is a liquid')
     else:
-        print('At this temperature, water is a gas')
+        print('test print')
+        if temperature <= 273:
+            print('At this temperature, water is a solid')
+        elif temperature > 273 and temperature < 373:
+            print('At this temperature, water is a liquid')
+        else:
+            print('At this temperature, water is a gas')
 
 
 main()
