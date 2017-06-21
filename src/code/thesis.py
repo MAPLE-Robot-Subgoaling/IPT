@@ -27,7 +27,7 @@ executed_lines = []
 for line in outf:
     if line.startswith(code_file_name):
         lineno = line[line.index('(')+1:line.index(')')]
-        executed_lines.append(lineno)
+        executed_lines.append(int(lineno))
 
 
 has_id = Relation()
@@ -147,7 +147,7 @@ for line in outputs:
     p = PrintVisitor()
     p.visit(ast.parse(actual_line))
     expr = p.get_expr()
-    print("expr:", expr)
+
     if len(expr) == 0:
         continue
 
@@ -162,7 +162,8 @@ correct_lines = []
 for goal in goals:
     correct = run(0, (l1, val), hasOutput(l1, val), eq(val, goal))
     for thing in correct:
-        correct_lines.append(thing)
+        if thing[0] in executed_lines:
+            correct_lines.append(thing)
 
 print(correct_lines)
 
@@ -210,7 +211,7 @@ for correct_line in correct_lines:
 
 #thinks that empty lines are extraneous
 for node in unused_nodes:
-    if len(src_lines[node-1]) == 0:
+    if original_src_lines[node-1] == '\n':
         unused_nodes.remove(node)
 
 print()

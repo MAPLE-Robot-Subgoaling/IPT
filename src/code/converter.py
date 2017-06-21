@@ -10,6 +10,17 @@ class RewriteVars(ast.NodeTransformer):
     def get_result(self):
         return self.prev, self.nums
 
+
+    '''
+    def visit_Assign(self, node):
+        target = node.targets[0]
+        value = node.value
+        if isinstance(value, ast.Name) and isinstance(target, ast.Name):
+            if value.id == target.id:
+                print("wow")
+
+    '''
+
     def visit_Name(self, node):
         new_node = node
         if isinstance(node.ctx, ast.Store):
