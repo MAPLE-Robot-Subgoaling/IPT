@@ -92,6 +92,7 @@ for lineno, line in enumerate(original_src_lines, 1):
     outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
     print(outstr)
 
+print()
 print("The altered input program is:")
 for lineno, line in enumerate(src_lines, 1):
     outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
@@ -139,6 +140,7 @@ new_stdout = open("out.txt", "w")
 new_stdin = open("input2.txt")
 sys.stdin = new_stdin
 sys.stdout = new_stdout
+sys.stderr = open("junk.txt","w")
 from testfiles.new_test import *
 sys.stdout = old
 new_stdout.close()
@@ -190,7 +192,7 @@ for key, val in dependencies.items():
         results.append(t)
 
 print()
-print("The lines that have dependencies are:")
+print("Lines that have dependencies:")
 print(results)
 
 # directed graph of dependencies, flipped line pairs so it goes from the goal line(s) to the begining
