@@ -41,14 +41,21 @@ class Visitor(ast.NodeVisitor):
             self.dependencies[lineA] = [lineB]
 
     def visit_If(self, node):
-        #print("if statement found on line", node.lineno)
 
+        # add a dependency between each body line and the condition
         for body_line in node.body:
             self.add_dependency(node.lineno, body_line.lineno)
 
-        if not isinstance(node.orelse, ast.If):
+        # add dependency between each thing in the else clause
+        if isinstance(node.orelse[0], ast.If):
+            print("l1:", node.lineno, "l2:", node.orelse[0].lineno)
+            self.add_dependency(node.lineno, node.orelse[0].lineno)
+        else:
+            # "else:" is one line before the first body line
+            else_lineno = node.orelse[0].lineno - 1
+            self.add_dependency(node.lineno, else_lineno)
             for body_line in node.orelse:
-                self.add_dependency(node.lineno, body_line.lineno)
+                self.add_dependency(else_lineno, body_line.lineno)
 
         self.generic_visit(node)
 
@@ -92,10 +99,16 @@ class Visitor(ast.NodeVisitor):
         elif isinstance(node.parent, ast.Compare) and isinstance(node.ctx, ast.Load):
             # print("id<{}> used in  test<{}> call on {}".format(node.id, node.parent, node.lineno))
             self.add_usage(node.id, node.lineno)
+
         elif isinstance(node.parent, ast.If) and isinstance(node.ctx, ast.Load):
             self.add_usage(node.id, node.lineno)
+
+        elif isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Load):
+            self.add_usage(node.id, node.lineno)
+
         else:
             print("ERROR: nothing done with {} in visit_Name".format(node.id))
+            print(vars(node))
 
     def visit_Call(self, node):
         if node.func.id == 'print':

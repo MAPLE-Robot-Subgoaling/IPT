@@ -1,6 +1,4 @@
-y = int(input("Enter a number: "))
-
-y = int(y)
+y = 17
 
 if y % 2 == 0:
     print("even")

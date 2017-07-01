@@ -10,13 +10,13 @@ import astor
 import networkx as nx
 import os
 
-filename = "testfiles/test1.py"
+filename = "testfiles/test2.py"
 #filename = "../../data/HW3/hw3_141.py"
 
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 outf = open(outf_name)
-code_file_name = "test1.py"
+code_file_name = "test2.py"
 code_name = "/Users/mneary1/Desktop/IPT/src/code/testfiles/" + code_file_name
 inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
 
@@ -45,8 +45,8 @@ hasOutput = Relation()  # line L has output of value V
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
 #goals = ["At this temperature, water is a liquid"]
-goals = ["31"]
-#goals = ["even", "odd"]
+#goals = ["31"]
+goals = ["odd"]
 
 def depends(a, b):
     """there is a dependency between two lines {A, B} if:
