@@ -10,17 +10,17 @@ import astor
 import networkx as nx
 import os
 
-filename = "testfiles/test2.py"
-#filename = "../../data/HW3/hw3_141.py"
-
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 outf = open(outf_name)
+
+code_name_prefix = "/Users/mneary1/Desktop/IPT/src/code/testfiles/"
 code_file_name = "test2.py"
-code_name = "/Users/mneary1/Desktop/IPT/src/code/testfiles/" + code_file_name
+code_file = code_name_prefix + code_file_name
+
 inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
 
-cmd = "python3 -m trace --trace {} < {} > {}".format(code_name, inputf_name, outf_name)
+cmd = "python3 -m trace --trace {} < {} > {}".format(code_file, inputf_name, outf_name)
 os.system(cmd)
 
 # determine the line number of each line that was executed
@@ -57,7 +57,7 @@ def depends(a, b):
     shared_id = var()
     return conde([is_before(a, b), assigns(a, shared_id), uses(b, shared_id)])
 
-with open(filename) as f:
+with open(code_file) as f:
     original_src = f.read()
     f.seek(0)
     original_src_lines = f.readlines()
