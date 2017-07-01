@@ -78,18 +78,22 @@ with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py", "w") as w
 #reread the sources
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     src = f.read()
-    src_lines = src.split("\n")
+    f.seek(0)
+    src_lines = f.readlines()
+    for i, line in enumerate(original_src_lines):
+        if len(line) == 0 or line == "\n":
+            src_lines.insert(i, "\n")
 
 # add the is_before fact for every valid pair of lines
-facts(is_before, *combinations(range(len(src)), 2))
+facts(is_before, *combinations(range(1, len(src_lines)+1), 2))
 
 print("The input program is:")
-for lineno, line in enumerate(original_src.split("\n"), 1):
+for lineno, line in enumerate(original_src_lines, 1):
+    outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
+    print(outstr)
 
-    if line == "\n":
-        print("Empty line")
-        continue
-
+print("The altered input program is:")
+for lineno, line in enumerate(src_lines, 1):
     outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
     print(outstr)
 
@@ -210,12 +214,15 @@ for correct_line in correct_lines:
             pass
 
 
+extraneous_lines = list(unused_nodes)
+
 #thinks that empty lines are extraneous
-'''
-for node in unused_nodes:
-    if original_src_lines[node-1] == '\n':
-        unused_nodes.remove(node)
-'''
+for i in range(len(unused_nodes)):
+    node = unused_nodes[i]
+    line = original_src_lines[node-1]
+    if len(line) == 1 and line == '\n':
+        extraneous_lines.remove(node)
+
 print()
 print("Extraneous lines of code:")
-print(unused_nodes)
+print(extraneous_lines)

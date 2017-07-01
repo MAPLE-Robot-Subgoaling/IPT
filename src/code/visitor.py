@@ -43,22 +43,6 @@ class Visitor(ast.NodeVisitor):
     def visit_If(self, node):
         #print("if statement found on line", node.lineno)
 
-        '''
-        if isinstance(node.test, ast.BoolOp):
-            print("test is a boolop")
-        elif isinstance(node.test, ast.Compare):
-            print("test is a compare")
-        elif isinstance(node.test, ast.Name):
-            print("test is just a name")
-            self.add_usage(node.test.id, node.lineno)
-
-        for thing in node.test.comparators:
-            if isinstance(thing, ast.Name):
-                print("Name in the comparators")
-            elif isinstance(thing, ast.BinOp):
-                print("Binop in the comparators")
-        '''
-
         for body_line in node.body:
             self.add_dependency(node.lineno, body_line.lineno)
 
