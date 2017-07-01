@@ -1,7 +1,2 @@
-y = 17
-
-if y % 2 == 0:
-    print("even")
-else:
-    print("extraneous")
-    print("odd")
+for i in range(1,4):
+    print("*"*i)

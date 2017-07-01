@@ -1,5 +1,7 @@
 import ast
 
+exempt_names = list(dir(__builtins__)) + ["main", "print", "range"]
+
 class RewriteVars(ast.NodeTransformer):
 
     def __init__(self):
@@ -16,7 +18,7 @@ class RewriteVars(ast.NodeTransformer):
     def visit_Name(self, node):
         new_node = node
 
-        if node.id == 'print':
+        if node.id in exempt_names:
             return new_node
 
         if isinstance(node.ctx, ast.Store):
@@ -36,24 +38,6 @@ class RewriteVars(ast.NodeTransformer):
                 new_node = ast.copy_location(ast.Name(id=self.prev[node.id], ctx=node.ctx), node)
             else:
                 new_node = ast.copy_location(ast.Name(id=self.next[node.id], ctx=node.ctx), node)
-
-        '''
-        
-        if isinstance(node.ctx, ast.Store):
-            if node.id not in self.prev and node.id not in self.nums:
-                self.prev[node.id] = ''
-                self.nums[node.id] = 0
-                new_node = node
-            else:
-                self.nums[node.id] += 1
-                self.prev[node.id] = node.id + "_" + str(self.nums[node.id])
-                new_node = ast.copy_location(ast.Name(id=self.prev[node.id], ctx=node.ctx), node)
-        elif isinstance(node.ctx, ast.Load) and node.id in self.prev:
-            if len(self.prev[node.id]) != 0:
-                new_node = ast.copy_location(ast.Name(id=self.prev[node.id], ctx=node.ctx), node)
-            else:
-                new_node = ast.copy_location(ast.Name(id=node.id,ctx=node.ctx), node)
-        '''
 
         #if its a binop then you need to reset the left and right parents
         if isinstance(node.parent, ast.BinOp):
