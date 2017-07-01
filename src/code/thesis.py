@@ -145,13 +145,13 @@ new_stdout = open("out.txt", "w")
 new_stdin = open("input2.txt")
 sys.stdin = new_stdin
 sys.stdout = new_stdout
-sys.stderr = open("junk.txt","w")
+#sys.stderr = open("junk.txt","w")
 from testfiles.new_test import *
 sys.stdout = old
 new_stdout.close()
 new_stdin.close()
 
-
+print(outputs)
 for line in outputs:
     actual_line = original_src_lines[line-1].strip()
     if len(actual_line) == 0:

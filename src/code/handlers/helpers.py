@@ -6,6 +6,9 @@ def binOpToString(binop):
         return binop.id
     if isinstance(binop, ast.Num):
         return str(binop.n)
+    if isinstance(binop, ast.Str):
+        return "'" + binop.s + "'"
+
     if not isinstance(binop, ast.BinOp):
         return "ERR"
 

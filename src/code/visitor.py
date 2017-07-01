@@ -108,6 +108,9 @@ class Visitor(ast.NodeVisitor):
         elif isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Load):
             self.add_usage(node.id, node.lineno)
 
+        elif isinstance(node.parent, ast.For) and isinstance(node.ctx, ast.Store):
+            self.add_assignment(node.id, node.lineno)
+
         else:
             print("ERROR: nothing done with {} in visit_Name".format(node.id))
             print(vars(node))
