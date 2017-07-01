@@ -30,6 +30,11 @@ for line in outf:
         lineno = line[line.index('(')+1:line.index(')')]
         executed_lines.append(int(lineno))
 
+execution_dependencies = []
+for i in range(len(executed_lines)-1):
+    a = executed_lines[i]
+    b = executed_lines[i+1]
+    execution_dependencies.append((a, b))
 
 has_id = Relation()
 is_before = Relation()
@@ -190,6 +195,8 @@ for key, val in dependencies.items():
     thing = zip([key]*len(val), val)
     for t in thing:
         results.append(t)
+
+results += execution_dependencies
 
 print()
 print("Lines that have dependencies:")
