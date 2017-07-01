@@ -46,16 +46,18 @@ class Visitor(ast.NodeVisitor):
         for body_line in node.body:
             self.add_dependency(node.lineno, body_line.lineno)
 
-        # add dependency between each thing in the else clause
-        if isinstance(node.orelse[0], ast.If):
-            print("l1:", node.lineno, "l2:", node.orelse[0].lineno)
-            self.add_dependency(node.lineno, node.orelse[0].lineno)
-        else:
-            # "else:" is one line before the first body line
-            else_lineno = node.orelse[0].lineno - 1
-            self.add_dependency(node.lineno, else_lineno)
-            for body_line in node.orelse:
-                self.add_dependency(else_lineno, body_line.lineno)
+        if len(node.orelse) > 0:
+
+            # add dependency between each thing in the else clause
+            if isinstance(node.orelse[0], ast.If):
+                print("l1:", node.lineno, "l2:", node.orelse[0].lineno)
+                self.add_dependency(node.lineno, node.orelse[0].lineno)
+            else:
+                # "else:" is one line before the first body line
+                else_lineno = node.orelse[0].lineno - 1
+                self.add_dependency(node.lineno, else_lineno)
+                for body_line in node.orelse:
+                    self.add_dependency(else_lineno, body_line.lineno)
 
         self.generic_visit(node)
 
