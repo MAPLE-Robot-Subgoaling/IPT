@@ -12,7 +12,7 @@ class PrintVisitor(ast.NodeVisitor):
 
     def visit_Call(self, node):
         if node.func.id == 'print':
-            print(vars(node))
+            #print(vars(node))
             for i, arg in enumerate(node.args):
                 if isinstance(arg, ast.BinOp):
                     self.expr += "str(" + binOpToString(arg) + ")"

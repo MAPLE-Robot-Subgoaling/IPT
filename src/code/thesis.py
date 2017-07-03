@@ -20,28 +20,52 @@ code_file = code_name_prefix + code_file_name
 
 inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
 
-cmd = "python3 -m trace --trace {} < {} > {}".format(code_file, inputf_name, outf_name)
-os.system(cmd)
-
-# determine the line number of each line that was executed
-executed_lines = []
-for line in outf:
-    if line.startswith(code_file_name):
-        lineno = line[line.index('(')+1:line.index(')')]
-        executed_lines.append(int(lineno))
-
-execution_dependencies = []
-for i in range(len(executed_lines)-1):
-    a = executed_lines[i]
-    b = executed_lines[i+1]
-    execution_dependencies.append((a, b))
-
+# declaration of the relations
 has_id = Relation()
 is_before = Relation()
 assigns = Relation()
 uses = Relation()
 hasOutput = Relation()  # line L has output of value V
 
+# run a trace of the target program, then analyze the output of the trace
+cmd = "python3 -m trace --trace {} < {} > {}".format(code_file, inputf_name, outf_name)
+os.system(cmd)
+
+
+# determine the line number of each line that was executed
+# also determines which print statements are responsible for what output
+executed_lines = []
+lineno = 0
+flag = False
+outputstr = ''
+
+for line in outf:
+    if line.startswith(code_file_name):
+        executed_lines.append(int(line[line.index('(') + 1:line.index(')')]))
+
+    if flag and (code_file_name in line or line.startswith(" ---")):
+        facts(hasOutput, (int(lineno), outputstr))
+        flag = False
+        outputstr = ''
+
+    if flag:
+        outputstr += line
+
+    if 'print' in line:
+        flag = True
+        left = line.index("(")
+        right = line.index(")")
+        lineno = line[left + 1:right]
+
+
+# determines the execution dependency pairs
+execution_dependencies = []
+'''
+for i in range(len(executed_lines)-1):
+    a = executed_lines[i]
+    b = executed_lines[i+1]
+    execution_dependencies.append((a, b))
+'''
 #goal_output = 41 #test1
 #goal_output = 17 #test3
 #goal_output = "good" #test2
@@ -51,14 +75,15 @@ hasOutput = Relation()  # line L has output of value V
 #goals = ["y is: 19 17"]
 #goals = ["At this temperature, water is a liquid"]
 #goals = ["31"]
-goals = ["odd"]
+#goals = ['191\n']
+goals = ['***\n', '**\n', '*\n']
 
 def depends(a, b):
-    """there is a dependency between two lines {A, B} if:
+    '''there is a dependency between two lines {A, B} if:
     they share an ID X AND
     A comes before B AND
     X is a target for the assignment on line A AND
-    B uses X (not just an assignment where X is a target"""
+    B uses X (not just an assignment where X is a target'''
     shared_id = var()
     return conde([is_before(a, b), assigns(a, shared_id), uses(b, shared_id)])
 
@@ -128,45 +153,7 @@ for variable in usages:
     #print(*[(lineno, variable) for lineno in usages[variable]])
     facts(uses, *[(lineno, variable) for lineno in usages[variable]])
 
-# add output fact to the KB
-# evaluate the output line to get the result
-# if any variable is reused at any point in the program,
-# copy the program and rename the reuses to different names,
-# that way they printed expression will not change as is is at
-# time is was printed
-# later, you can derive what the expression would have been from
-# a dependency graph, so you don't have to edit their code at all
-
-#redirect stdin to a file the corresponds to the input to the program
-#redirect stdout just so you don't have to see their output
-import sys
-old = sys.stdout
-new_stdout = open("out.txt", "w")
-new_stdin = open("input2.txt")
-sys.stdin = new_stdin
-sys.stdout = new_stdout
-#sys.stderr = open("junk.txt","w")
-from testfiles.new_test import *
-sys.stdout = old
-new_stdout.close()
-new_stdin.close()
-
-print(outputs)
-for line in outputs:
-    actual_line = original_src_lines[line-1].strip()
-    if len(actual_line) == 0:
-        continue
-
-    p = PrintVisitor()
-    p.visit(ast.parse(actual_line))
-    expr = p.get_expr()
-
-    if len(expr) == 0:
-        continue
-
-    facts(hasOutput, (line, eval(expr)))
-
-
+# get the lines that give correct output
 val, l1 = var(), var()
 
 print()
@@ -174,6 +161,7 @@ print("Line(s) that have the correct output: ")
 correct_lines = []
 for goal in goals:
     correct = run(0, (l1, val), hasOutput(l1, val), eq(val, goal))
+    print(run(0, (l1, val), hasOutput(l1, val)))
     for thing in correct:
         if thing[0] in executed_lines:
             correct_lines.append(thing)

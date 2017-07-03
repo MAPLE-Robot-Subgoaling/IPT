@@ -3,7 +3,6 @@ import ast
 # a list of all python keywords and exempt names
 exempt_names = list(dir(__builtins__)) + ["main", "print"]
 
-
 class Visitor(ast.NodeVisitor):
 
     def __init__(self):
@@ -50,7 +49,7 @@ class Visitor(ast.NodeVisitor):
 
             # add dependency between each thing in the else clause
             if isinstance(node.orelse[0], ast.If):
-                print("l1:", node.lineno, "l2:", node.orelse[0].lineno)
+                #print("l1:", node.lineno, "l2:", node.orelse[0].lineno)
                 self.add_dependency(node.lineno, node.orelse[0].lineno)
             else:
                 # "else:" is one line before the first body line
@@ -72,7 +71,7 @@ class Visitor(ast.NodeVisitor):
         self.generic_visit(node)
 
     def visit_For(self, node):
-        print("for loop found on line", node.lineno)
+        #print("for loop found on line", node.lineno)
         self.generic_visit(node)
 
     def visit_While(self, node):
