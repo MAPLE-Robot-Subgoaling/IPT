@@ -9,6 +9,7 @@ import ast
 import astor
 import networkx as nx
 import os
+import sys
 
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
@@ -30,7 +31,6 @@ hasOutput = Relation()  # line L has output of value V
 # run a trace of the target program, then analyze the output of the trace
 cmd = "python3 -m trace --trace {} < {} > {}".format(code_file, inputf_name, outf_name)
 os.system(cmd)
-
 
 # determine the line number of each line that was executed
 # also determines which print statements are responsible for what output
@@ -60,12 +60,11 @@ for line in outf:
 
 # determines the execution dependency pairs
 execution_dependencies = []
-'''
 for i in range(len(executed_lines)-1):
     a = executed_lines[i]
     b = executed_lines[i+1]
     execution_dependencies.append((a, b))
-'''
+
 #goal_output = 41 #test1
 #goal_output = 17 #test3
 #goal_output = "good" #test2
@@ -85,7 +84,7 @@ def depends(a, b):
     X is a target for the assignment on line A AND
     B uses X (not just an assignment where X is a target'''
     shared_id = var()
-    return conde([is_before(a, b), assigns(a, shared_id), uses(b, shared_id)])
+    return conde([is_before(a,b), assigns(a, shared_id), uses(b, shared_id)])
 
 with open(code_file) as f:
     original_src = f.read()
@@ -99,13 +98,14 @@ for node in ast.walk(src_ast):
     for child in ast.iter_child_nodes(node):
         child.parent = node
 
+
 t = RewriteVars()
 new_tree = t.visit(src_ast)
 
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py", "w") as w:
     w.write(astor.to_source(new_tree))
 
-#reread the sources
+# reread the sources
 with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     src = f.read()
     f.seek(0)
@@ -144,13 +144,11 @@ assignments, usages, outputs, dependencies = ast_visitor.get_data()
 
 # add assignment facts to the KB
 for variable in assignments:
-    #print(*[(lineno, variable) for lineno in assignments[variable]])
     facts(assigns, *[(lineno, variable) for lineno in assignments[variable]])
 
 
 # add usage facts to the KB
 for variable in usages:
-    #print(*[(lineno, variable) for lineno in usages[variable]])
     facts(uses, *[(lineno, variable) for lineno in usages[variable]])
 
 # get the lines that give correct output
@@ -159,11 +157,12 @@ val, l1 = var(), var()
 print()
 print("Line(s) that have the correct output: ")
 correct_lines = []
-for goal in goals:
-    correct = run(0, (l1, val), hasOutput(l1, val), eq(val, goal))
-    print(run(0, (l1, val), hasOutput(l1, val)))
-    for thing in correct:
-        if thing[0] in executed_lines:
+# get all the lines that output something
+potential_correct = run(0, (l1, val), hasOutput(l1, val))
+
+for thing in potential_correct:
+    for goal in goals:
+        if thing[0] in executed_lines and goal in thing[1]:
             correct_lines.append(thing)
 
 print(correct_lines)
@@ -171,26 +170,28 @@ print(correct_lines)
 # if no matches were found, terminate execution
 if len(correct_lines) == 0:
     print("Failed to find correct output line")
-    print("Perhaps goal_output is wrong")
+    print("Extraneous lines of code do not exist in unfinished programs.")
     sys.exit(1)
 
 
 a, b = var(), var()
 results = list(run(0, (a, b), depends(a, b)))
 
-# add known dependencies to the results
+# add structural dependencies to the results
 for key, val in dependencies.items():
     thing = zip([key]*len(val), val)
     for t in thing:
         results.append(t)
 
-results += execution_dependencies
+# add execution dependencies to the results
+# results += execution_dependencies
 
 print()
 print("Lines that have dependencies:")
 print(results)
 
-# directed graph of dependencies, flipped line pairs so it goes from the goal line(s) to the begining
+# Here we create the directed dependency graph (DDG)
+# line pairs flipped so it looks from the goal line(s) to the beginning
 graph = nx.DiGraph()
 graph.add_nodes_from(list(range(1, len(src_lines)+1)))
 graph.add_edges_from([(b, a) for a, b in results])
@@ -210,10 +211,9 @@ for correct_line in correct_lines:
         except ValueError:
             pass
 
-
 extraneous_lines = list(unused_nodes)
 
-#thinks that empty lines are extraneous
+# thinks that empty lines are extraneous
 for i in range(len(unused_nodes)):
     node = unused_nodes[i]
     line = original_src_lines[node-1]

@@ -1,3 +1,4 @@
-i = 8
-for i in range(1, 4):
+i = 1
+while i < 4:
     print("*"*i)
+    i += 1

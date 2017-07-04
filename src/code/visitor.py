@@ -60,55 +60,39 @@ class Visitor(ast.NodeVisitor):
 
         self.generic_visit(node)
 
-    def visit_Assign(self, node):
-        #print()
-        #print("assignment found on line", node.lineno)
-        self.generic_visit(node)
-
-    def visit_Expr(self, node):
-        #print()
-        #print("expression found on line", node.lineno)
-        self.generic_visit(node)
-
     def visit_For(self, node):
-        #print("for loop found on line", node.lineno)
+        # add the structural dependencies
+        for line in node.body:
+            self.add_dependency(node.lineno, line.lineno)
+
         self.generic_visit(node)
 
     def visit_While(self, node):
-        print("while loop found on line", node.lineno)
+        # add the structural dependencies
+        for line in node.body:
+            self.add_dependency(node.lineno, line.lineno)
+
         self.generic_visit(node)
 
     def visit_Name(self, node):
-        # print(type(node), type((node.parent)))
-
         # TODO: might have to figure out what to do with main
         if node.id in exempt_names:
             return
 
-        if isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Store):
+        # the variable is being loaded somewhere, so it is used
+        if isinstance(node.ctx, ast.Load):
+            self.add_usage(node.id, node.lineno)
+
+        elif isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Store):
             #print("id<{}> assigned a value on {}".format(node.id, node.lineno))
             self.add_assignment(node.id, node.lineno)
 
-        elif isinstance(node.parent, ast.BinOp) and isinstance(node.ctx, ast.Load):
-            #print("id<{}> used in binary op. on {}".format(node.id, node.lineno))
-            self.add_usage(node.id, node.lineno)
-
-        elif isinstance(node.parent, ast.Call):
-            #print("id<{}> used in func<{}> call on {}".format(node.id, node.parent.func.id, node.lineno))
-            self.add_usage(node.id, node.lineno)
-
-        elif isinstance(node.parent, ast.Compare) and isinstance(node.ctx, ast.Load):
-            # print("id<{}> used in  test<{}> call on {}".format(node.id, node.parent, node.lineno))
-            self.add_usage(node.id, node.lineno)
-
-        elif isinstance(node.parent, ast.If) and isinstance(node.ctx, ast.Load):
-            self.add_usage(node.id, node.lineno)
-
-        elif isinstance(node.parent, ast.Assign) and isinstance(node.ctx, ast.Load):
-            self.add_usage(node.id, node.lineno)
-
         elif isinstance(node.parent, ast.For) and isinstance(node.ctx, ast.Store):
             self.add_assignment(node.id, node.lineno)
+
+        elif isinstance(node.parent, ast.AugAssign) and isinstance(node.ctx, ast.Store):
+            self.add_assignment(node.id, node.lineno)
+            self.add_usage(node.id, node.lineno)
 
         else:
             print("ERROR: nothing done with {} in visit_Name".format(node.id))

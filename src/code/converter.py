@@ -12,13 +12,48 @@ class RewriteVars(ast.NodeTransformer):
         self.next = {}
         self.known_vars = []
 
+        self.paused = []
+
     def get_result(self):
         return self.prev, self.nums
+
+
+    def visit_While(self, node):
+
+        # visit the node normally
+        self.generic_visit(node)
+
+        #remove all paused names
+        self.paused = []
+
+        # done with special case
+        return node
 
     def visit_Name(self, node):
         new_node = node
 
-        if node.id in exempt_names:
+        #print(vars(node))
+
+        # all these checks are for the test in a while loop
+        # we have to pause the update of variable names to make it work
+
+        # while test is just this name
+        if isinstance(node.parent, ast.While):
+            self.paused.append(node.id)
+
+        # while test is a just a binop
+        if isinstance(node.parent, ast.BinOp) and isinstance(node.parent.parent, ast.While):
+            self.paused.append(node.id)
+
+        # while test is just a single comparison
+        if isinstance(node.parent, ast.Compare) and isinstance(node.parent.parent, ast.While):
+            self.paused.append(node.id)
+
+        # while test is a boolop with just names
+        if isinstance(node.parent, ast.BoolOp) and isinstance(node.parent.parent, ast.While):
+            self.paused.append(node.id)
+
+        if node.id in exempt_names or node.id in self.paused:
             return new_node
 
         if isinstance(node.ctx, ast.Store):
