@@ -13,7 +13,6 @@ import sys
 
 # figure out which lines are actually executed when the code is run
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
-outf = open(outf_name)
 
 code_name_prefix = "/Users/mneary1/Desktop/IPT/src/code/testfiles/"
 code_file_name = "test2.py"
@@ -39,6 +38,7 @@ lineno = 0
 flag = False
 outputstr = ''
 
+outf = open(outf_name)
 for line in outf:
     if line.startswith(code_file_name):
         executed_lines.append(int(line[line.index('(') + 1:line.index(')')]))
@@ -75,7 +75,7 @@ for i in range(len(executed_lines)-1):
 #goals = ["At this temperature, water is a liquid"]
 #goals = ["31"]
 #goals = ['191\n']
-goals = ['***\n', '**\n', '*\n']
+goals = ['***', '**', '*']
 
 def depends(a, b):
     '''there is a dependency between two lines {A, B} if:
@@ -158,12 +158,14 @@ print()
 print("Line(s) that have the correct output: ")
 correct_lines = []
 # get all the lines that output something
-potential_correct = run(0, (l1, val), hasOutput(l1, val))
-
-for thing in potential_correct:
+outputs = run(0, (l1, val), hasOutput(l1, val))
+import regex as re
+for line, output in outputs:
     for goal in goals:
-        if thing[0] in executed_lines and goal in thing[1]:
-            correct_lines.append(thing)
+        found_goal = re.findall(re.escape(goal), output, overlapped=True)
+        print(goal, found_goal, len(found_goal), output)
+        if line in executed_lines and len(found_goal) == 1:
+            correct_lines.append((line, output))
 
 print(correct_lines)
 
