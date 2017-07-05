@@ -21,7 +21,7 @@ codecs.py(324):         return result
 test4.py(4):     if units == "C":
 test4.py(12):         if temperature <= 273:
 test4.py(14):         elif temperature > 273 and temperature < 373:
-test4.py(15):             print("At this temperature, water is a liquid")
-At this temperature, water is a liquid
+test4.py(17):             print("At this temperature, water is a gas")
+At this temperature, water is a gas
  --- modulename: trace, funcname: _unsettrace
 trace.py(77):         sys.settrace(None)

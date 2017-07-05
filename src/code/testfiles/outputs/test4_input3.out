@@ -19,9 +19,8 @@ codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.erro
 codecs.py(323):         self.buffer = data[consumed:]
 codecs.py(324):         return result
 test4.py(4):     if units == "C":
-test4.py(12):         if temperature <= 273:
-test4.py(14):         elif temperature > 273 and temperature < 373:
-test4.py(15):             print("At this temperature, water is a liquid")
-At this temperature, water is a liquid
+test4.py(5):         if temperature <= 0:
+test4.py(6):             print("At this temperature, water is a solid")
+At this temperature, water is a solid
  --- modulename: trace, funcname: _unsettrace
 trace.py(77):         sys.settrace(None)

@@ -94,6 +94,10 @@ class Visitor(ast.NodeVisitor):
             self.add_assignment(node.id, node.lineno)
             self.add_usage(node.id, node.lineno)
 
+            #if this is changing the value in a while loop condition
+            #if isinstance(node.parent, ast.While):
+            #    self.add_dependency(node.lineno, node.parent.lineno)
+
         else:
             print("ERROR: nothing done with {} in visit_Name".format(node.id))
             print(vars(node))

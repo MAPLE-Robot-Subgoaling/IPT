@@ -15,10 +15,10 @@ import sys
 outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 
 code_name_prefix = "/Users/mneary1/Desktop/IPT/src/code/testfiles/"
-code_file_name = "test2.py"
+code_file_name = "test4.py"
 code_file = code_name_prefix + code_file_name
 
-inputf_name = "/Users/mneary1/Desktop/IPT/src/code/input2.txt"
+inputf_name = "/Users/mneary1/Desktop/IPT/src/code/test4_input2"
 
 # declaration of the relations
 has_id = Relation()
@@ -72,10 +72,10 @@ for i in range(len(executed_lines)-1):
 #goal_output = 2 #test3
 #goals = [17, "good"]
 #goals = ["y is: 19 17"]
-#goals = ["At this temperature, water is a liquid"]
+goals = ["At this temperature, water is a liquid"]
 #goals = ["31"]
 #goals = ['191\n']
-goals = ['***', '**', '*']
+#goals = ['***', '**', '*']
 
 def depends(a, b):
     '''there is a dependency between two lines {A, B} if:
@@ -111,7 +111,7 @@ with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     f.seek(0)
     src_lines = f.readlines()
     for i, line in enumerate(original_src_lines):
-        if len(line) == 0 or line == "\n":
+        if len(line) == 0:
             src_lines.insert(i, "\n")
 
 # add the is_before fact for every valid pair of lines
@@ -163,7 +163,6 @@ import regex as re
 for line, output in outputs:
     for goal in goals:
         found_goal = re.findall(re.escape(goal), output, overlapped=True)
-        print(goal, found_goal, len(found_goal), output)
         if line in executed_lines and len(found_goal) == 1:
             correct_lines.append((line, output))
 
