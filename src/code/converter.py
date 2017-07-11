@@ -17,7 +17,6 @@ class RewriteVars(ast.NodeTransformer):
     def get_result(self):
         return self.prev, self.nums
 
-
     def visit_While(self, node):
 
         # visit the node normally
@@ -29,7 +28,12 @@ class RewriteVars(ast.NodeTransformer):
         # done with special case
         return node
 
-    def visit_Name(self, node):
+    def visit_If(self, node):
+        print("Visiting If")
+        self.generic_visit(node)
+        return node
+
+    def visit_Name(self, node, **kwargs):
         new_node = node
 
         #print(vars(node))

@@ -1,0 +1,27 @@
+<html>
+<head><title>Results</title></head>
+<body><h3>Program: {{name}}</h3>
+{% if execute %}
+<p>&#9989; Execution Dependencies</p>
+{% else %}
+<p>&#10060; Execution Dependencies</p>
+{% endif %}
+
+{% if semantic %}
+<p>&#9989; Semantic Dependencies</p>
+{% else %}
+<p>&#10060; Semantic Dependencies</p>
+{% endif %}
+
+{% if structural %}
+<p>&#9989; Structural Dependencies</p>
+{% else %}
+<p>&#10060; Structural Dependencies</p>
+{% endif %}
+
+<div id="results">
+{{ results|safe }}
+</div>
+<br>
+<a href="{{url_for('index')}}">Return</a></body>
+</html>

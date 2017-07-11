@@ -18,7 +18,7 @@ code_name_prefix = "/Users/mneary1/Desktop/IPT/src/code/testfiles/"
 code_file_name = "test4.py"
 code_file = code_name_prefix + code_file_name
 
-inputf_name = "/Users/mneary1/Desktop/IPT/src/code/test4_input2"
+inputf_name = "/Users/mneary1/Desktop/IPT/src/code/test4_input2.txt"
 
 # declaration of the relations
 has_id = Relation()

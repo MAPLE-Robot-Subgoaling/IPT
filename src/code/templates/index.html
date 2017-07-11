@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Find Extraneous Lines</title>
+<style type="text/css" media="screen">
+    #editor {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        bottom: 10%;
+        left: 55%;
+    }
+
+    #results {
+        position: absolute;
+        top: 10%;
+        right: 0;
+        bottom: 10%;
+        left: 5%
+    }
+    button {
+        position: relative;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <form id="upload" action="{{url_for('index')}}" method="post" enctype=multipart/form-data>
+    <input name="file" type="file" multiple="">
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>

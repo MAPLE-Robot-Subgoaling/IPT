@@ -21,7 +21,7 @@ outf_name = "/Users/mneary1/Desktop/IPT/src/code/out.txt"
 
 # location of the target program
 code_name_prefix = "/Users/mneary1/Desktop/IPT/src/code/testfiles/"
-code_file_name = "test4.py"
+code_file_name = "hw3_388.py"
 code_file = code_name_prefix + code_file_name
 
 # location of the intermediate files
@@ -29,12 +29,25 @@ INTERMEDIATE_BASE_DIR = "/Users/mneary1/Desktop/IPT/src/code/testfiles/intermedi
 
 # names of each input file
 INPUT_BASE_DIR = "/Users/mneary1/Desktop/IPT/src/code/testfiles/inputs/"
-inputs = ["test4_input1", "test4_input2", "test4_input3", "test4_input4", "test4_input5", "test4_input6"]
+inputs = ["test4_input1.txt", "test4_input2.txt", "test4_input3.txt", "test4_input4.txt", "test4_input5.txt", "test4_input6.txt"]
+#inputs = ["test4_input1.txt"]
 
 # goal(s) for the target program
-goals = ["At this temperature, water is a liquid",
-         "At this temperature, water is a gas",
-         "At this temperature, water is a solid"]
+#goals = ["At this temperature, water is a liquid",
+#         "At this temperature, water is a gas",
+#         "At this temperature, water is a solid"]
+
+#goals = ["Water is a solid.",
+#         "Water is a liquid.",
+#         "Water is a gas."]
+
+#goals = ["32"]
+
+#goals = ["At this temperature, water is a gas",
+#        "At this temperature, water is a solid",
+#        "At this temperature, water is a liquid"]
+
+goals = ["The water is a solid", "The water is a liquid", "The water is a gas"]
 
 # declaration of the relations
 has_id = Relation()
@@ -47,7 +60,7 @@ hasOutput = Relation()  # line L has output of value V
 graph = nx.DiGraph()
 
 # flags for what dependencies to include
-INCLUDE_EXECUTE = True
+INCLUDE_EXECUTE = False
 INCLUDE_STRUCTURE = True
 INCLUDE_SEMANTIC = True
 
@@ -95,13 +108,15 @@ with open("/Users/mneary1/Desktop/IPT/src/code/testfiles/new_test.py") as f:
     f.seek(0)
     src_lines = f.readlines()
     for i, line in enumerate(original_src_lines):
-        if len(line) == 0:
+        if line == "\n" and src_lines[i] != "\n":
             src_lines.insert(i, "\n")
+
 
 print("The input program is:")
 for lineno, line in enumerate(original_src_lines, 1):
     outstr = "[{0: >2}]: {1}".format(lineno, line.strip("\n"))
     print(outstr)
+
 
 print()
 print("The altered input program is:")
@@ -114,9 +129,19 @@ for node in ast.walk(new_tree):
     for child in ast.iter_child_nodes(node):
         child.parent = node
 
+
 ast_visitor = Visitor()
 ast_visitor.visit(new_tree)
+'''
+v = ast.parse(original_src)
 
+for node in ast.walk(v):
+    for child in ast.iter_child_nodes(node):
+        child.parent = node
+
+ast_visitor.visit(v)
+
+'''
 # get the assignments and usages to determine the data dependencies
 # get the structural dependencies
 assignments, usages, outputs, dependencies = ast_visitor.get_data()
@@ -246,7 +271,7 @@ for input_name in inputs:
     for i in range(len(unused_nodes)):
         node = unused_nodes[i]
         line = original_src_lines[node - 1]
-        if len(line) == 1 and line == '\n':
+        if line.isspace() or len(line) == 0:
             extraneous_lines.remove(node)
 
     print()
@@ -266,7 +291,7 @@ for input_name in inputs:
 # An extraneous line is one that appears as extraneous for all possible inputs
 print()
 print("Extraneous lines in target program <{}> are:".format(code_file_name))
-for key,val in extraneous_dict.items():
+for key, val in extraneous_dict.items():
     if val == len(inputs):
         print(key, end=" ")
 print()

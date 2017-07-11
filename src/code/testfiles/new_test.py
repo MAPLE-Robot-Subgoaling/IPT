@@ -1,19 +1,22 @@
 def main():
-    temperature = float(input('Please enter the temperature: '))
-    units = str(input("Please enter 'C' for Celcius, or 'K' for Kelvin: "))
-    if units == 'C':
+    temperature = float(input('Please input the temperature:'))
+    C = 0
+    K = 0
+    measured = input("Please enter a 'C' for Celsius or 'K' for Kelvin")
+    if measured == 'C':
         if temperature <= 0:
-            print('At this temperature, water is a solid')
+            print('The water is a solid')
         elif temperature > 0 and temperature < 100:
-            print('At this temperature, water is a liquid')
-        else:
-            print('At this temperature, water is a gas')
-    elif temperature <= 273:
-        print('At this temperature, water is a solid')
-    elif temperature > 273 and temperature < 373:
-        print('At this temperature, water is a liquid')
-    else:
-        print('At this temperature, water is a gas')
+            print('The water is a liquid')
+        elif temperature >= 100:
+            print('The water is a gas')
+    elif measured == 'K':
+        if temperature <= -273.15:
+            print('The water is a solid')
+        elif temperature > -273.15 and temperature < 273.15:
+            print('The water is a liquid')
+        elif temperature >= 273.15:
+            print('The water is a gas')
 
 
 main()
