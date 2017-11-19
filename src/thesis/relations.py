@@ -7,7 +7,7 @@ assigns = Relation()
 uses = Relation()
 hasOutput = Relation()  # line L has output of value V
 
-# define the data dependency relationship
+
 def depends(a, b):
     '''there is a dependency between two lines {A, B} if:
     they share an ID X AND
