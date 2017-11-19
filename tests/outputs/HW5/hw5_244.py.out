@@ -1,0 +1,114 @@
+ --- modulename: hw5_244, funcname: <module>
+hw5_244.py(1): def main():
+hw5_244.py(25): main()
+ --- modulename: hw5_244, funcname: main
+hw5_244.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_244.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_244.py(4):     symbol = str(input("Please enter a symbol for the box outline: "))
+Please enter a symbol for the box outline: hw5_244.py(5):     filler = str(input("Please enter a symbol for the box fill: "))
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_244.py(6):     middle = []
+hw5_244.py(7):     ends = []
+hw5_244.py(8):     ends.append(symbol)
+hw5_244.py(9):     ends.append(symbol)
+hw5_244.py(10):     middle.append(symbol)
+hw5_244.py(11):     for i in range(1,width-1):
+hw5_244.py(12):         middle.append(filler)
+hw5_244.py(13):         ends.append(symbol)
+hw5_244.py(11):     for i in range(1,width-1):
+hw5_244.py(12):         middle.append(filler)
+hw5_244.py(13):         ends.append(symbol)
+hw5_244.py(11):     for i in range(1,width-1):
+hw5_244.py(12):         middle.append(filler)
+hw5_244.py(13):         ends.append(symbol)
+hw5_244.py(11):     for i in range(1,width-1):
+hw5_244.py(14):     middle.append(symbol)
+hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(16):         print(ends[k],end="")
+$hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(16):         print(ends[k],end="")
+$hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(16):         print(ends[k],end="")
+$hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(16):         print(ends[k],end="")
+$hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(16):         print(ends[k],end="")
+$hw5_244.py(15):     for k in range(0,width):
+hw5_244.py(17):     print("\n")
+
+
+hw5_244.py(18):     for l in range(1,height-1):
+hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(21):         print("\n")
+
+
+hw5_244.py(18):     for l in range(1,height-1):
+hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(21):         print("\n")
+
+
+hw5_244.py(18):     for l in range(1,height-1):
+hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+#hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(20):             print(middle[j],end="")
+$hw5_244.py(19):         for j in range(0,width):
+hw5_244.py(21):         print("\n")
+
+
+hw5_244.py(18):     for l in range(1,height-1):
+hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(23):         print(ends[m],end="")
+$hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(23):         print(ends[m],end="")
+$hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(23):         print(ends[m],end="")
+$hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(23):         print(ends[m],end="")
+$hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(23):         print(ends[m],end="")
+$hw5_244.py(22):     for m in range(0,width):
+hw5_244.py(24):     print("\n")
+
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

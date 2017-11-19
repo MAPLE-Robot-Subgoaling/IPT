@@ -1,0 +1,46 @@
+ --- modulename: hw5_285, funcname: <module>
+hw5_285.py(1): def main():
+hw5_285.py(12): main()
+ --- modulename: hw5_285, funcname: main
+hw5_285.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_285.py(3):     heightNum = int(input("Please enter the hieght if the box: "))
+Please enter the hieght if the box: hw5_285.py(4):     height = range(heightNum)
+hw5_285.py(5):     sym1 = input("Please enter the symbol for the outline: ")
+Please enter the symbol for the outline: hw5_285.py(6):     sym2 = input("Please enter the symbol to fill the box: ")
+Please enter the symbol to fill the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_285.py(7):     for i in height:
+hw5_285.py(8):         if i == 0 or i == heightNum - 1:
+hw5_285.py(9):             print(sym1*width)
+$$$$$
+hw5_285.py(7):     for i in height:
+hw5_285.py(8):         if i == 0 or i == heightNum - 1:
+hw5_285.py(11):             print(sym1+(sym2*(width-2))+sym1)
+$###$
+hw5_285.py(7):     for i in height:
+hw5_285.py(8):         if i == 0 or i == heightNum - 1:
+hw5_285.py(11):             print(sym1+(sym2*(width-2))+sym1)
+$###$
+hw5_285.py(7):     for i in height:
+hw5_285.py(8):         if i == 0 or i == heightNum - 1:
+hw5_285.py(11):             print(sym1+(sym2*(width-2))+sym1)
+$###$
+hw5_285.py(7):     for i in height:
+hw5_285.py(8):         if i == 0 or i == heightNum - 1:
+hw5_285.py(9):             print(sym1*width)
+$$$$$
+hw5_285.py(7):     for i in height:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,35 +1,22 @@
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if(scale == "K"):
-        if(temp < 0):
-            print("At this temperature, water is below absolute zero.")
-        if(temp == 0):
-            print("At this temperature, water is absolute zero.")
-        if(temp > 0 and temp < 273):
-            print("At this temperature, water is beginning to freeze.")
-        if(temp == 273):
-            print("At this temperature, water is a (frozen) solid.")
-        if(temp > 273 and temp < 373):
-            print("At this temperature, water is beginning to boil.")
-        if(temp == 373):
-            print("At this temperature, water is boiling.")
-        if(temp > 373):
-            print("At this temperature, water is a gas, or beyond.")
-    if(scale == "C"):
-        if(temp < -273):
-            print("At this temperature, water is below absolute zero,")
-        if(temp == -273):
-            print("At this temperature, water is absolute zero.")
-        if(temp < 0 and temp > -273):
-            print("At this temperature, water is beginning to freeze.")
-        if(temp == 0):
-            print("At this temperature, water is a(frozen) solid.")
-        if(temp > 0 and temp < 100):
-            print("At this temperature, water is beginning to boil.")
-        if(temp == 100):
-            print("At this temperature, water is boiling.")
-        if(temp > 100):
-            print("At this temperature, water is a gas, or beyond.")
+    userTemp = float(input("Please enter a temperature: "))
+    tempType = input("Is your temperature in Celsius or Kelvin? Please type either 'C' for Celsius or 'K' for Kelvin: ")
+    CELS_FP = 0
+    CELS_BP = 100
+    KELV_FP = 273.15
+    KELV_BP = 373.15
+    if tempType == "C":
+        if userTemp <= CELS_FP:
+            print("At this temperature, water is a solid.")
+        elif userTemp < CELS_BP:
+            print("At this temperature, water is a liquid.")
+        elif userTemp >=CELS_BP:
+            print("At this temperature, water is a gas.")
+    else:
+        if userTemp <= KELV_FP:
+            print("At this temperature, water is a solid.")
+        elif userTemp < KELV_BP:
+            print("At this temperature, water is a liquid.")
+        elif userTemp >= KELV_BP:
+            print("At this temperature, water is a gas.")
 main()

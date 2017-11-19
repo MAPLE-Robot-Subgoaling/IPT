@@ -1,0 +1,32 @@
+ --- modulename: hw3_175, funcname: <module>
+hw3_175.py(1): SOLIDC=0
+hw3_175.py(2): GASC=100
+hw3_175.py(3): SOLIDK=273.16
+hw3_175.py(4): GASK=373.16
+hw3_175.py(5): def main():
+hw3_175.py(24): main()
+ --- modulename: hw3_175, funcname: main
+hw3_175.py(6):     Temp=float(input("Please enter the temperature:"))
+Please enter the temperature: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_175.py(7):     Scale=input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+Please enter 'C' for Celsius, or 'K' for Kelvin: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_175.py(8):     if Scale=="C":
+hw3_175.py(15):     elif Scale=="K":
+hw3_175.py(16):         if Temp<=SOLIDK:
+hw3_175.py(18):         elif Temp>=GASK:
+hw3_175.py(19):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

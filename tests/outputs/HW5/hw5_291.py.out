@@ -1,0 +1,52 @@
+ --- modulename: hw5_291, funcname: <module>
+hw5_291.py(1): def main():
+hw5_291.py(16): main()
+ --- modulename: hw5_291, funcname: main
+hw5_291.py(2):     THICKNESS = 2
+hw5_291.py(3):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_291.py(4):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_291.py(5):     outline = input("Please enter the symbol that will make up the outline of the box: ")
+Please enter the symbol that will make up the outline of the box: hw5_291.py(6):     fill = input("Please enter the symbol that will fill the box: ")
+Please enter the symbol that will fill the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_291.py(7):     realWidth = width-THICKNESS
+hw5_291.py(8):     fillList = range(0,height)
+hw5_291.py(9):     for n in fillList:
+hw5_291.py(10):         if n == 0:
+hw5_291.py(11):             print(outline*width)
+$$$$$
+hw5_291.py(9):     for n in fillList:
+hw5_291.py(10):         if n == 0:
+hw5_291.py(12):         elif n == fillList[height-1]:
+hw5_291.py(15):             print(outline+(fill*realWidth)+outline)
+$###$
+hw5_291.py(9):     for n in fillList:
+hw5_291.py(10):         if n == 0:
+hw5_291.py(12):         elif n == fillList[height-1]:
+hw5_291.py(15):             print(outline+(fill*realWidth)+outline)
+$###$
+hw5_291.py(9):     for n in fillList:
+hw5_291.py(10):         if n == 0:
+hw5_291.py(12):         elif n == fillList[height-1]:
+hw5_291.py(15):             print(outline+(fill*realWidth)+outline)
+$###$
+hw5_291.py(9):     for n in fillList:
+hw5_291.py(10):         if n == 0:
+hw5_291.py(12):         elif n == fillList[height-1]:
+hw5_291.py(13):             print(outline*width)
+$$$$$
+hw5_291.py(9):     for n in fillList:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

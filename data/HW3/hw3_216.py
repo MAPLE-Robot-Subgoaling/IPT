@@ -1,21 +1,20 @@
-
-def main():
+ZER = 273.15
+def main():   
     temp = float(input("Please enter the temperature: "))
-    typetemp = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin"))
-    if typetemp  == "C":
-        if temp >= 100:
-            print("At this temperature, water is a gas")
+    tempType = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if tempType == "C":
         if temp <= 0:
-            print("At this temperature, water is a (frozen) solid")
-        if temp > 0 and temp < 100:
-            print("At this temperature, water is  a liquid")
-    elif typetemp  == "K":
-        if temp >= 373.2:
-            print("At this temperature, water is a gas")
-        if temp <= 273.2:
-            print("At this temperature, water is a (frozen) solid")
-        if temp > 273.2 and temp < 373.2:
-            print("At this temperature, water is a liquid")
-        
+             print("At this temperature, water is a (frozen) solid.")
+        elif temp >= 100:
+             print("At this temperature, water is a gas.")
+        else:
+              print("At this temperature, water is a liquid.")
+    else:
+        temp = (temp - ZER)
+        if temp <= 0:
+             print("At this temperature, water is a (frozen) solid.")
+        elif temp >= 100: 
+             print("At this temperature, water is a gas.")
+        else:
+              print("At this temperature, water is a liquid.")
 main()
-        

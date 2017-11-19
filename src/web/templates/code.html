@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title Here</title>
+	<link rel="stylesheet" type="text/css" href={{url_for("static",filename="css/main.css")}}>
+</head>
+<body>
+<h1>Extraneous Line Labeler</h1>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<h3>Messages:</h3>
+	<ul>
+		{% for message in messages %}
+		<li> {{ message }} </li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+{% endwith %}
+
+<div class="code">
+	<form id="lineForm" onsubmit="return handleSubmit(this);" method="post" action="{{url_for("handle_submit")}}">
+		{% if code %}
+			{% for line in code %}
+			<select name="{{loop.index}}" class="line{{loop.index}}" disabled>
+				<option selected disabled hidden value="?">?</option>
+				{% for result in results %}
+				<option>{{result['letter']}}</option>
+				{% endfor %}
+			</select>
+			<input type="checkbox" class="line{{loop.index}}" onchange="handleClick(this)">
+			{{line|safe}} 
+			{% endfor %} 
+		{% else %}
+		<h2>No lines of code to display.</h2>
+		{% endif %}
+		<input type="submit" name="lineForm">
+	</form>
+</div>
+<br>
+Enter another type of extraneous line here:
+<form id="typeForm" method="post" action={{url_for("handle_submit")}}>
+	<input type="text" name="letter" placeholder="letter">
+	<input type="text" name="desc" placeholder="description">
+	<input type="submit" name="typeForm">
+</form>
+<div class="legend">
+	{% if results %}
+	<ul>
+		{% for result in results %}
+			<li>{{result['letter']}} - {{result['description']}}</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p> No labels made yet. </p>
+	{% endif %}
+</div>
+<form action="/logout"><input type="submit" value="Logout"></form>
+</body>
+<script type="text/javascript" src={{url_for('static', filename='js/helpers.js')}}></script>
+</html>

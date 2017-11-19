@@ -1,34 +1,18 @@
-
-FREEZING_POINT_OF_WATER_CELSIUS=0
-BOILING_POINT_OF_WATER_CELSIUS=100
-FREEZING_POINT_OF_WATER_KELVIN=273.15
-BOILING_POINT_OF_WATER_KELVIN=373.15
-
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    tempUnit = str(input("Please enter 'C' for Celsius or 'K' for Kelvin: "))
-    if tempUnit == "C" :
-        if temp < FREEZING_POINT_OF_WATER_CELSIUS :
-            print("At this temperature, water is a solid")
-        elif temp > BOILING_POINT_OF_WATER_CELSIUS :
-            print("At this temperature, water is a gas")
-        elif temp == FREEZING_POINT_OF_WATER_CELSIUS :
-            print("At this temperature, water is both solid and liquid")
-        elif temp == BOILING_POINT_OF_WATER_CELSIUS :
-            print("At this temperature, water is both liquid and gas")
-        else :
-            print("At this temperature, water is a liquid")
-    else :
-        if temp < FREEZING_POINT_OF_WATER_KELVIN :
-            print("At this temperature, water is a solid")
-        elif temp > BOILING_POINT_OF_WATER_KELVIN : 
-            print("At this temperature, water is a gas")
-        elif temp == FREEZING_POINT_OF_WATER_KELVIN :
-            print("At this temperature, water is both a solid and liquid")
-        elif temp == BOILING_POINT_OF_WATER_KELVIN :
-            print("At this temperature, water is both a liquid and gas")
-        else :
-            print("At this temperature, water is a liquid")
-
-main()
+tempNum = input(float("Please enter the temperature: "))
+tempForm = input(str("Please enter 'C' for Celcius, or 'K' for Kelvin: "))
+for tempForm == ("C"):
+    if tempNum > 99:
+        print("This is a gas")
+    elif 99 > tempNum > 0:
+        print("This is a liquid")
+    elif tempNum < 0:
+        print("This is a solid")
+for tempForm == ("K"):
+    if tempNum > 273:
+        print("This is a solid")
+    elif 273 < tempNum < 373:
+        print("This is a liquid")
+    elif tempNum > 373:
+        print("This is a gas")
+main():

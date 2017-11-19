@@ -1,17 +1,13 @@
-
-
 def main():
-
-    height = int(input("Please enter the starting height of the hailstone: "))
-    print("Hail is currently at height" , height)
-    while (height != 1):
-        if (height%2 == 1):
-           height = int((height * 3) + 1)
-           print("Hail is currently at height" , height)
-        elif (height%2 == 0):
-           height = int(height / 2)
-           print("Hail is currently at height" , height)
-
-    print("Hail stopped at height", height)
-
+    num = print(int(input("Enter the starting height of the hailstone.")))
+    if num != 1:
+        print("Hail is currently at ,num")
+    elif num is "even":
+        num = num % 2
+        print("Hail is currently at ,num")
+    elif num is "odd":
+        num = num x 3 + 1
+        print("Hail is currently at ,num")
+    else:
+        print("Hail stopped at height 1.")
 main()

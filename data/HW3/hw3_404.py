@@ -1,29 +1,30 @@
-
-
-
-
-
-
 def main():
-	FREEZING_POINT_K = 273.15
-	BOILING_POINT_K = 373.15
-	FREEZING_POINT_C = 0
-	BOILING_POINT_C = 100
-	degrees = float(input("Please enter the temperature: "))
-	tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin ")
-	if tempScale == 'C':
-		if degrees <= FREEZING_POINT_C:
-			print("At this temperature, water is a (frozen) solid")
-		elif degrees <BOILING_POINT_C:
-			print("At this temperature, water is a liquid")
-		else:
-			print("At this temperature, water is a gas")
-	else:
-		if degrees <= FREEZING_POINT_K:
-			print("At this temperature, water is a (frozen) solid")
-		elif degrees <BOILING_POINT_K:
-			print("At this temperature, water is a liquid")
-		else:
-			print("At this temperature, water is a gas")
-
+    inputTemperture = float(input("Please enter the temperture: "))
+    typeTemperture = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if typeTemperture == "C":
+        boilingTemp = 100.0
+        freezingTemp = 0.0
+        absoluteZero = -273.0
+        print("You are using Celius")
+        if inputTemperture >= boilingTemp:
+            print("At this temperture, water is a gas")
+        if boilingTemp > inputTemperture > freezingTemp:
+            print("At this temperture, water is a liquid")
+        if freezingTemp >= inputTemperture > absoluteZero:
+            print("At this temperture, water is a (frozen) soild")
+        if absoluteZero >= inputTemperture:
+            print("At this temperture, water is at absolute zero")
+    if typeTemperture == "K":
+        print("You are using Kelvin")
+        boilingTemp = 373.0 
+        freezingTemp = 273.0
+        absoluteZero = 0.0
+        if inputTemperture >= boilingTemp:
+            print("At this temperture, water is a gas")
+        if boilingTemp > inputTemperture > freezingTemp:
+            print("At this temperture, water is a liquid")
+        if freezingTemp >= inputTemperture > absoluteZero:
+            print("At this temperture, water is a (frozen) soild")
+        if absoluteZero >= inputTemperture:
+            print("At this temperture, water is at absolute zero")
 main()

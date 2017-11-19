@@ -1,19 +1,23 @@
-
 def main():
-
-    hailHite = int(input(
-            "Please enter the starting height of the hailstone "))
-
-    while hailHite != 1:
-        if hailHite % 2 == 1:
-            hailHite = (hailHite * 3) + 1
-            print ("Hail is currently at a height of", 
-                   (hailHite), "meters")
-        else:
-            hailHite = hailHite // 2
-            print ("Hail is currently at a height of", 
-                   hailHite, "meters")
-
-    print("Hail stopped at height 1")
-
+    positiveNum = int(input("Hail is currently at height: "))
+    if positiveNum < 0:
+        print("Error: Number must be positive")
+        positiveNum = int(input("Hail is currently at height: "))
+        while(positiveNum != 1):
+            if positiveNum % 2 == 0:
+                positiveNum = positiveNum/2
+                print("Hail is currently at height: ", positiveNum)
+            else:
+                positiveNum = (positiveNum * 3) + 1
+                print("Hail is current at height: ", positiveNum)
+        print("Hail stopped at height: ", positiveNum)
+    else:
+        while(positiveNum != 1):
+            if positiveNum % 2 == 0:
+                positiveNum = positiveNum/2
+                print("Hail is currently at height: " , positiveNum)
+            else:
+                positiveNum = (positiveNum * 3) + 1
+                print("Hail is currently at height: " ,positiveNum)
+        print("Hail stopped at height: " , positiveNum)
 main()

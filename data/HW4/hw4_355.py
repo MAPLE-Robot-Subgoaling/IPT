@@ -1,20 +1,11 @@
-
-
 def main():
-   heightOfHailstone = int(input("Please enter the starting height of the hailstone:",))
-   if heightOfHailstone >0:
-      while heightOfHailstone != 1:  # Check while loop condition
-         print("Hail is currently at height", int(heightOfHailstone ))
-         if heightOfHailstone  % 2!=0 :   # Check for odd Numbers
-            heightOfHailstone  = 3*heightOfHailstone  + 1
-                  
-         else:                                # Formula for even numbers
-      
-            heightOfHailstone  =heightOfHailstone  / 2
-      print("Hail stopped at",int(heightOfHailstone)  )
-
-   else :
-      print("Your entering data is wrong. Please check again.")
+    height = int(input("What is the starting height of the hailstone? "))
+    while height != 1:
+        if (height % 2) != 0:
+            height = (height * 3) + 1
+            print("Hail is currently at height ",height)
+        if (height % 2) == 0:
+            height = (height // 2)
+            print("Hail is currently at height ",height)
+    print("Hail stopped at height 1")
 main()
-
-

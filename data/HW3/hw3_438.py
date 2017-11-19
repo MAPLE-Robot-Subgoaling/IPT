@@ -1,29 +1,18 @@
-
-SOLID_CEL = 0
-SOLID_KEL = 273.16
-GAS_CEL = 100
-GAS_KEL = 373.16
-
 def main():
-    
-    temp = float(input("Please enter the temperature: "))
-    tempScale = input("Please enter 'c' for Celcius, or 'k' for Kelvin: ")
-
-    if(tempScale == 'c'):
-        if(temp <= SOLID_CEL):
-             print("At this temperature, water is a (frozen) solid.")
-        elif(temp >= GAS_CEL):
-             print("At this temperature, water is a gas.")
-        elif((temp > SOLID_CEL) and (temp < GAS_CEL)):
-             print("At this temperature, water is a liquid.")
-     
-    if(tempScale == 'k'):
-         if(temp <= SOLID_KEL):
-             print("At this temperature, water is a (frozen) solid.")
-         elif(temp >= GAS_KEL):
-             print("At this temperature, water is a gas.")
-         elif((temp > SOLID_KEL) and (temp < GAS_KEL)):
-             print("At this temperature, water is a liquid.")
-
-
+    temp = float(input("Please enter the temperature:"))
+    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+    if tempScale == "C":
+        if temp <= 0:
+            print("At this temperature, water is a (frozen) solid.")
+        elif temp > 0 and temp < 100:
+            print("At this temperature, water is a liquid.")
+        else:
+            print("At this temperature, water is a gas.")
+    if tempScale == "K":
+        if temp <= 200:
+            print("At this temperature, water is a (frozen) solid.")
+        elif temp > 200 and temp < 373:
+            print("At this temperature, water is a liquid.")
+        else:
+            print("At this temperature, water is a gas.")
 main()

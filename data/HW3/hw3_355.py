@@ -1,23 +1,16 @@
-
-
 def main():
-
-    temperatureWater = float(input("Please enter the water temperature.  ",))
-
-    scaleMeasure = str(input("If the water temperatue in Celsius, please enter C or temperature in Kelvin, Please enter K.  ",))
-
-
-
-    if( temperatureWater <= 273.15 and scaleMeasure == "K") or (temperatureWater <= 0 and scaleMeasure == "C"):
-
-        print("The water is in solid(frozen) when the temperature is", temperatureWater ,scaleMeasure )
-
-    elif (temperatureWater >= 373.15 and scaleMeasure == "K") or  (temperatureWater >= 100 and scaleMeasure == "C"):
-  
-      print("The water is gas when  the temperature is", temperatureWater ,scaleMeasure )
-
-    else:
-
-        print("The water is in liquid when  the temperature is" ,temperatureWater, scaleMeasure)
-
+    temp = int(input(" Please enter the temperature: "))
+    units = str(input(" Please enter 'C' for Celsius, or 'K' for Kelvin: "))
+    if temp <= 0 and units == 'C' :
+       print("At this temperature, water is a (frozen) solid.")
+    elif 100 > temp > 0 and units == 'C' :
+       print(" At this temperature, water is a liquid.")
+    elif temp >= 100 and units == 'C' :
+       print(" At this temperature, water is a gas.")
+    if temp <= 273.16 and units == 'K' :
+        print(" At this temperature, water is a (frozen) solid.")
+    elif 373.16 > temp > 273.16 and units == 'K' :
+        print(" At this temperature, water is a liquid.")
+    elif temp >= 373.16 and units == 'K' :
+        print(" At this temperature, water is a gas.")
 main()

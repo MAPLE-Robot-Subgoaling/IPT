@@ -1,32 +1,13 @@
 def main():
-    width=int(input("Enter the width please "))
-    height=int(input("Enter the height please "))
-    symbolO=raw_input("Enter the outline character please ")
-    symbolF=raw_input("Enter the fill character please ")
-    widthN=width-2
-    heightN=height-2
-    if widthN>0:
-        lineO=[symbolO]
-        lineM=[symbolO]
-        for i in range(1,widthN):
-            lineO.append(symbolO)
-            lineM.append(symbolF)
-        lineO.append(symbolO)
-        lineM.append(symbolO)
-    elif widthN==0:
-        lineO=[symbolO,symbolO]
-        lineM=[symbolO,symbolO]
-    else:
-        lineO=[symbolO]
-        lineM=[symbolO]
-    if heightN>0:
-        print(lineO)
-        for i in range(heightN):
-            print(lineM)
-        print(lineO)
-    elif height==0:
-        print(lineO)
-        print(lineO)
-    else:
-        print(lineO)
+     width = int(input ("Please enter the width of the box: "))
+     hight = int(input ("Please enter the height of the box: "))
+     outSimple =(input ("Please enter a symbol for the box outline: "))
+     innSimple =(input (" Please enter a symbol for the box fill: "))
+     for i in range(hight):
+         for a in range(width):
+             if ( i == 0 or i == (hight-1) or a==0 or a ==(width-1)):
+                 print( outSimple,end='')
+             else:
+                 print(innSimple,end='')
+         print()
 main()

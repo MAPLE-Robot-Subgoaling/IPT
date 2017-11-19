@@ -1,0 +1,28 @@
+ --- modulename: hw3_122, funcname: <module>
+hw3_122.py(1): BOILING_C=100
+hw3_122.py(2): FROZEN_C=0
+hw3_122.py(3): BOILING_K=373.15
+hw3_122.py(4): FROZEN_K=273.15
+hw3_122.py(5): def main():
+hw3_122.py(22): main()
+ --- modulename: hw3_122, funcname: main
+hw3_122.py(6):     temp=float(input("Please enter the tempurature: "))
+Please enter the tempurature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_122.py(7):     degree=input("Please enter 'c' for celcius or 'k' for kelvins: ")
+Please enter 'c' for celcius or 'k' for kelvins:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_122.py(8):     if degree == "c":
+hw3_122.py(15):     elif degree=="k":
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

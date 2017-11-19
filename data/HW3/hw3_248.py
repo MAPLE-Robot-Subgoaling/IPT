@@ -1,23 +1,19 @@
-
 def main():
-    FREEZING_POINT_K = 273.15
-    FREEZING_POINT_C = 0
-    BOILING_POINT_K = 373.15
-    BOILING_POINT_C = 100
-    temperature = float(input("Please enter the temperature:"))
-    temp_type = input("Please enter 'C' for Celsius, or 'K' for kelvin:")
-    if temp_type == "C":
-        if temperature > FREEZING_POINT_C and temperature < BOILING_POINT_C:
-            print("Water is a liquid at this temperature.")
-        elif temperature <= FREEZING_POINT_C:
-            print("Water is a solid at this temperature.")
+    temp = float(input("Please enter the temperature: ")) 
+    units = input("Please enter 'C' for Celcius or 'K' for Kelvin : ")
+    if units == "C":
+        if temp <= 0:
+            state = "solid"
+        elif temp < 100:
+            state = "liquid"
         else:
-            print("Water is a gas at this temperature.")
-    elif temp_type == "K":
-        if temperature > FREEZING_POINT_K and temperature < BOILING_POINT_K:
-            print("Water is a liquid at this temperature.")
-        elif temperature <= FREEZING_POINT_K:
-            print("Water is a solid at this temperature.")
+            state = "gas"
+    else:
+        if temp <= 273.2:
+            state = "solid"
+        elif temp < 373.2:
+            state = "liquid"
         else:
-            print("Water is a gas at this temerature.")
-main()
+            state = "gas"
+    print("At this temperature, water is a "+state+".")
+main() 

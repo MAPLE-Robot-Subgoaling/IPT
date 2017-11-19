@@ -1,32 +1,24 @@
-
 def main():
-    temperature = float(input("Please enter the temperature: "))
-    scaleType = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    
-    C_FROZEN = 0
-    C_BOIL = 100
-    K_FROZEN = 273
-    K_BOIL = 373
-
-    if  scaleType == 'C':
-        if temperature <= C_FROZEN:
-            print("At this temperature, water is a (frozen) solid.")
-            print(" ")
-        elif (temperature > C_FROZEN) and (temperature < C_BOIL):
-            print("At this temperature, water is a liquid.")
-            print(" ")
-        else: 
-            print("At this temperature, water is a gas.")
-            print(" ")
+    waterTemp = "" 
+    celsiusOrKelvin = "" 
+    celsiusCheck = "C" 
+    celsiusToKelvin = 273 
+    trueKelvinTemp = "" 
+    FUSION_STATE = 273 
+    VAPORIZATION_STATE = 373 
+    print("Hell, this program will help declare what state of water is at a given temperature.")
+    waterTemp = float(input("Please enter a temperature: "))
+    celsiusOrKelvin = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if celsiusOrKelvin == celsiusCheck: 
+        trueKelvinTemp = waterTemp + celsiusToKelvin 
     else:
-        if temperature <= K_BOIL:
-            print("At this temperature, water is a (frozen) solid.")
-            print(" ")
-        elif (temperature > K_FROZEN) and (temperature < K_BOIL):
-            print("At this temperature, water is a liquid.")
-            print(" ")
+        trueKelvinTemp = waterTemp 
+    if trueKelvinTemp <= FUSION_STATE:
+        print(" At ",waterTemp,", water is a solid")
+    else:
+        if trueKelvinTemp > FUSION_STATE and trueKelvinTemp < VAPORIZATION_STATE:
+            print(" At ",waterTemp,", water is a liquid")
         else:
-            print("At this temperature, water is a gas.")
-            print(" ")
-
+            if trueKelvinTemp >= VAPORIZATION_STATE:
+                print(" At ",waterTemp,", water is a gas")
 main()

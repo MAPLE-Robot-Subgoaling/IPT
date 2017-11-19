@@ -1,31 +1,16 @@
-
 def main():
-    temperature = int(input("Please enter the temperature: "))
-    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-
-    if (tempScale == "C"):
-        
-        if (temperature >= 100):
-            print("At this temperature, water is a gas")
-
-        if (temperature < 100 and temperature > 0):
-            print("At this temperature, water is a liquid")
-
-        if (temperature <= 0):
-            print("At this temperature, water is a solid")
-
-    if (tempScale == "K"):
-
-        if (temperature >= 373):
-            print("At this temperature, water is a gas")
-
-        if (temperature < 373 and temperature > 273):
-            print("At this temperature, water is a liquid")
-
-        if (temperature <= 273):
-            print("At this temperature, water is a solid")
-
-
+    temp = float(input("Please enter the temperature:"))
+    meas = input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+    if meas == "C" and temp <= 0:
+        print("At this temperature, water is a (frozen) solid.")
+    if meas == "C" and temp > 0 and temp < 100:
+        print("At this temperature, water is a liquid.")
+    if meas == "C" and temp >= 100:
+        print("At this temperature, water is a gas.")
+    if meas == "K" and temp <= 273.16:
+        print("At this temperature, water is a (frozen) solid.")
+    if meas == "K" and temp > 273.16 and temp < 373.16:
+        print("At this temperature, water is a liquid.")
+    if meas == "K" and temp >= 373.16:
+        print("At this temperature, water is a gas.")
 main()
-
-

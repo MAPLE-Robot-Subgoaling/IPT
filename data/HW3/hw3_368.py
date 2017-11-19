@@ -1,23 +1,18 @@
-
-def main ():
-    print ("Hello")
-    userTemp = float(input("At what temperature would you like me to check water's state of matter?: "))
-    tempUnit = input("Is this in 'F' Fahrenheit or 'C' Celsius. Please capitalize!?: ")
-    print ()
-    if tempUnit == "F":
-        if userTemp >= 212:
-            print ("Water is in it's gaseous state at ",userTemp," degrees Fahrenheit.")
-        elif userTemp <= 32:
-            print ("Water is in it's solid state at ",userTemp," degrees Fahrenheit.")
+def main():
+    userNum = float(input("Please enter the temperature: "))
+    userTemp = input("Please enter 'C' for Celsius and 'K' for Kelvin: ")
+    if userTemp == 'C':
+        if userNum > 0 and userNum < 100:
+            print("At this temperature, water is a liquid.")
+        elif userNum < 0:
+            print("At this temperature, water is (frozen) solid.")
         else:
-            print ("Water is in it's liquid state at ",userTemp," degrees Fahrenheit.")
-    elif tempUnit == "C":
-        if userTemp >= 100:
-            print ("Water is in it's gaseous state at ",userTemp," degrees Celsius.")
-        elif userTemp <= 0:
-            print ("Water is in it's solid state at ",userTemp," degrees Celsius.")
+            print("At this temperature, water is a gas.")
+    if userTemp == 'K':
+        if userNum > 273.15 and userNum < 373.15:
+            print("At this temperature, water is a liquid.")
+        elif userNum < 273.15:
+            print("At this temperature, wate is (frozen) solid")
         else:
-            print ("Water is in it's liquid state at ",userTemp," degrees Clesius.")
-main ()
-                         
-                         
+            print("At this temperature, water is a gas")
+main()

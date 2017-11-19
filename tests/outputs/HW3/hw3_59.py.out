@@ -1,0 +1,36 @@
+ --- modulename: hw3_59, funcname: <module>
+hw3_59.py(1): def main():
+hw3_59.py(22): main()
+ --- modulename: hw3_59, funcname: main
+hw3_59.py(2): 	userTemp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_59.py(3): 	userTempUnits = input("If this temperature is in Celsius please enter 'C' and if it is in Kelvin please put 'K': ")
+If this temperature is in Celsius please enter 'C' and if it is in Kelvin please put 'K':  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_59.py(4): 	FREEZING_POINT_C = 0
+hw3_59.py(5): 	FREEZING_POINT_K = 273.15
+hw3_59.py(6): 	LIQUID_POINT_C = 33
+hw3_59.py(7): 	LIQUID_POINT_K = 306.15
+hw3_59.py(8): 	GAS_POINT_C = 100
+hw3_59.py(9): 	GAS_POINT_K = 373.15
+hw3_59.py(10): 	if userTemp <= FREEZING_POINT_C and userTempUnits == 'C':
+hw3_59.py(12): 	if userTemp <= FREEZING_POINT_K and userTempUnits == 'K':
+hw3_59.py(14): 	elif userTemp >= FREEZING_POINT_C and userTemp <= GAS_POINT_C and userTempUnits == 'C':
+hw3_59.py(16): 	elif userTemp >= FREEZING_POINT_K and userTemp <= GAS_POINT_K and userTempUnits == 'K':
+hw3_59.py(18): 	elif userTemp >= GAS_POINT_C and userTempUnits == 'C':	
+hw3_59.py(20): 	elif userTemp >= GAS_POINT_K and userTempUnits == 'K':
+hw3_59.py(21): 		print("At this temperature, water is in a gas state")
+At this temperature, water is in a gas state
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

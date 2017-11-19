@@ -1,19 +1,12 @@
-
 def main():
-
-    num = int(input("gib hight pls C: "))
-    
-    print("hale is height high: " + str(num))
-    
-    while num != 1:
-        
-        if num%2 == 0:
-            num = num//2
-            print("hale is height at: " + str(num))
+    print("Please enter the starting height of the hailstone: ")    
+    stoneHeight = int(input())
+    while stoneHeight != 1:
+        print("Hail is currently at height", stoneHeight)
+        if stoneHeight % 2 == 0:
+            stoneHeight = stoneHeight / 2
         else:
-            num = (num*3)+1
-            print("hale hight at is: " + str(num))
-
-    print("height turned into juan")
-
+            stoneHeight = stoneHeight * 3 + 1
+        stoneHeight = int(stoneHeight)
+    print("Hail stopped at height", stoneHeight)
 main()

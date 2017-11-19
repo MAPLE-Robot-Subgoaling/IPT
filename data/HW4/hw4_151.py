@@ -1,15 +1,15 @@
-
 def main():
-    hailheight = float(input("please enter starting height of the hailstone: "))
-    print("Hail is currently at height",hailheight)
-    while hailheight > 1:
-        if hailheight % 2 == 0:
-            hailheight = hailheight / 2
-            print("Hail is currently at height",hailheight)
-        elif hailheight % 2 == 1:
-            hailheight = hailheight * 3 + 1
-            print("Hail is currentlly at height",hailheight)
-    print("Hail stopped at height 1")
-
+    divide = 2
+    add = 1
+    multiply = 3
+    ground = 1
+    height = int(input("Please enter the starting height of the hailstone: "))
+    while(height > ground):
+        while(height % 2 != 1):
+            print("Hail is currently at height" , height)
+            height = int(height / divide)
+        while(height % 2 == 1 and height != ground):
+            print("Hail is currently at height" , height)
+            height = int((height * multiply) + add)
+    print("Hail stopped at height" , height)
 main()
-

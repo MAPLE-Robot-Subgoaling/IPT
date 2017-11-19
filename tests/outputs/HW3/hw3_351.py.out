@@ -1,0 +1,31 @@
+ --- modulename: hw3_351, funcname: <module>
+hw3_351.py(1): def main():
+hw3_351.py(21): main()
+ --- modulename: hw3_351, funcname: main
+hw3_351.py(2):     oneInput= 0
+hw3_351.py(3):     temp= (float(input("Please enter the Temperature")))
+Please enter the Temperature --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_351.py(4):     tempOutput=input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+Please enter 'C' for Celsius, or 'K' for Kelvin: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_351.py(5):     while tempOutput== "C" and oneInput < 1:
+hw3_351.py(13):     while tempOutput== "K"and oneInput < 1:
+hw3_351.py(14):         oneInput= oneInput + 1
+hw3_351.py(15):         if temp < 273:
+hw3_351.py(17):         elif temp > 273 and temp < 373:
+hw3_351.py(20):             print("The water is in gas form")
+The water is in gas form
+hw3_351.py(13):     while tempOutput== "K"and oneInput < 1:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,0 +1,32 @@
+ --- modulename: hw3_245, funcname: <module>
+hw3_245.py(1): def main():
+hw3_245.py(21): main()
+ --- modulename: hw3_245, funcname: main
+hw3_245.py(2):     temp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_245.py(3):     scale = str(input("Please eneter C for Celsius, or K for Kelvin: "))
+Please eneter C for Celsius, or K for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_245.py(4):     frozen = "At this temperature, water is a (frozen) solid."
+hw3_245.py(5):     liquid = "At this temperature, water is a liquid."
+hw3_245.py(6):     gas = "At this temperature, water is a gas"
+hw3_245.py(7):     if(scale == "C"):
+hw3_245.py(14):     if(scale == "K"):
+hw3_245.py(15):         if(temp <= 273.15):
+hw3_245.py(17):         if(temp > 273.15 and temp < 373.15):
+hw3_245.py(19):         if(temp > 373.15):
+hw3_245.py(20):             print(gas)
+At this temperature, water is a gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

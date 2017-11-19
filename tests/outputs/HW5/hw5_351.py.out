@@ -1,0 +1,4 @@
+ --- modulename: hw5_351, funcname: <module>
+hw5_351.py(1): XC
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

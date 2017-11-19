@@ -1,0 +1,32 @@
+ --- modulename: hw3_373, funcname: <module>
+hw3_373.py(1): def main():
+hw3_373.py(22): main()
+ --- modulename: hw3_373, funcname: main
+hw3_373.py(2):     CELSIUS_BOILING_TEMPERATURE = 100
+hw3_373.py(3):     CELSIUS_FREEZING_TEMPERATURE = 0
+hw3_373.py(4):     KELVIN_SOLID_TEMPERATURE = 273.16
+hw3_373.py(5):     KELVIN_GAS_TEMPERATURE = 373.16
+hw3_373.py(6):     temp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_373.py(7):     scale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin: "))
+Please enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_373.py(8):     if scale == 'C':
+hw3_373.py(15):     elif scale == 'K':
+hw3_373.py(16):         if temp < KELVIN_SOLID_TEMPERATURE:
+hw3_373.py(18):         elif KELVIN_GAS_TEMPERATURE < temp > KELVIN_SOLID_TEMPERATURE:
+hw3_373.py(19):             print("At this temperature, water is a liquid.")
+At this temperature, water is a liquid.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

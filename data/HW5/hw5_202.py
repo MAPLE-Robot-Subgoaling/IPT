@@ -1,17 +1,13 @@
 def main():
     width = int(input("Please enter the width of the box: "))
     height = int(input("Please enter the height of the box: "))
-    symbolOut = input("Please enter the symbol for the box outline: ")
-    symbolIn = input("Please enter a symbol for the box fill: ")
-    width2 = (width - 2)
-    symbol1 = (width * symbolOut)
-    
-    print(symbol1)
-
-    for i in range(1, height):
-        print(symbolOut + symbolIn * width2 + symbolOut)
- 
-    print(symbol1)
-
-    
+    symOut = input("Please enter the symbol for the box outline: ")
+    symFill = input("Please enter the symbol for the box fill: ")
+    topRow = symOut*width
+    midRow = symOut + symFill*(width-2) + symOut
+    for x in range(0, height):
+        if x == 0 or x == height-1:
+            print(topRow)
+        else:
+            print(midRow)
 main()

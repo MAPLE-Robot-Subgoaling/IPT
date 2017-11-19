@@ -1,0 +1,25 @@
+ --- modulename: hw3_208, funcname: <module>
+hw3_208.py(1): temp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_208.py(2): SI = input("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
+Please enter 'C' for Celcius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_208.py(3): if SI == 'C' and temp > 100:
+hw3_208.py(5): elif SI == 'C' and temp > 0:
+hw3_208.py(7): elif SI == 'C' and temp <= 0:
+hw3_208.py(9): elif SI == 'K' and temp > 373.15:
+hw3_208.py(10):     print("At this temperature, water is gas")
+At this temperature, water is gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

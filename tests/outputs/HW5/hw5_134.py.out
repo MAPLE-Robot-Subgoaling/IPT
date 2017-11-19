@@ -1,0 +1,42 @@
+ --- modulename: hw5_134, funcname: <module>
+hw5_134.py(1): def main():
+hw5_134.py(12): main()
+ --- modulename: hw5_134, funcname: main
+hw5_134.py(2):     width = int(input(" please enter the width of the box"))
+ please enter the width of the box --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_134.py(3):     height = int(input("Please enter the height of the box"))
+Please enter the height of the boxhw5_134.py(4):     symbolO = input("please enter a symbol for the box outline")
+please enter a symbol for the box outlinehw5_134.py(5):     symbolF = input("please enter a symbol for the box fill")
+please enter a symbol for the box fill --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_134.py(6):     print((width) * symbolO)
+$$$$$
+hw5_134.py(7):     for box in ((height-2)*symbolO):
+hw5_134.py(8):         box = box + ((width -2) * symbolF) + symbolO
+hw5_134.py(9):         print(box)
+$###$
+hw5_134.py(7):     for box in ((height-2)*symbolO):
+hw5_134.py(8):         box = box + ((width -2) * symbolF) + symbolO
+hw5_134.py(9):         print(box)
+$###$
+hw5_134.py(7):     for box in ((height-2)*symbolO):
+hw5_134.py(8):         box = box + ((width -2) * symbolF) + symbolO
+hw5_134.py(9):         print(box)
+$###$
+hw5_134.py(7):     for box in ((height-2)*symbolO):
+hw5_134.py(10):     if width != 1 and height != 1:
+hw5_134.py(11):         print((width) * symbolO)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

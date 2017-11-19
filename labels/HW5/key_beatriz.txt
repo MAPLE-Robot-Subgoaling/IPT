@@ -1,0 +1,5 @@
+A:unnecessary conversion of input to string
+B:statement has no effect
+F:unnecessary conversion of a variable type
+J:unnecessary start and/or step for range function
+K:loop that only executes once

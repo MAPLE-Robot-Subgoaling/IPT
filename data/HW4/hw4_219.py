@@ -1,22 +1,10 @@
-
-
 def main():
-    
-
-    number = int(input('Please enter the starting height of a hailstone. '))
-    
-    while number > 1:
-        print('Hail is currently at height:', number)
-        mod = number % 2
-        if mod == 0:
-            number = number // 2
-
-        elif mod != 0:
-            number = (number * 3) + 1 
-
-    print('Hail stopped at height:',number)
-
+    height_of_hailstone = int(input("Please enter the starting height of the hailstone: "))
+    while height_of_hailstone != 1:
+        print("Hail is currently at height",height_of_hailstone)
+        if ( height_of_hailstone % 2 ) != 0:
+            height_of_hailstone = int(( height_of_hailstone * 3 ) + 1 )
+        elif ( height_of_hailstone % 2 ) == 0:            
+            height_of_hailstone = ( height_of_hailstone // 2 )
+    print("Hail stopped at height 1")
 main()
-
-
-    

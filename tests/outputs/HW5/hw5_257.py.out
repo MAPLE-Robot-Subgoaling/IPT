@@ -1,0 +1,3 @@
+ --- modulename: hw5_257, funcname: <module>
+hw5_257.py(1):  --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

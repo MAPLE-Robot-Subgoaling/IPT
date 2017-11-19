@@ -1,20 +1,18 @@
-
-def main() :
-  temp = float(input('Please enter the temperature: '))
-  scale = (input("Please enter 'C' for Celsius, or 'K' for Kelvin: "))
-  if (scale == 'C'):
-    if (temp <= 0):
-      print('At this temperature, water is a (frozen) solid.')
-    elif (temp >= 100):
-      print('At this temperature, water is a gas.')
+def main():
+    temp = float(input("Please enter the temperature: "))
+    unit = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if unit == "K" or unit == "k":
+        tempAdj=temp-273
+    elif unit == "C" or unit == "c":
+        tempAdj=temp
     else:
-      print('At this temperature, water is a liquid.')
-  elif (scale == 'K'):
-    if (temp <= 273.16):
-      print('At this temperature, water is a (frozen) solid.')
-    elif (temp >= 373.16):
-      print('At this temperature, water is a gas.')
+        print("Improper unit entry. Please try again!")
+    if tempAdj <= 0:
+        print("At this temperature, water is (frozen) solid.")
+    elif tempAdj > 0 and tempAdj < 100:
+        print("At this temperature, water is liquid.")
+    elif tempAdj >= 100:
+        print("At this temperature, water is a gas.")
     else:
-      print('At this temperature, water is a liquid.')
-
+        print("Error in the state determination.")
 main()

@@ -1,38 +1,18 @@
-
 def main():
-    
-    temperature = float(input("Please enter the temperature: "))
-    temperatureScale = input("Please enter 'C' for Celsius or 'K' for Kelvin: ")
-
-    if temperatureScale == "C":
-        
-        if temperature <= 0:
-            
-            waterState = "solid"
-
-        elif temperature >= 100:
-
-            waterState = "gas"
-
-        else:
-
-            waterState = "liquid"
-
-    else:
-
-        if temperature <= 273.15:
-            
-            waterState = "solid"
-
-        elif temperature >=373.15:
-            
-            waterState = "gas"
-
-        else:
-            
-            waterState = "liquid"
-
-    print("At this temperature, water is a", waterState + ".")
-
-print("")
+    units = input("what are the units of tempature? (k/c)")
+    temp = (float)(input("what is the tempature of the water?"))
+    if units == "k":
+        if temp >= 373.16:
+            print("boiling")
+        elif temp <= 273.16:
+            print("frozen") 
+        else : 
+            print("water")
+    elif units == "c":
+        if temp >= 100:
+            print("boiling")
+        elif temp <= 0:
+            print("frozen") 
+        else : 
+            print("water")
 main()

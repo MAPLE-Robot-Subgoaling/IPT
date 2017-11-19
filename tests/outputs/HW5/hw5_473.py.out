@@ -1,0 +1,48 @@
+ --- modulename: hw5_473, funcname: <module>
+hw5_473.py(1): def main():
+hw5_473.py(21): main()
+ --- modulename: hw5_473, funcname: main
+hw5_473.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_473.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_473.py(4):     outlineSymbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_473.py(5):     fillSymbol = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_473.py(6):     if width <= 1 or height <= 1:
+hw5_473.py(14):         print(width * outlineSymbol)
+$$$$$
+hw5_473.py(15):         for b in range(height - 2):
+hw5_473.py(16):             a = outlineSymbol
+hw5_473.py(17):             b = fillSymbol
+hw5_473.py(18):             formula = (a + (b * (width - 2)) + a)
+hw5_473.py(19):             print(formula)
+$###$
+hw5_473.py(15):         for b in range(height - 2):
+hw5_473.py(16):             a = outlineSymbol
+hw5_473.py(17):             b = fillSymbol
+hw5_473.py(18):             formula = (a + (b * (width - 2)) + a)
+hw5_473.py(19):             print(formula)
+$###$
+hw5_473.py(15):         for b in range(height - 2):
+hw5_473.py(16):             a = outlineSymbol
+hw5_473.py(17):             b = fillSymbol
+hw5_473.py(18):             formula = (a + (b * (width - 2)) + a)
+hw5_473.py(19):             print(formula)
+$###$
+hw5_473.py(15):         for b in range(height - 2):
+hw5_473.py(20):         print(width * outlineSymbol)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

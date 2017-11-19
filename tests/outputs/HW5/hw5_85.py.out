@@ -1,0 +1,64 @@
+ --- modulename: hw5_85, funcname: <module>
+hw5_85.py(1): def main():
+hw5_85.py(25): main()
+ --- modulename: hw5_85, funcname: main
+hw5_85.py(2):     boxWidth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_85.py(3):     boxHeight = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_85.py(4):     boxOutlineSymbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_85.py(5):     boxFillSymbol = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_85.py(6):     boxOutlineString = ""
+hw5_85.py(7):     boxFillString = boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(9):         boxOutlineString = boxOutlineString + boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(9):         boxOutlineString = boxOutlineString + boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(9):         boxOutlineString = boxOutlineString + boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(9):         boxOutlineString = boxOutlineString + boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(9):         boxOutlineString = boxOutlineString + boxOutlineSymbol
+hw5_85.py(8):     for x in range(0, boxWidth):
+hw5_85.py(10):     for z in range(0, boxWidth - 2):
+hw5_85.py(11):         boxWidth > 1
+hw5_85.py(12):         boxFillString = boxFillString + boxFillSymbol
+hw5_85.py(10):     for z in range(0, boxWidth - 2):
+hw5_85.py(11):         boxWidth > 1
+hw5_85.py(12):         boxFillString = boxFillString + boxFillSymbol
+hw5_85.py(10):     for z in range(0, boxWidth - 2):
+hw5_85.py(11):         boxWidth > 1
+hw5_85.py(12):         boxFillString = boxFillString + boxFillSymbol
+hw5_85.py(10):     for z in range(0, boxWidth - 2):
+hw5_85.py(13):     if boxWidth > 1:
+hw5_85.py(14):         boxFillString = boxFillString + boxOutlineSymbol
+hw5_85.py(17):     if boxHeight > 2:
+hw5_85.py(18):         print(boxOutlineString)
+$$$$$
+hw5_85.py(19):         for x in range(0, boxHeight - 2):
+hw5_85.py(20):             print(boxFillString)
+$###$
+hw5_85.py(19):         for x in range(0, boxHeight - 2):
+hw5_85.py(20):             print(boxFillString)
+$###$
+hw5_85.py(19):         for x in range(0, boxHeight - 2):
+hw5_85.py(20):             print(boxFillString)
+$###$
+hw5_85.py(19):         for x in range(0, boxHeight - 2):
+hw5_85.py(21):         print(boxOutlineString)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

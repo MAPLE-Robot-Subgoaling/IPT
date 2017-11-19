@@ -1,18 +1,13 @@
-
 def main():
-    sentinel = True
-    height = int(input("What is the starting height of the hailstone? "))
-    while sentinel:
-        if height == 1:
-            sentinel = False
-            print("Hail stopped at height 1")
-        elif height % 2 == 0:
-            print("Hail is currently at height", height)
-            height = height // 2
-        elif height % 2 == 1:
-            print("Hail is currently at height", height)
-            height = (height * 3) + 1 
-
-
-
+    height = int( input("Please enter the starting  height of the hailstorne"))
+    if height == 1:
+        print("exit the program")
+        exit()
+    while height > 1:
+        if height % 2 == 0:
+            height = height / 2
+            print("hailstone is :", height) 
+        else:
+            height = (height * 3) + 1
+            print("hailstone is: ", height)
 main()

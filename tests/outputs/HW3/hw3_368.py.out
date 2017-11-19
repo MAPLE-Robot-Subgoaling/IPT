@@ -1,0 +1,28 @@
+ --- modulename: hw3_368, funcname: <module>
+hw3_368.py(1): def main ():
+hw3_368.py(20): main ()
+ --- modulename: hw3_368, funcname: main
+hw3_368.py(2):     print ("Hello")
+Hello
+hw3_368.py(3):     userTemp = float(input("At what temperature would you like me to check water's state of matter?: "))
+At what temperature would you like me to check water's state of matter?:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_368.py(4):     tempUnit = input("Is this in 'F' Fahrenheit or 'C' Celsius. Please capitalize!?: ")
+Is this in 'F' Fahrenheit or 'C' Celsius. Please capitalize!?:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_368.py(5):     print ()
+
+hw3_368.py(6):     if tempUnit == "F":
+hw3_368.py(13):     elif tempUnit == "C":
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

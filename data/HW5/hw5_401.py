@@ -1,17 +1,11 @@
-
 def main():
-
     width = int(input("Enter the width of the box: "))
-    height = int(input("Enter the height of the box: "))
-    symbolOutline = input("What symbol do you want for the outline? ")
-    symbolFill = input("What symbol do you want to fill the box? ")
-
-    if width > 1 and height > 1:
-        print(symbolOutline*width)
-        for i in list(range(height-2)):
-            print(symbolOutline + symbolFill*(width-2) + symbolOutline)
-        print(symbolOutline*width)
-    else:
-        print(symbolOutline)
-        
+    length = int(input("Enter the length of the box: "))
+    outlineSym = input("Enter the symbol that will outline the box: ")
+    fillSym = input("Enter the symbol that will fill the box: ")
+    for i in range(length):
+        if (i < (length - 1)) and (i > 0):
+            print(outlineSym + (fillSym * (width - 2)) + outlineSym)
+        else:
+            print(outlineSym * width)
 main()

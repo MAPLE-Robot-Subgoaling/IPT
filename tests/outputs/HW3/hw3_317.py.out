@@ -1,0 +1,32 @@
+ --- modulename: hw3_317, funcname: <module>
+hw3_317.py(1): def main():
+hw3_317.py(23): main()
+ --- modulename: hw3_317, funcname: main
+hw3_317.py(2):     FREEZING_POINT_C = 0
+hw3_317.py(3):     BOILING_POINT_C = 100
+hw3_317.py(4):     FREEZING_POINT_K = 273
+hw3_317.py(5):     BOILING_POINT_K = 373.2
+hw3_317.py(6):     temp = input("What is the temperature value?: ")
+What is the temperature value?:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_317.py(7):     temp = float(temp)
+hw3_317.py(8):     units = input("Are the units Celsius (answer with C) or Kelvin (answer with K)?: ")
+Are the units Celsius (answer with C) or Kelvin (answer with K)?:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_317.py(9):     if units == "C":
+hw3_317.py(16):     elif units == "K":
+hw3_317.py(17):         if temp >= BOILING_POINT_K:
+hw3_317.py(18):             print("Water is a gas at this temperature.")
+Water is a gas at this temperature.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

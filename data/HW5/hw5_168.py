@@ -1,18 +1,15 @@
-
-
-
-
 def main():
-    width = int(input("Please enter the width of your box: "))
-    height = int(input("Please enter the height of your box: "))
-    outline = input("Please enter the symbol of your outline: ")
-    filling = input("Please enter the symbol for your filling: ")
-    for n in range(1,height + 1):
-        if n == 1  or  n == height:
-            print(outline * width)
-        else:
-            print(outline + filling * (width - 2) + outline)
-
-
-
+    width = int(input("Please enter the width of the box: "))
+    height = int(input("Please enter the height of the box: "))
+    perimSym = input("Please enter a symbol for the box outline: ")
+    areaSym = input("Please enter a symbol for the box area: ")
+    for h in range(height + 1) :
+        if h == 0 :
+            print(perimSym * width)
+        elif h > 0 and h < height - 1 :
+            print(perimSym + areaSym * (width - 2) + perimSym)
+        elif h == height and height == 1 :
+            h = height + 2
+        elif h == height :
+            print(perimSym * width)
 main()

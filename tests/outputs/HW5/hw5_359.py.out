@@ -1,0 +1,45 @@
+ --- modulename: hw5_359, funcname: <module>
+hw5_359.py(1): def main():
+hw5_359.py(11): main()
+ --- modulename: hw5_359, funcname: main
+hw5_359.py(2):     wid = int(input("How wide do you want the box?: "))
+How wide do you want the box?:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_359.py(3):     height = int(input("How tall do you want the box?: "))
+How tall do you want the box?: hw5_359.py(4):     sym1 = input("Enter a symbol for the box outline: ")
+Enter a symbol for the box outline: hw5_359.py(5):     sym2 = input("Enter a symbol for the box insides: ")
+Enter a symbol for the box insides:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_359.py(6):     for y in range(0, (height)):
+hw5_359.py(7):         if (y == 0 or y == (height - 1)):
+hw5_359.py(8):             print(sym1 * wid)
+$$$$$
+hw5_359.py(6):     for y in range(0, (height)):
+hw5_359.py(7):         if (y == 0 or y == (height - 1)):
+hw5_359.py(10):             print(sym1 + (sym2 * (wid - 2)) + sym1)
+$###$
+hw5_359.py(6):     for y in range(0, (height)):
+hw5_359.py(7):         if (y == 0 or y == (height - 1)):
+hw5_359.py(10):             print(sym1 + (sym2 * (wid - 2)) + sym1)
+$###$
+hw5_359.py(6):     for y in range(0, (height)):
+hw5_359.py(7):         if (y == 0 or y == (height - 1)):
+hw5_359.py(10):             print(sym1 + (sym2 * (wid - 2)) + sym1)
+$###$
+hw5_359.py(6):     for y in range(0, (height)):
+hw5_359.py(7):         if (y == 0 or y == (height - 1)):
+hw5_359.py(8):             print(sym1 * wid)
+$$$$$
+hw5_359.py(6):     for y in range(0, (height)):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,17 +1,12 @@
-
 def main():
-
-    index = 0
-    widthPrompt = int(input("What is the width of the box? "))
-    heightPrompt = int(input("What is the height of the box? "))
-    outsideSymbol = str(input("What character is the outside of the box made of? "))
-    insideSymbol = str(input("What character is the inside of the box made of? "))
-    
-    print(outsideSymbol * widthPrompt)
-    if heightPrompt > 2:
-        for index in list(range(heightPrompt - 2)):
-            print(outsideSymbol + insideSymbol * (widthPrompt - 2) + outsideSymbol)
-    if heightPrompt != 1:
-        print(outsideSymbol * widthPrompt)
-        
+    boxWidth  = int(input("Please enter the width of the box: "))
+    boxHeight = int(input("Please enter the height of the box: "))
+    outlineSymbol = input("Please enter a symbol for the box outline: ")
+    innerSymbol = input("Please emter a symbol for the box fill: ")
+    innerRows = list(range(0 , boxHeight-2))
+    print(outlineSymbol * boxWidth)
+    for numOf  in innerRows:
+       print(outlineSymbol + (innerSymbol*(boxWidth -2)) + outlineSymbol)
+    if boxHeight > 1:
+        print(outlineSymbol * boxWidth)
 main()

@@ -1,20 +1,10 @@
-
 def main():
     width = int(input("Please enter the width of the box: "))
     height = int(input("Please enter the height of the box: "))
-    outline = input("Please enter a symbol for the box outline: ")
+    border = input("Please enter a symbol for the box outline: ")
     fill = input("Please enter a symbol for the box fill: ")
-
-    for row in range(height):
-        if row == 0 or row == height - 1:
-            print(outline * width)
-        elif width == 1:
-            print(outline)
-        else:
-            print(outline + (fill * (width - 2)) + outline)
-            
-            
-
+    print(border*width)
+    for r in range(height - 2):
+        print(border + fill*(width-2) + border)
+    print(border*width)
 main()
-
-                                                            

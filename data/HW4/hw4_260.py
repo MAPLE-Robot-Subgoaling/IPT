@@ -1,13 +1,4 @@
-
 def main():
-
-    num = int(input("Input a positive integer: "))
-    print(num)
-    while num != 1:
-        if num % 2 == 0:
-            num = num/2
-            print(int(num))
-        else:
-            num = 3*num + 1
-            print(int(num))
-main()
+    hailstone = input("Enter the starting height: ")
+    even = hailstone // 2
+    odd = (hailstone * 3) + 1

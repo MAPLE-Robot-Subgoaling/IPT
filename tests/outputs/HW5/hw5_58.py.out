@@ -1,0 +1,40 @@
+ --- modulename: hw5_58, funcname: <module>
+hw5_58.py(1): def main():
+hw5_58.py(12): main()
+ --- modulename: hw5_58, funcname: main
+hw5_58.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_58.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_58.py(4):     outline_symbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_58.py(5):     fill_symbol = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_58.py(6):     interior_rows = height - 2
+hw5_58.py(7):     interior_width = width - 2
+hw5_58.py(8):     print(outline_symbol * width)
+$$$$$
+hw5_58.py(9):     for n in range(0, (interior_rows)):
+hw5_58.py(10):         print(outline_symbol + (fill_symbol * interior_width) + outline_symbol)
+$###$
+hw5_58.py(9):     for n in range(0, (interior_rows)):
+hw5_58.py(10):         print(outline_symbol + (fill_symbol * interior_width) + outline_symbol)
+$###$
+hw5_58.py(9):     for n in range(0, (interior_rows)):
+hw5_58.py(10):         print(outline_symbol + (fill_symbol * interior_width) + outline_symbol)
+$###$
+hw5_58.py(9):     for n in range(0, (interior_rows)):
+hw5_58.py(11):     print(outline_symbol * width)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

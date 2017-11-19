@@ -1,14 +1,11 @@
-
 def main():
-    w = int(input("Please enter the width of the box: "))
-    h = int(input("Please enter the height of the box: "))
-    sym1 = input("Please enter a symbol for the box outline: ")
-    sym2 = input("Please enter a symbol for the inside of the box: ")
-    fill = w - 2
-    end = h - 1
-    for m in range(h):
-        if m == 0 or m == end:
-            print(sym1 * w)
+    wid = int(input("How wide do you want the box?: "))
+    height = int(input("How tall do you want the box?: "))
+    sym1 = input("Enter a symbol for the box outline: ")
+    sym2 = input("Enter a symbol for the box insides: ")
+    for y in range(0, (height)):
+        if (y == 0 or y == (height - 1)):
+            print(sym1 * wid)
         else:
-            print(sym1 + (sym2 * fill) + sym1)
+            print(sym1 + (sym2 * (wid - 2)) + sym1)
 main()

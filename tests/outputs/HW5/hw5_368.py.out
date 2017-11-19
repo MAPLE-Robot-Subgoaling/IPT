@@ -1,0 +1,47 @@
+ --- modulename: hw5_368, funcname: <module>
+hw5_368.py(1): def main ():
+hw5_368.py(13): main ()
+ --- modulename: hw5_368, funcname: main
+hw5_368.py(2):     width = int(input("What is the width of the box: "))
+What is the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_368.py(3):     height = int(input("What is the height of the box: "))
+What is the height of the box: hw5_368.py(4):     boxOutline = input("What symbol do you want to use for the box's outline: ")
+What symbol do you want to use for the box's outline: hw5_368.py(5):     boxFill = input("What symbol do you want to use to fill the box: ")
+What symbol do you want to use to fill the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_368.py(6):     upperLimit = height - 1
+hw5_368.py(7):     fillWidth = width - 2
+hw5_368.py(8):     for x in range (height):
+hw5_368.py(9):         if x == 0 or x == upperLimit:
+hw5_368.py(10):             print (boxOutline * width)
+$$$$$
+hw5_368.py(8):     for x in range (height):
+hw5_368.py(9):         if x == 0 or x == upperLimit:
+hw5_368.py(12):             print (boxOutline + (boxFill * fillWidth) + boxOutline)
+$###$
+hw5_368.py(8):     for x in range (height):
+hw5_368.py(9):         if x == 0 or x == upperLimit:
+hw5_368.py(12):             print (boxOutline + (boxFill * fillWidth) + boxOutline)
+$###$
+hw5_368.py(8):     for x in range (height):
+hw5_368.py(9):         if x == 0 or x == upperLimit:
+hw5_368.py(12):             print (boxOutline + (boxFill * fillWidth) + boxOutline)
+$###$
+hw5_368.py(8):     for x in range (height):
+hw5_368.py(9):         if x == 0 or x == upperLimit:
+hw5_368.py(10):             print (boxOutline * width)
+$$$$$
+hw5_368.py(8):     for x in range (height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

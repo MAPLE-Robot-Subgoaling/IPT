@@ -1,0 +1,38 @@
+ --- modulename: hw5_275, funcname: <module>
+hw5_275.py(1): def main():
+hw5_275.py(10): main()
+ --- modulename: hw5_275, funcname: main
+hw5_275.py(2):     widthNum = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_275.py(3):     heightNum = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_275.py(4):     symbolOut = str(input("Please enter a symbol for the box outline: "))
+Please enter a symbol for the box outline: hw5_275.py(5):     symbolFill = str(input("Please enter a symbol for the box fill: "))
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_275.py(6):     print(symbolOut * widthNum)
+$$$$$
+hw5_275.py(7):     for i in range(heightNum - 2) :
+hw5_275.py(8):         print(symbolOut + (widthNum - 2) * symbolFill + symbolOut)
+$###$
+hw5_275.py(7):     for i in range(heightNum - 2) :
+hw5_275.py(8):         print(symbolOut + (widthNum - 2) * symbolFill + symbolOut)
+$###$
+hw5_275.py(7):     for i in range(heightNum - 2) :
+hw5_275.py(8):         print(symbolOut + (widthNum - 2) * symbolFill + symbolOut)
+$###$
+hw5_275.py(7):     for i in range(heightNum - 2) :
+hw5_275.py(9):     print(symbolOut * widthNum)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

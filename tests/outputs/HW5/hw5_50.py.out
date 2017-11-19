@@ -1,0 +1,43 @@
+ --- modulename: hw5_50, funcname: <module>
+hw5_50.py(1): def main():
+hw5_50.py(18): main()
+ --- modulename: hw5_50, funcname: main
+hw5_50.py(2):     boxWidth = int(input("What is rhe desired width of the box? "))
+What is rhe desired width of the box?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_50.py(3):     boxHeight = int(input("What is the desired hight of the box? "))
+What is the desired hight of the box? hw5_50.py(4):     boxBorder = input("What is the desired border of the box? ")
+What is the desired border of the box? hw5_50.py(5):     boxFill = input("What is the desired interior of the box? ")
+What is the desired interior of the box?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_50.py(6):     horizontal  = boxBorder + (boxFill * (boxWidth - 2)) + boxBorder
+hw5_50.py(7):     center = [horizontal] * (boxHeight - 2)
+hw5_50.py(8):     vertical = [boxBorder] * (boxHeight - 2)
+hw5_50.py(9):     print (boxBorder * boxWidth)
+$$$$$
+hw5_50.py(10):     if boxWidth == 1:
+hw5_50.py(14):         for w in center:
+hw5_50.py(15):             print(w)
+$###$
+hw5_50.py(14):         for w in center:
+hw5_50.py(15):             print(w)
+$###$
+hw5_50.py(14):         for w in center:
+hw5_50.py(15):             print(w)
+$###$
+hw5_50.py(14):         for w in center:
+hw5_50.py(16):     if boxHeight > 1:
+hw5_50.py(17):         print(boxBorder * boxWidth)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

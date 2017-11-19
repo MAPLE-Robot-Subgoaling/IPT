@@ -1,16 +1,12 @@
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    if temp == 60:
-        scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-        if scale == "C":
-            print("At this tempature, water is a liquid.")
-        elif scale == "K":
-            print("At this tempature, water is a (frozen) solid.")
-    elif temp == 373.2 or 373:
-        scale2 = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-        if scale2 == "K":
-            print("At this tempature, water is a gas.")
-        elif scale2 == "C":
-            print("At this tempature, water is a gas")      
+    temperature = float(input("Please enter the temperature: "))
+    tempType    = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ").upper() 
+    if tempType == 'K':
+        temperature -= 273 
+    if temperature >= 100:
+        print("At this temperature, water is a gas")
+    elif temperature > 0:
+        print("At this temperature, water is a liquid")
+    else:
+        print("At this temperature, water is a solid")
 main()

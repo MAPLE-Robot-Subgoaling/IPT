@@ -1,0 +1,39 @@
+ --- modulename: hw5_431, funcname: <module>
+hw5_431.py(1): def main():
+hw5_431.py(11): main()
+ --- modulename: hw5_431, funcname: main
+hw5_431.py(2):     boxWidth = int(input("Please enter the width of your box: "))
+Please enter the width of your box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_431.py(3):     boxHeight = int(input("Please enter the height of your box: "))
+Please enter the height of your box: hw5_431.py(4):     boxOutline =  input("Please enter the symbol to outline your box with: ")
+Please enter the symbol to outline your box with: hw5_431.py(5):     boxFill = input("Please enter the symbol to fill your box with: ")
+Please enter the symbol to fill your box with:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_431.py(6):     print(boxOutline * boxWidth)
+$$$$$
+hw5_431.py(7):     for i in range(boxHeight - 2):
+hw5_431.py(8):         print(boxOutline + boxFill * (boxWidth - 2)+ boxOutline)
+$###$
+hw5_431.py(7):     for i in range(boxHeight - 2):
+hw5_431.py(8):         print(boxOutline + boxFill * (boxWidth - 2)+ boxOutline)
+$###$
+hw5_431.py(7):     for i in range(boxHeight - 2):
+hw5_431.py(8):         print(boxOutline + boxFill * (boxWidth - 2)+ boxOutline)
+$###$
+hw5_431.py(7):     for i in range(boxHeight - 2):
+hw5_431.py(9):     if boxHeight > 1:
+hw5_431.py(10):         print(boxOutline * boxWidth)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

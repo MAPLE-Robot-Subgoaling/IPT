@@ -1,14 +1,18 @@
-KELVIN_CONVERT = 273.15
 def main():
-	temperature = float(input("Please enter the temperature: "))
-	scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-	if scale == "K":
-		temperature -= KELVIN_CONVERT
-	if temperature <= 0:
-		print("At this temperature, water is a (frozen) solid.")
-	elif temperature >= 100:
-		print("At this temperature, water is a gas.")
-	else:
-		print("At this temperature, water is a liquid.")
-
+    temp = float(input("Enter the temperature : "))
+    scale = input("Enter 'C' for celcius or 'K' for Kelvin : ")
+    if scale == "C":
+        if temp <= 0:
+            print("The water is frozen solid.")
+        if temp > 0 and temp < 100:
+            print("The water is still a liquid")
+        if temp >= 100:
+            print("The water is now a gas.")
+    if scale == "K":
+        if temp <= 0:
+            print("The water is frozen solid.")
+        if temp > 0 and temp < 373.15:
+            print("The water is still a liquid.")
+        if temp >= 373.15:
+            print("The water is a gas.")
 main()

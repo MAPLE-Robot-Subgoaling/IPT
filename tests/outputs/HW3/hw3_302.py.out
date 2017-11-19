@@ -1,0 +1,30 @@
+ --- modulename: hw3_302, funcname: <module>
+hw3_302.py(1): def main():
+hw3_302.py(20): main()
+ --- modulename: hw3_302, funcname: main
+hw3_302.py(2):     water_sC= 0
+hw3_302.py(3):     water_gC= 100
+hw3_302.py(4):     water_sK= 273.16
+hw3_302.py(5):     water_gK= 373.16
+hw3_302.py(6):     num1= float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_302.py(7):     unit= input("Please enter 'C' or Celcius, or 'K' for Kelvin: ")
+Please enter 'C' or Celcius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_302.py(8):     if unit == "K" and num1 < water_sK:
+hw3_302.py(10):     elif unit == "K" and num1 > water_gK:
+hw3_302.py(11):         print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

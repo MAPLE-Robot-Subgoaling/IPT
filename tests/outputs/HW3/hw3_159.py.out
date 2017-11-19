@@ -1,0 +1,36 @@
+ --- modulename: hw3_159, funcname: <module>
+hw3_159.py(1): def main():
+hw3_159.py(25): main()
+ --- modulename: hw3_159, funcname: main
+hw3_159.py(2):     print ("This program will help determine what physical state your water is in.")
+This program will help determine what physical state your water is in.
+hw3_159.py(3):     temperature = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_159.py(4):     celcius = str("C")
+hw3_159.py(5):     kelvin = str("K")
+hw3_159.py(6):     tempScale = str(input("Please enter 'C' for Celcius, or 'K' for Kelvin: "))
+Please enter 'C' for Celcius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_159.py(7):     freezeCelcius = float("0.0")
+hw3_159.py(8):     gasCelcius = float("100.0")
+hw3_159.py(9):     if tempScale == "C":
+hw3_159.py(16):     freezeKelvin = float("273.15")
+hw3_159.py(17):     gasKelvin = float("373.15")
+hw3_159.py(18):     if tempScale == "K":
+hw3_159.py(19):         if temperature <= freezeKelvin:
+hw3_159.py(21):         elif temperature >= gasKelvin:
+hw3_159.py(22):             print ("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

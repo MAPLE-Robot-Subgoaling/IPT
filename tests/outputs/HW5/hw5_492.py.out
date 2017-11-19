@@ -1,0 +1,46 @@
+ --- modulename: hw5_492, funcname: <module>
+hw5_492.py(1): def main():
+hw5_492.py(16): main()
+ --- modulename: hw5_492, funcname: main
+hw5_492.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_492.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_492.py(4):     symbolO = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_492.py(5):     symbolI = input("Please enter a symbol for the inside of the box: ")
+Please enter a symbol for the inside of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_492.py(6):     firstline = (symbolO * width)
+hw5_492.py(7):     lastline = firstline
+hw5_492.py(8):     midlines = (str(symbolO)+ str(symbolI*(width-2))+ str(symbolO))
+hw5_492.py(9):     print()
+
+hw5_492.py(10):     print(firstline)
+$$$$$
+hw5_492.py(11):     for i in range(height - 2):
+hw5_492.py(12):         print(midlines)
+$###$
+hw5_492.py(11):     for i in range(height - 2):
+hw5_492.py(12):         print(midlines)
+$###$
+hw5_492.py(11):     for i in range(height - 2):
+hw5_492.py(12):         print(midlines)
+$###$
+hw5_492.py(11):     for i in range(height - 2):
+hw5_492.py(13):     if height > 1:
+hw5_492.py(14):         print(lastline)
+$$$$$
+hw5_492.py(15):     print()
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

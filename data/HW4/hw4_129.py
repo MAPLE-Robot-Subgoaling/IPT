@@ -1,19 +1,10 @@
-
 def main():
-    
-    stoneHeight = int(input("Please enter the height of the hailstone: "))
-
-    while (stoneHeight > 1):
-        
-        print(stoneHeight)
-        evenOrOdd = stoneHeight % 2
-
-        if (evenOrOdd == 0):
-            stoneHeight = stoneHeight // 2
-
-        if (evenOrOdd == 1):
-            stoneHeight = 1 + (stoneHeight * 3)
-    
-    print(stoneHeight)
-    
+    height = int(input("Please enter the starting height of the hailstone: "))
+    while height != 1:
+        print("The hailstone is currently at height", height)
+        if height % 2 == 0:
+            height = height // 2
+        else:
+            height = height * 3 + 1
+    print("Hail stopped at height 1")
 main()

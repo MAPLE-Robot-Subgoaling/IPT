@@ -1,0 +1,26 @@
+ --- modulename: hw3_134, funcname: <module>
+hw3_134.py(1): def main():
+hw3_134.py(16): main()
+ --- modulename: hw3_134, funcname: main
+hw3_134.py(2):     temp = float(input("Please enter a number"))
+Please enter a number --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_134.py(3):     value = input("Please enter a 'C' for celsius, or 'K' for Kevlin")
+Please enter a 'C' for celsius, or 'K' for Kevlin --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_134.py(4):     if value.upper() == "C":
+hw3_134.py(11):     elif value.upper() ==  "K":
+hw3_134.py(12):         if temp >= 373.16:
+hw3_134.py(14):         elif temp <= 273.16:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

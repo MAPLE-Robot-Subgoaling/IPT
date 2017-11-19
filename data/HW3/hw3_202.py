@@ -1,17 +1,17 @@
-def main():
-    temp = float(input("Please enter the temperature: "))
-    measure = input("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
-    
-    if (100 > temp > 0 and measure == 'C'):
-        print("At this temperature, water is liquid")
-    elif (212 > temp > 32 and measure == 'K'):
-        print("At this temperature, water is lquid")
-    elif (temp <= 0 and measure == 'C'):
-        print("At this temperature, water is frozen")
-    elif (temp <= 32 and measure == 'K'):
-        print("At this temperature, water is frozen")
-    elif (temp >= 100 and measure == 'C'):
-        print("At this temperature, water is gas")
-    elif (temp >= 212 and measure == 'K'):
-        print("At this temperature, water is gas")
-main()
+tempOfWater = float(input("please enter the temperature: "))
+tempType = input("please enter 'C' for celcius, or 'K' for Kelvin: ")
+if tempType == "C":
+    if tempOfWater <= 0:
+        print("at this temperature, water is a solid. ")
+    elif tempOfWater > 0 and tempOfWater <= 99:
+        print("at this temperature, water is a liquid. ")
+    elif tempOfWater >= 100:
+        print("at this temperature, water is a gas. ")
+elif tempType == "K":
+    newTempOfWater = tempOfWater - 273.15
+    if newTempOfWater <= 0:
+        print("at this temperature, water is a solid. ")
+    elif newTempOfWater > 0 and newTempOfWater <= 99:
+        print("at this temperature, water is a liquid. ")
+    elif newTempOfWater >= 100:
+        print("at this temperature, water is a gas. ")

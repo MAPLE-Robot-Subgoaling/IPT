@@ -1,0 +1,123 @@
+ --- modulename: hw5_358, funcname: <module>
+hw5_358.py(1): def main():
+hw5_358.py(21): main()
+ --- modulename: hw5_358, funcname: main
+hw5_358.py(2):     width = (int(input("Please enter the width of the box: ")))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_358.py(3):     height = (int(input("Please enter the height of the box: ")))
+Please enter the height of the box: hw5_358.py(4):     widthList = range(width)
+hw5_358.py(5):     heightList = range(height)
+hw5_358.py(6):     outline = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_358.py(7):     fill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_358.py(8):     line = ""
+hw5_358.py(9):     for x in heightList:
+hw5_358.py(10):         if(x == 0 or x == height - 1):
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(19):         print(line)
+$$$$$
+hw5_358.py(20):         line = ""
+hw5_358.py(9):     for x in heightList:
+hw5_358.py(10):         if(x == 0 or x == height - 1):
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(19):         print(line)
+$###$
+hw5_358.py(20):         line = ""
+hw5_358.py(9):     for x in heightList:
+hw5_358.py(10):         if(x == 0 or x == height - 1):
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(19):         print(line)
+$###$
+hw5_358.py(20):         line = ""
+hw5_358.py(9):     for x in heightList:
+hw5_358.py(10):         if(x == 0 or x == height - 1):
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(18):                     line = line + fill
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(15):                 if (w == 0 or w == width - 1):
+hw5_358.py(16):                     line = line + outline
+hw5_358.py(14):             for w in widthList:
+hw5_358.py(19):         print(line)
+$###$
+hw5_358.py(20):         line = ""
+hw5_358.py(9):     for x in heightList:
+hw5_358.py(10):         if(x == 0 or x == height - 1):
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(12):                 line = line + outline
+hw5_358.py(11):             for w in widthList:
+hw5_358.py(19):         print(line)
+$$$$$
+hw5_358.py(20):         line = ""
+hw5_358.py(9):     for x in heightList:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

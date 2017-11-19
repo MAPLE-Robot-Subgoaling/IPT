@@ -1,28 +1,18 @@
-
 def main():
-    FREEZE_C = 0
-    BOIL_C = 100
-    FREEZE_K = 273
-    BOIL_K = 373
-    
-    tempNum = float(input("Please enter the temperature: "))
-    tempMes = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    
-    if tempMes == "C" or tempMes == "c":
-        if tempNum <= FREEZE_C:
-            print("At this temperature, water is a solid.")
-        elif tempNum >= BOIL_C:
-            print("At this temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid.")
-    elif tempMes == "K" or tempMes == "k":
-        if tempNum <= FREEZE_K:
-            print("At this temperature, water is a solid.")
-        elif tempNum >= BOIL_K:
-            print("At this temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid.")
+    temp = float(input("Please enter tempuature"))
+    degrees = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin:"))
+    if temp >= 100 and degrees == 'C':
+        print(" At this tempurature, water is a gas.")
+    elif temp <= 0 and degrees == 'C':
+        print(" At this tempurature, water is a solid")
+    elif (temp < 100 and temp > 0) and degrees == 'C':
+        print(" At this tempurature, water is a liquid")
+    elif temp >= 373.2 and degrees == 'K':
+        print("At this tempurature, water is a gas")
+    elif ( temp < 373.2 and temp > 273.2) and degrees == 'K':
+        print("At this tempurature, water is a liquid")
+    elif temp <= 273.2 and degrees == 'K':
+        print("At this tempurature, water is a solid")
     else:
-        print("Please enter a valid measurement.")
-
+        print("Invalid data")
 main()

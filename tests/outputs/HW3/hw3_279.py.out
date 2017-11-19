@@ -1,0 +1,39 @@
+ --- modulename: hw3_279, funcname: <module>
+hw3_279.py(1): def main():
+hw3_279.py(26): main()
+ --- modulename: hw3_279, funcname: main
+hw3_279.py(2):     K_FREEZING_POINT = 273
+hw3_279.py(3):     K_BOILING_POINT = 373
+hw3_279.py(4):     C_FREEZING_POINT = 0
+hw3_279.py(5):     C_BOILING_POINT = 100
+hw3_279.py(6):     print()
+
+hw3_279.py(7):     print("I will tell you whether water is in its solid, liquid or gaseous state given the temperature and scale (Celsius or Kelvin).")
+I will tell you whether water is in its solid, liquid or gaseous state given the temperature and scale (Celsius or Kelvin).
+hw3_279.py(8):     print()
+
+hw3_279.py(9):     temperature = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_279.py(10):     scale = str(input("Please enter \'C\' for Celsius, or \'K\' for Kelvin: "))
+Please enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_279.py(11):     if scale == "C":
+hw3_279.py(19):         if temperature < K_FREEZING_POINT:
+hw3_279.py(21):         elif temperature > K_BOILING_POINT:
+hw3_279.py(22):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+hw3_279.py(25):     print()
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,0 +1,39 @@
+ --- modulename: hw5_141, funcname: <module>
+hw5_141.py(1): def main():
+hw5_141.py(11): main()
+ --- modulename: hw5_141, funcname: main
+hw5_141.py(2):     width = int(input('What is the width of the box: '))
+What is the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_141.py(3):     height = int(input("What is the height of the box: "))
+What is the height of the box: hw5_141.py(4):     outlined = input('What symbol will the box be outlined in: ')
+What symbol will the box be outlined in: hw5_141.py(5):     filled = input('What symbol will the box be filled with: ')
+What symbol will the box be filled with:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_141.py(6):     print (outlined * width)
+$$$$$
+hw5_141.py(7):     for i in range(height - 2):
+hw5_141.py(8):         print(outlined + filled * (width - 2) + outlined)
+$###$
+hw5_141.py(7):     for i in range(height - 2):
+hw5_141.py(8):         print(outlined + filled * (width - 2) + outlined)
+$###$
+hw5_141.py(7):     for i in range(height - 2):
+hw5_141.py(8):         print(outlined + filled * (width - 2) + outlined)
+$###$
+hw5_141.py(7):     for i in range(height - 2):
+hw5_141.py(9):     if height > 1:
+hw5_141.py(10):         print (outlined * width)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

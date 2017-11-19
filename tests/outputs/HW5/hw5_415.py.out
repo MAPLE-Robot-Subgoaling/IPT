@@ -1,0 +1,155 @@
+ --- modulename: hw5_415, funcname: <module>
+hw5_415.py(1): def main():
+hw5_415.py(18): main()
+ --- modulename: hw5_415, funcname: main
+hw5_415.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_415.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_415.py(4):     symOut = input("Please enter a symbol for the bow ouline: ")
+Please enter a symbol for the bow ouline: hw5_415.py(5):     symFill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_415.py(6):     for num in range(height):
+hw5_415.py(7):         prnOut = ""
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(17):         print(prnOut)
+$$$$$
+hw5_415.py(6):     for num in range(height):
+hw5_415.py(7):         prnOut = ""
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(17):         print(prnOut)
+$###$
+hw5_415.py(6):     for num in range(height):
+hw5_415.py(7):         prnOut = ""
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(17):         print(prnOut)
+$###$
+hw5_415.py(6):     for num in range(height):
+hw5_415.py(7):         prnOut = ""
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(15):                     temp = str(symFill)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(12):                 if num2 == 0 or num2 == width - 1:
+hw5_415.py(13):                     temp = str(symOut)
+hw5_415.py(16):                 prnOut += temp
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(17):         print(prnOut)
+$###$
+hw5_415.py(6):     for num in range(height):
+hw5_415.py(7):         prnOut = ""
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(9):             if num == 0 or num == height - 1:
+hw5_415.py(10):                 prnOut += symOut
+hw5_415.py(8):         for num2 in range(width):
+hw5_415.py(17):         print(prnOut)
+$$$$$
+hw5_415.py(6):     for num in range(height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

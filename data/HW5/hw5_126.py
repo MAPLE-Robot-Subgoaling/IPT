@@ -1,14 +1,10 @@
-
-
 def main():
-   w = int(input("Please enter the width of the box: "))
-   h = int(input("Please enter the height of the box: "))
-   outside = input("Please enter a symbol for the box outline: ")
-   inside = input("Please enter a symbol for the box fill: ")
-
-   for in range(w):
-      for j in range(h):
-         print(outside * if in [0, h-1] or j in [0, w-1] else inside, end = '')
-      print()
-
+    width = int(input("Enter the width of the box"))
+    length = int(input("Enter the length of the box"))
+    symb = input("Enter a symbol for the outline of the box")
+    symb2 = input("Enter a symbol for the box fill.")
+    print(symb * width)
+    for n in range(0, length-1):
+        print( symb + symb2*(width-2) + symb)
+    print(symb * width)
 main()

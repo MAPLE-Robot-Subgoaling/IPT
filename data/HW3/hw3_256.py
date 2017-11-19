@@ -1,24 +1,18 @@
-
-FREEZE_POINT_C = 0.0
-FREEZE_POINT_K = 273.2
-BOIL_POINT_C = 100.0
-BOIL_POINT_K = 373.2
-
 def main():
     temp = float(input("Please enter the temperature: "))
-    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if(tempScale == 'C'):
-        if(temp <= FREEZE_POINT_C):
-            print("At this temperature, water is a (frozen) solid.")
-        elif(temp >= BOIL_POINT_C):
+    COrK = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if COrK == "C":
+        if temp > 100:
             print("At this temperature, water is a gas.")
-        else:
+        elif temp <=100 and temp > 0:
             print("At this temperature, water is a liquid.")
-    else:
-        if(temp <= FREEZE_POINT_K):
-            print("At this temperature, water is a (frozen) solid.")
-        elif(temp >= BOIL_POINT_K):
+        else:
+            print("At this temperature, water is a solid.")
+    if COrK == "K":
+        if temp > 373:
             print("At this temperature, water is a gas.")
-        else:
+        elif temp <=373 and temp > 273:
             print("At this temperature, water is a liquid.")
+        else:
+            print("At this temperature, water is a solid.")
 main()

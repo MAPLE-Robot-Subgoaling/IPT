@@ -1,0 +1,57 @@
+ --- modulename: hw5_229, funcname: <module>
+hw5_229.py(1): def partTwo():
+hw5_229.py(14): partTwo()
+ --- modulename: hw5_229, funcname: partTwo
+hw5_229.py(2):     BOX_WIDTH = int(input("Please enter a box width: \n"))
+Please enter a box width: 
+ --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_229.py(3):     BOX_HEIGHT = int(input("Please enter a box height: \n"))
+Please enter a box height: 
+hw5_229.py(4):     BOX_OUTLINE_SYMBOL = (input("Please enter a box outline symbol: \n"))
+Please enter a box outline symbol: 
+hw5_229.py(5):     BOX_FILL_SYMBOL = (input("Please enter a box fill symbol: \n"))
+Please enter a box fill symbol: 
+ --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_229.py(6):     BOX_STRING = ""
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(8):        if(runningRow == 0 or runningRow == BOX_HEIGHT - 1):
+hw5_229.py(9):            BOX_STRING += BOX_OUTLINE_SYMBOL * BOX_WIDTH
+hw5_229.py(12):        BOX_STRING += "\n"
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(8):        if(runningRow == 0 or runningRow == BOX_HEIGHT - 1):
+hw5_229.py(11):            BOX_STRING += BOX_OUTLINE_SYMBOL + BOX_FILL_SYMBOL * (BOX_WIDTH - 2) + BOX_OUTLINE_SYMBOL
+hw5_229.py(12):        BOX_STRING += "\n"
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(8):        if(runningRow == 0 or runningRow == BOX_HEIGHT - 1):
+hw5_229.py(11):            BOX_STRING += BOX_OUTLINE_SYMBOL + BOX_FILL_SYMBOL * (BOX_WIDTH - 2) + BOX_OUTLINE_SYMBOL
+hw5_229.py(12):        BOX_STRING += "\n"
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(8):        if(runningRow == 0 or runningRow == BOX_HEIGHT - 1):
+hw5_229.py(11):            BOX_STRING += BOX_OUTLINE_SYMBOL + BOX_FILL_SYMBOL * (BOX_WIDTH - 2) + BOX_OUTLINE_SYMBOL
+hw5_229.py(12):        BOX_STRING += "\n"
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(8):        if(runningRow == 0 or runningRow == BOX_HEIGHT - 1):
+hw5_229.py(9):            BOX_STRING += BOX_OUTLINE_SYMBOL * BOX_WIDTH
+hw5_229.py(12):        BOX_STRING += "\n"
+hw5_229.py(7):     for runningRow in range(BOX_HEIGHT):
+hw5_229.py(13):     print(BOX_STRING)
+$$$$$
+$###$
+$###$
+$###$
+$$$$$
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

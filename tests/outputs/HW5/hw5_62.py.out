@@ -1,0 +1,130 @@
+ --- modulename: hw5_62, funcname: <module>
+hw5_62.py(1): def main():
+hw5_62.py(19): main()
+ --- modulename: hw5_62, funcname: main
+hw5_62.py(2):     width = int(input("Enter width"))
+Enter width --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_62.py(3):     height = int(input("Enter height"))
+Enter heighthw5_62.py(4):     symbol = input("Enter symbol")
+Enter symbolhw5_62.py(5):     fill = input("Enter fill")
+Enter fill --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_62.py(6):     for i in range(height-1):
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(9):                print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(9):                print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(9):                print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(9):                print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(6):     for i in range(height-1):
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(14):                    print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(6):     for i in range(height-1):
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(14):                    print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(6):     for i in range(height-1):
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(14):                    print(symbol)
+$
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(8):            if i ==0:
+hw5_62.py(10):            elif i == height-1:
+hw5_62.py(13):                if e == 0:
+hw5_62.py(15):                elif e== width-1:
+hw5_62.py(18):                    print(fill)
+#
+hw5_62.py(7):        for e in range(width-1):
+hw5_62.py(6):     for i in range(height-1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

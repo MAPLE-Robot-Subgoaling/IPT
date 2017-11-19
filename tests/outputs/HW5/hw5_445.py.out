@@ -1,0 +1,48 @@
+ --- modulename: hw5_445, funcname: <module>
+hw5_445.py(1): def main():
+hw5_445.py(14): main()
+ --- modulename: hw5_445, funcname: main
+hw5_445.py(2):     boxWidth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_445.py(3):     boxHeight = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_445.py(4):     boxOut = input("Please enter the symbol for the box outline: ")
+Please enter the symbol for the box outline: hw5_445.py(5):     boxFill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_445.py(6):     w = boxWidth
+hw5_445.py(7):     h = boxHeight
+hw5_445.py(8):     o = boxOut
+hw5_445.py(9):     f = boxFill
+hw5_445.py(10):     print(w*(o))
+$$$$$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(12):         print(o*(1) + f*(w-2) + o*(1))
+$###$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(12):         print(o*(1) + f*(w-2) + o*(1))
+$###$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(12):         print(o*(1) + f*(w-2) + o*(1))
+$###$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(12):         print(o*(1) + f*(w-2) + o*(1))
+$###$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(12):         print(o*(1) + f*(w-2) + o*(1))
+$###$
+hw5_445.py(11):     for h in range(boxHeight):
+hw5_445.py(13):     print(w*(o))
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,21 +1,19 @@
-
 def main():
-
-    userTemp = float(input("Please enter the temperature: "))
-    userScale = input("Please enter 'C' for Celcuis, or 'K' for Kelvin: ")
-    if userScale == "C":
-        if userTemp <= 0:
-            print("At this temperature, water is a (frozen) solid.")
-        elif userTemp > 0 and userTemp < 100:
-            print("At this temperature, water is a liquid.")
-        else:
-            print("At this temperature, water is a gas.")
-    elif userScale == "K":
-        if userTemp <= 273.2:
-            print("At this temperature, water is a (frozen) solid.")
-        elif userTemp > 273.2 and userTemp < 373.2:
-            print("At this temperature, water is a liquid.")
-        else:
-            print("At this temperatue, water is a gas.")
-
+    temp = float(input("Please enter a temperature: "))
+    scale = ""
+    while (scale != "C") and (scale != "K"):
+        scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if scale == "C":
+        FREEZING_POINT = 0
+        BOILING_POINT = 100
+    elif scale == "K":
+        FREEZING_POINT = 273.15
+        BOILING_POINT = 373.15
+    if temp <= FREEZING_POINT:
+        print("At this temperature, water is a solid")
+    elif (temp > FREEZING_POINT) and (temp < BOILING_POINT):
+        print("At this temperature, water is a liquid")
+    elif temp >= BOILING_POINT:
+        print("At this temperature, water is a gas")
 main()
+print()

@@ -1,0 +1,32 @@
+ --- modulename: hw3_42, funcname: <module>
+hw3_42.py(1): MELTING_POINT_C = 0.0
+hw3_42.py(2): MELTING_POINT_K = 273.15
+hw3_42.py(3): BOILING_POINT_C = 100
+hw3_42.py(4): BOILING_POINT_K = 373.15
+hw3_42.py(5): def main():
+hw3_42.py(24): main()
+ --- modulename: hw3_42, funcname: main
+hw3_42.py(6):     temp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_42.py(7):     measure = input("Please enter 'C' for Celsius and 'K' for Kelvin: ")
+Please enter 'C' for Celsius and 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_42.py(8):     if measure == "C":
+hw3_42.py(15):     elif measure == "K":
+hw3_42.py(16):         if temp <= MELTING_POINT_K:
+hw3_42.py(18):         elif temp > MELTING_POINT_K and temp < BOILING_POINT_K:
+hw3_42.py(21):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

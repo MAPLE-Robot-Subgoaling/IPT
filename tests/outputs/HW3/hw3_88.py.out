@@ -1,0 +1,4 @@
+ --- modulename: hw3_88, funcname: <module>
+hw3_88.py(1): def main():
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

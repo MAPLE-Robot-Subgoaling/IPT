@@ -1,18 +1,30 @@
-
-K_CONSTANT = 273.15
-
+FREEZING_POINT_OF_WATER_CELSIUS=0
+BOILING_POINT_OF_WATER_CELSIUS=100
+FREEZING_POINT_OF_WATER_KELVIN=273.15
+BOILING_POINT_OF_WATER_KELVIN=373.15
 def main():
-    print("This program will print out the state of water at a given temperature.")
     temp = float(input("Please enter the temperature: "))
-    scale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin': "))
-    if scale == 'K':
-        temp = temp - K_CONSTANT
-    if temp > 0 and temp < 100:
-        print("The current state is liquid")
-    if temp >= 100:
-        print("The current state is gas")
-    if temp <= 0:
-        print("The current state is solid")
-    
-
+    tempUnit = str(input("Please enter 'C' for Celsius or 'K' for Kelvin: "))
+    if tempUnit == "C" :
+        if temp < FREEZING_POINT_OF_WATER_CELSIUS :
+            print("At this temperature, water is a solid")
+        elif temp > BOILING_POINT_OF_WATER_CELSIUS :
+            print("At this temperature, water is a gas")
+        elif temp == FREEZING_POINT_OF_WATER_CELSIUS :
+            print("At this temperature, water is both solid and liquid")
+        elif temp == BOILING_POINT_OF_WATER_CELSIUS :
+            print("At this temperature, water is both liquid and gas")
+        else :
+            print("At this temperature, water is a liquid")
+    else :
+        if temp < FREEZING_POINT_OF_WATER_KELVIN :
+            print("At this temperature, water is a solid")
+        elif temp > BOILING_POINT_OF_WATER_KELVIN : 
+            print("At this temperature, water is a gas")
+        elif temp == FREEZING_POINT_OF_WATER_KELVIN :
+            print("At this temperature, water is both a solid and liquid")
+        elif temp == BOILING_POINT_OF_WATER_KELVIN :
+            print("At this temperature, water is both a liquid and gas")
+        else :
+            print("At this temperature, water is a liquid")
 main()

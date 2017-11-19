@@ -1,20 +1,18 @@
-
-
-def main():
-
+def main(): 
+    height = int(input("Please enter the height of the box: "))
     width = int(input("Please enter the width of the box: "))
-    height = int(input("Please enter the height if the box: "))
     outline = input("Please enter a symbol for the box outline: ")
     fill = input("Please enter a symbol for the box fill: ")
-
-    topBottomBorder = outline * width
-    middleRows = outline + (fill * (width-2)) + outline
-
-    for b in range (0, height):
-        if ((b == 0) or (b == height-1)):
-            print(topBottomBorder)
-        else:
-            print(middleRows)
-    
-
+    widthLine = outline + (fill * (width - 2)) + outline
+    centerPieces = [widthLine] * (height - 2)  
+    middleHeight = [outline] * (height-2) 
+    print(outline * width)
+    if width == 1: 
+        for w in middleHeight:
+            print(w)
+    else: 
+        for w in centerPieces: 
+            print(w)
+    if height > 1:
+        print(outline * width) 
 main()

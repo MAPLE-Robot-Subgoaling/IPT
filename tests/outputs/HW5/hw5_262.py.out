@@ -1,0 +1,45 @@
+ --- modulename: hw5_262, funcname: <module>
+hw5_262.py(1): def main():
+hw5_262.py(11): main()
+ --- modulename: hw5_262, funcname: main
+hw5_262.py(2):     wid_box = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_262.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_262.py(4):     symbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_262.py(5):     fill = input("Please enter a symbol for the box fill: ")    
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_262.py(6):     for i in range (height):
+hw5_262.py(7):         if i == 0 or i == height - 1:
+hw5_262.py(8):             print(height * symbol)
+$$$$$
+hw5_262.py(6):     for i in range (height):
+hw5_262.py(7):         if i == 0 or i == height - 1:
+hw5_262.py(10):             print(symbol + ((height - 2) * fill) + symbol)
+$###$
+hw5_262.py(6):     for i in range (height):
+hw5_262.py(7):         if i == 0 or i == height - 1:
+hw5_262.py(10):             print(symbol + ((height - 2) * fill) + symbol)
+$###$
+hw5_262.py(6):     for i in range (height):
+hw5_262.py(7):         if i == 0 or i == height - 1:
+hw5_262.py(10):             print(symbol + ((height - 2) * fill) + symbol)
+$###$
+hw5_262.py(6):     for i in range (height):
+hw5_262.py(7):         if i == 0 or i == height - 1:
+hw5_262.py(8):             print(height * symbol)
+$$$$$
+hw5_262.py(6):     for i in range (height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

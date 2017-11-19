@@ -1,20 +1,22 @@
-
 def main():
-    print("Hello!")
-    waterTemp=int(input("Please enter the temprature:"))
-    tempUnit=input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
-    if tempUnit == "C":
-        if waterTemp <= 0:
+    temperature = "0"
+    tempScale = "C"
+    print("Hello and welcome to the water state wizard!")
+    temperature = float(input("Please enter the temperature: "))
+    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if tempScale == "C":
+        if temperature <= 0:
             print("At this temperature, water is a solid.")
-        if 0 < waterTemp <= 99:
+        elif temperature <= 100:
             print("At this temperature, water is a liquid.")
-        if 100 <= waterTemp:
+        else:
             print("At this temperature, water is a gas.")
-    if tempUnit == "K":
-        if waterTemp <= 273:
+    else:
+        if temperature <= 273.16:
             print("At this temperature, water is a solid.")
-        if 273 < waterTemp < 372:
+        elif temperature <= 373.16:
             print("At this temperature, water is a liquid.")
-        if 373 <= waterTemp:
+        else:
             print("At this temperature, water is a gas.")
+    print("Thank you for using our water state wizard!")
 main()

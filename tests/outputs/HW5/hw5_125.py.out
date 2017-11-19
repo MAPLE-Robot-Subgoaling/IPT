@@ -1,0 +1,41 @@
+ --- modulename: hw5_125, funcname: <module>
+hw5_125.py(1): def main():
+hw5_125.py(15): main()
+ --- modulename: hw5_125, funcname: main
+hw5_125.py(2):     width = int(input("Please enter the width of the box:  "))
+Please enter the width of the box:   --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_125.py(3):     height = int(input("Please enter the height of the box:  "))
+Please enter the height of the box:  hw5_125.py(4):     perimeter  = input("Please enter a symbol for the bout to outline")
+Please enter a symbol for the bout to outlinehw5_125.py(5):     guts = input("please enter a symbol for the box to fill:  ")
+please enter a symbol for the box to fill:   --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_125.py(6):     if( height != 1 and width !=1):
+hw5_125.py(7):         print( width * perimeter)
+$$$$$
+hw5_125.py(8):         insideWidth =  width - 2
+hw5_125.py(9):         insideHeight = height - 2
+hw5_125.py(10):         for i in range (insideHeight):
+hw5_125.py(11):             print(perimeter + (guts * insideWidth) + perimeter)
+$###$
+hw5_125.py(10):         for i in range (insideHeight):
+hw5_125.py(11):             print(perimeter + (guts * insideWidth) + perimeter)
+$###$
+hw5_125.py(10):         for i in range (insideHeight):
+hw5_125.py(11):             print(perimeter + (guts * insideWidth) + perimeter)
+$###$
+hw5_125.py(10):         for i in range (insideHeight):
+hw5_125.py(12):         print(width * perimeter)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

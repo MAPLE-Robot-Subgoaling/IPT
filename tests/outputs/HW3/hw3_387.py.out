@@ -1,0 +1,31 @@
+ --- modulename: hw3_387, funcname: <module>
+hw3_387.py(1): def main():
+hw3_387.py(28): main()
+ --- modulename: hw3_387, funcname: main
+hw3_387.py(2):     temp = int(input("Input a temperature: "))
+Input a temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_387.py(3):     kOrC = input("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
+Please enter 'C' for Celcius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_387.py(4):     BOIL_CELCIUS = 100
+hw3_387.py(5):     FREEZE_CELCIUS = 0
+hw3_387.py(6):     BOIL_KELVIN = 373
+hw3_387.py(7):     FREEZE_KELVIN = 273
+hw3_387.py(8):     if kOrC == "C":
+hw3_387.py(17):     elif kOrC == "K":
+hw3_387.py(18):         if temp >= BOIL_KELVIN:
+hw3_387.py(19):             print("Your water is a gas")
+Your water is a gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,0 +1,46 @@
+ --- modulename: hw5_46, funcname: <module>
+hw5_46.py(1): def main():
+hw5_46.py(12): main()
+ --- modulename: hw5_46, funcname: main
+hw5_46.py(2):   width = int(input("Please enter the desired width of the box: "))
+Please enter the desired width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_46.py(3):   height = int(input("Please enter the desired height of the box: "))
+Please enter the desired height of the box: hw5_46.py(4):   border = input("Please enter a symbol to border the box: ")
+Please enter a symbol to border the box: hw5_46.py(5):   fill = input("Please enter a symbol to fill the box: ")
+Please enter a symbol to fill the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_46.py(6):   inBorder = width - 2
+hw5_46.py(7):   for h in range(height):
+hw5_46.py(8):     if h != 0 and h != (height - 1):
+hw5_46.py(11):       print(border * width)
+$$$$$
+hw5_46.py(7):   for h in range(height):
+hw5_46.py(8):     if h != 0 and h != (height - 1):
+hw5_46.py(9):       print(border + (fill * inBorder) + border)
+$###$
+hw5_46.py(7):   for h in range(height):
+hw5_46.py(8):     if h != 0 and h != (height - 1):
+hw5_46.py(9):       print(border + (fill * inBorder) + border)
+$###$
+hw5_46.py(7):   for h in range(height):
+hw5_46.py(8):     if h != 0 and h != (height - 1):
+hw5_46.py(9):       print(border + (fill * inBorder) + border)
+$###$
+hw5_46.py(7):   for h in range(height):
+hw5_46.py(8):     if h != 0 and h != (height - 1):
+hw5_46.py(11):       print(border * width)
+$$$$$
+hw5_46.py(7):   for h in range(height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

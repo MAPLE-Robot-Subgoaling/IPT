@@ -1,0 +1,34 @@
+ --- modulename: hw3_165, funcname: <module>
+hw3_165.py(1): def main():
+hw3_165.py(20): main()
+ --- modulename: hw3_165, funcname: main
+hw3_165.py(2):     GAS_K = 373.16
+hw3_165.py(3):     SOLID_K = 273.16
+hw3_165.py(4):     GAS_C = 100
+hw3_165.py(5):     SOLID_C = 0
+hw3_165.py(6):     temp = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_165.py(7):     scale = input("Please enter a 'C' for Celsius and a 'K' for Kelvin: ")
+Please enter a 'C' for Celsius and a 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_165.py(8):     if scale == "K" and temp >= GAS_K:
+hw3_165.py(9):         print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+hw3_165.py(10):     if scale == "K" and temp <= SOLID_K:
+hw3_165.py(12):     if scale == "K" and temp < GAS_K and temp > SOLID_K:
+hw3_165.py(14):     if scale == "C" and temp >= GAS_C:
+hw3_165.py(16):     if scale == "C" and temp <= SOLID_C:
+hw3_165.py(18):     if scale == "C" and temp < GAS_C and temp > SOLID_C: 
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,22 +1,22 @@
-
 def main():
-    width=int(input('Please enter the width of the box: '))
-    height=int(input('Please enter the height of the box: '))
-    out=input('Please enter the symbol for the box outline: ')
-    fill=input('Please enter the symbol for the box fill: ')
-    row_count=1
-    col_count=1
-    while row_count<=height:
-        while col_count<=width:
-            if row_count==1 or row_count==height or col_count==1 or col_count==width:
-                print(out, end='')
-                col_count=col_count+1
-            else:
-                print(fill, end='')
-                col_count=col_count+1
-
-        col_count=1
-        print(' ')
-        row_count=row_count+1
-
+    width = int(input(" Please enter the width of the box:  "))
+    height = int(input(" Please enter the height of the box:  "))
+    symbol_o = input(" Please enter a symbol for the box outline:  ")
+    symbol_i = input(" Please enter a symbol for the box fill:  ")
+    height = height - 2
+    if height <= 1 and width <= 1:
+        print(symbol_o)
+    elif width == 2 and (height + 2) == 2:
+        print(symbol_o + symbol_o)
+        print(symbol_o + symbol_o)
+    elif height <= 1:
+        print(symbol_o + symbol_i * (width - 2) + symbol_o)
+    elif width <= 1:
+        for w in range(0,(height + 2)):
+            print(symbol_o)    
+    else :
+        print(symbol_o * width)
+        for w in range(0,height) :
+            print(symbol_o + (symbol_i * (width - 2)) + symbol_o)
+        print(symbol_o * width)
 main()

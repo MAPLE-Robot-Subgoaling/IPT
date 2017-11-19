@@ -1,0 +1,40 @@
+ --- modulename: hw5_178, funcname: <module>
+hw5_178.py(1): def main():
+hw5_178.py(12): main()
+ --- modulename: hw5_178, funcname: main
+hw5_178.py(2):     length = int(input("Enter your length of the triangle: "))
+Enter your length of the triangle:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_178.py(3):     width = int(input("Enter your width: "))
+Enter your width: hw5_178.py(4):     outline = input("Please enter a symbol for outline: ")
+Please enter a symbol for outline: hw5_178.py(5):     filler = input("Please enter a symbol to fill the box: ")
+Please enter a symbol to fill the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_178.py(6):     inner_size = length - 2
+hw5_178.py(7):     print (outline * length)
+$$$$$
+hw5_178.py(8):     def printRect (length,width,outline,filler):
+hw5_178.py(11):     printRect(length,width,outline,filler)
+ --- modulename: hw5_178, funcname: printRect
+hw5_178.py(9):         for i in range(inner_size):
+hw5_178.py(10):             print (outline + filler * inner_size + outline)
+$###$
+hw5_178.py(9):         for i in range(inner_size):
+hw5_178.py(10):             print (outline + filler * inner_size + outline)
+$###$
+hw5_178.py(9):         for i in range(inner_size):
+hw5_178.py(10):             print (outline + filler * inner_size + outline)
+$###$
+hw5_178.py(9):         for i in range(inner_size):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

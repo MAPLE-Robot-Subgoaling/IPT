@@ -1,0 +1,29 @@
+ --- modulename: hw3_330, funcname: <module>
+hw3_330.py(1): def main():
+hw3_330.py(18): main()
+ --- modulename: hw3_330, funcname: main
+hw3_330.py(2):     Temp = float(input("Please enter a tempreture : "))
+Please enter a tempreture :  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_330.py(3):     CK = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+Please enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_330.py(4):     if CK == 'C':
+hw3_330.py(11):     elif CK == 'K':
+hw3_330.py(12):         if Temp >= 0 and Temp <= 273:
+hw3_330.py(14):         if Temp > 273 and Temp <= 373:
+hw3_330.py(16):         if Temp > 373:
+hw3_330.py(17):             print("At this temperature, water is gas ")        
+At this temperature, water is gas 
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

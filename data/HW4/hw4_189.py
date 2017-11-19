@@ -1,18 +1,14 @@
-LOOP_CONTROL = 1
-EVEN = 0
-EVEN_II = 2
-ODD = 1
-DIVISOR = 2
-MULTI = 3
-ADD = 1
 def main():
-    height = int(input("Please enter the starting height of the hailstone: "))
-    while(height != LOOP_CONTROL):
-        print("Hail is currently at height", height)
-        mod = int(height % DIVISOR)
-        if(mod == EVEN or mod == EVEN_II):
-            height = int(height / DIVISOR)
-        elif(mod == ODD):
-            height = int(height * MULTI + ADD)
-    print("Hail stopped at height 1")
+    hailStone=int(input("Please enter the starting height of the hailstones: "))
+    HAIL_EXIT=1
+    if(hailStone<HAIL_EXIT):
+        while((hailStone<HAIL_EXIT)):
+            hailStone=int(input("Please enter a starting hailstone height greater than '0': "))
+    while(hailStone!=HAIL_EXIT):
+        while((hailStone%2==0) and (hailStone!=HAIL_EXIT)):
+            hailStone=(hailStone/2)
+            print("Hail is currently at height: ",int(hailStone))
+        while((hailStone%2!=0) and (hailStone!=HAIL_EXIT)):
+            hailStone=((hailStone*3)+1)
+            print("Hail is currently at height: ",int(hailStone))
 main()

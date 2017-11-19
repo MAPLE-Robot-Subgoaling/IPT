@@ -1,0 +1,47 @@
+ --- modulename: hw5_98, funcname: <module>
+hw5_98.py(1): def main():
+hw5_98.py(13): main()
+ --- modulename: hw5_98, funcname: main
+hw5_98.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_98.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_98.py(4):     outline_symbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_98.py(5):     fill_symbol = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_98.py(6):     widthList = list(range(0, width + 1))
+hw5_98.py(7):     heightList = list(range(0, height))
+hw5_98.py(8):     for n in heightList:
+hw5_98.py(9):         if n == 0 or n == height-1:
+hw5_98.py(10):              print(outline_symbol*width)
+$$$$$
+hw5_98.py(8):     for n in heightList:
+hw5_98.py(9):         if n == 0 or n == height-1:
+hw5_98.py(12):              print(outline_symbol + (fill_symbol*(width-2)) + outline_symbol)
+$###$
+hw5_98.py(8):     for n in heightList:
+hw5_98.py(9):         if n == 0 or n == height-1:
+hw5_98.py(12):              print(outline_symbol + (fill_symbol*(width-2)) + outline_symbol)
+$###$
+hw5_98.py(8):     for n in heightList:
+hw5_98.py(9):         if n == 0 or n == height-1:
+hw5_98.py(12):              print(outline_symbol + (fill_symbol*(width-2)) + outline_symbol)
+$###$
+hw5_98.py(8):     for n in heightList:
+hw5_98.py(9):         if n == 0 or n == height-1:
+hw5_98.py(10):              print(outline_symbol*width)
+$$$$$
+hw5_98.py(8):     for n in heightList:
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

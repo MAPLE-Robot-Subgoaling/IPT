@@ -1,23 +1,12 @@
-
 def main():
-    height = 0
-    STOP_HEIGHT = 1     #The height to stop the simulation at
-    numberType = ""     #Will be used to store whether the current Height is odd or even
-    ONE = 1
-    TWO = 2
-    THREE = 3
-    height = int(input("What height is the hailstone at: "))
-    while height != 1:
-        print("THe hailstone is currently at height:", height) 
-        if height % TWO == 0:                              #These if else statements
-            numberType = "even"                          #Determine if the height 
-        else:                                            #is even or odd.
-            numberType = "odd"
-
-        if numberType == "even":
-            height = height // TWO
+    hailstone = int(input("Please enter the starting height of the hailstone: " ))
+    print("Hail is currently at height", hailstone)
+    while hailstone != 1:
+        if (hailstone % 2) == 0:
+            hailstone = (hailstone // 2)
+            print("Hail is currently at height", hailstone)
         else:
-            height = (height * THREE) + ONE
-    print("The hailstone has stopped at height", height )
-
+            hailstone = (hailstone*3)+1 
+            print("Hail is currently at height", hailstone)
+    print("Hail stopped at height 1")
 main()

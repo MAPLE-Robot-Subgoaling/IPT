@@ -1,12 +1,13 @@
-0# File: hw4_part4.py
 def main():
-    height=int(input('Please enter starting height of the hailstone: '))
-    while height!=1:
-        print('The hail is currently at the height ',int(height))
-        if height%2==0:
-            height=height/2
-        else:
-            height=(height*3)+1
-    print('Hail stopped at height 1')
-
+    currentHeight = int(input("Please enter the starting height of the hailstone: "))
+    print("Hail is currently at height", currentHeight)
+    while (currentHeight != 1):
+        if currentHeight % 2 == 0:
+            currentHeight = currentHeight / 2
+            print("Hail is currently at height", int(currentHeight))
+        elif currentHeight % 2 != 0:
+            currentHeight = currentHeight * 3 + 1
+            print("Hail is currently at height", int(currentHeight))
+    if (currentHeight == 1):
+        print("Hail stopped at 1")
 main()

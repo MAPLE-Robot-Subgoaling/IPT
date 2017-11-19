@@ -1,9 +1,22 @@
-
 def main():
-	temp = float(input("Please enter the temperature: "))
-	if str(input("Please enter 'C' for Celsius of 'K' for Kelvin: ")) == 'C':
-		state = "solid" if temp <= 0 else "gas" if temp >= 100 else "liquid"
-	else:
-		state = "solid" if temp <= 273 else "gas" if temp >= 373 else "liquid"
-	print("At this temperature, water is a", state)
+	userTemp = float(input("Please enter the temperature: "))
+	userTempUnits = input("If this temperature is in Celsius please enter 'C' and if it is in Kelvin please put 'K': ")
+	FREEZING_POINT_C = 0
+	FREEZING_POINT_K = 273.15
+	LIQUID_POINT_C = 33
+	LIQUID_POINT_K = 306.15
+	GAS_POINT_C = 100
+	GAS_POINT_K = 373.15
+	if userTemp <= FREEZING_POINT_C and userTempUnits == 'C':
+		print("At this temperature, water is a (frozen) solid")
+	if userTemp <= FREEZING_POINT_K and userTempUnits == 'K':
+		 print("At this temperature, water is a (frozen) solid")
+	elif userTemp >= FREEZING_POINT_C and userTemp <= GAS_POINT_C and userTempUnits == 'C':
+		print ("At this temperature, water is in a liquid state")
+	elif userTemp >= FREEZING_POINT_K and userTemp <= GAS_POINT_K and userTempUnits == 'K':
+		print ("At this temperature, water is in a liquid state")
+	elif userTemp >= GAS_POINT_C and userTempUnits == 'C':	
+		print("At this temperature, water is in a gas state")
+	elif userTemp >= GAS_POINT_K and userTempUnits == 'K':
+		print("At this temperature, water is in a gas state")
 main()

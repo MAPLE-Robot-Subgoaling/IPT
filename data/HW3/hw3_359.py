@@ -1,21 +1,22 @@
-
-
+temp = float(input("Please enter the temperature: "))
+scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+MELTING_POINT_C = 32
+BOILING_POINT_C = 100
+MELTING_POINT_K = 273.15
+BOILING_POINT_K = 373.15
 def main():
-    temp = float(input("What is the numerical temperature?: "))
-    celOrKel = str(input("Enter a C if it is in Celsius, or a K if it is in Kelvin. "))
-    celOrKel = celOrKel.lower()
-    if (temp <= 0):
-        print("At this temperature, water is frozen solid. Also, if this was actually Kelvin, call NASA or something!")
-    elif ( 0 < temp and temp < 373):
-        if ( 0 < temp and temp < 100 and celOrKel == "c"):
-            print("At this temperature, water is a liquid.")
-        elif ( 100 < temp and celOrKel == "c"):
-            print("At this temperature, water is a gas.")
-        elif ( 0 < temp and temp <= 273 and celOrKel == "k"):
-            print("At this temperature, water is frozen solid.")
-        elif ( 273 < temp and temp < 373 and celOrKel == "k"):
-            print("At this temperature, water is a liquid.")
-    else:
-        print("At this temperature, water is a gas.")
-
-main() 
+             if scale == "C":
+                 if temp >= 0 and temp < MELTING_POINT_C:
+                     print("At this temperature, water is a (frozen) solid.")
+                 elif temp >= MELTING_POINT_C and temp < BOILING_POINT_C:
+                     print("At this temperature, water is a liquid.")
+                 elif temp >= BOILING_POINT_C:
+                     print("At this temperature, water is a gas.")
+             else:
+                 if temp >= 0 and temp < MELTING_POINT_K:
+                     print("At this temperature, water is a (frozen) solid.")
+                 elif temp >= MELTING_POINT_K and temp < BOILING_POINT_K:
+                     print("At this temperature, water is a liquid.")
+                 elif temp >= BOILING_POINT_K:
+                     print("At this temperature, water is a gas.")
+main()

@@ -1,0 +1,8 @@
+A:unnecessary print
+B:unnecessary initialization
+C:error-handling that does not contribute to solution
+D:unnecessary conditional
+E:an if/elif should be an elif/else
+F:str() used on input()
+G:unnecessary input
+I:exit() not necessary

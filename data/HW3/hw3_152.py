@@ -1,30 +1,20 @@
-
-C_FREEZING_POINT = 0
-C_BOILING_POINT = 100
-K_FREEZING_POINT = 273.15
-K_BOILING_POINT = 373.15
-
+C= "Celcius"
+K= "Kelvin"
 def main():
-    temperature = float(input('Please enter the temperature: '))
-    scale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")).lower()
-    state = ''
-
-    if scale == 'c':
-        if temperature <= C_FREEZING_POINT:
-            state = '(frozen) solid.'
-        elif temperature >= C_BOILING_POINT:
-            state = 'gas. '
+    temp= float(input("Please enter the temperature: "))
+    unitS= input ("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
+    if unitS=="C" :
+        if temp<=0 :
+            print ("At this temperature, water is (forzen) solid")
+        elif temp>=100 :
+            print ("At this temperature, water is gaseous")
+        else :
+            print ("At this temperature, water is liquid")
+    else:
+        if temp<= 273.15:
+            print ("At this temperature, water is (frozen) solid")
+        elif temp>= 373.15:
+            print ("At this temperature, water is gaseous")
         else:
-            state = 'liquid.'
-
-    elif scale == 'k':
-        if temperature <= K_FREEZING_POINT:
-            state = '(frozen) solid.'
-        elif temperature >= K_BOILING_POINT:
-            state = 'gas.'
-        else:
-            state = 'liquid.'
-
-    print('At this temperature, water is a', state)
-
+            print ("At this temperature, water is liquid")
 main()

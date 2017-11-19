@@ -1,15 +1,15 @@
-
 def main():
-
-    int1=int(input("Please enter the starting height of the hailstorm: "))
-    
-    while int1 != 1:
-        print("Hail is currently at height",int(int1))
-        if int1 % 2 == 0:
-            int1=int1/2
-        elif int1 % 2 == 1:
-            int1=int1*3+1
-        
-    print("Hail stopped at height 1")
-
+    STOP_HEIGHT = 1
+    ODD_MOD = 1
+    EVEN_MOD = 0
+    height = int(input("Please enter the starting height of the hailstone: "))
+    while height != STOP_HEIGHT:
+        while (height % 2) == EVEN_MOD:
+            print("The current height is" , height)
+            height = height // 2
+        if height == STOP_HEIGHT:
+            print("The hailstone stopped at height 1.")
+        while (height % 2) == ODD_MOD and height != STOP_HEIGHT:
+            print("The current height is" , height)
+            height = (height * 3) + 1
 main()

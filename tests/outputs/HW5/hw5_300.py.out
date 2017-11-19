@@ -1,0 +1,594 @@
+ --- modulename: hw5_300, funcname: <module>
+hw5_300.py(1): def main():
+hw5_300.py(11): main()
+ --- modulename: hw5_300, funcname: main
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+101
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+99
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+98
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+97
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+94
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+93
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+92
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+91
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(4):             print("Thirty days hath September")
+Thirty days hath September
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+89
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+88
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+87
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+86
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+83
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+82
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+81
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+79
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+77
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+76
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+74
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+73
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+71
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+69
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+68
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+67
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+64
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+63
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+62
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+61
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(4):             print("Thirty days hath September")
+Thirty days hath September
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+59
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+58
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+57
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+56
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+53
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+52
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+51
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+49
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+47
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+46
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+44
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+43
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+41
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+39
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+38
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+37
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+34
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+33
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+32
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+31
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(4):             print("Thirty days hath September")
+Thirty days hath September
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+29
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+28
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+27
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+26
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+23
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+22
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+21
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+19
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+17
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+16
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+14
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+13
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+11
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+9
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+8
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+7
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(6):             print("I'll believe six impossible things before breafast")
+I'll believe six impossible things before breafast
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(8):             print("Where do you see yourself in five years")
+Where do you see yourself in five years
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+4
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+3
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+2
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+hw5_300.py(3):         if listNum % 5 == 0 and listNum % 6 == 0:
+hw5_300.py(5):         elif listNum % 6 == 0:
+hw5_300.py(7):         elif listNum % 5 == 0:
+hw5_300.py(10):             print(listNum)
+1
+hw5_300.py(2):     for listNum in range(101, 0, -1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

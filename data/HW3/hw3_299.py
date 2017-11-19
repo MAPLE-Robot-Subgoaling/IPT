@@ -1,25 +1,20 @@
-
 def main():
-    
-    tempNum = float(input("Please enter the temperature: "))
-    type = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    conclusions = ["At this temperature, water is a gas","At this temperature, water is a liquid","At this temperature, water is a solid"]
-    conclusion = ""
-    if(type == "C"):
-        if(tempNum >= 100):
-            conclusion = conclusions[0]
-        elif(tempNum < 100 and tempNum > 0):
-            conclusion = conclusions[1]
-        else:
-            conclusion = conclusions[2]
-    elif(type == "K"):
-        if(tempNum >= 373.16):
-            conclusion = conclusions[0]
-        elif(tempNum < 373.16 and tempNum > 273.16):
-            conclusion = conclusions[1]
-        else:
-            conclusion = conclusions[2]
-    else:
-        print("Invalid type")
-    print(conclusion)
+    userTemp = float(input("Please enter the temperature:"))
+    userScale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin:"))
+    BOILING_KELVIN = 373.15
+    BOILING_CELSIUS = 100
+    FREEZE_KELVIN = 273.15
+    FREEZE_CELSIUS = 0
+    if (userTemp <= FREEZE_CELSIUS and userScale == "C"):
+        print("Water is a solid at this temperature")
+    elif (userTemp <= FREEZE_KELVIN and userScale == "K"):
+        print("Water is a solid at this temperature")
+    elif (userTemp > FREEZE_CELSIUS and userTemp < BOILING_CELSIUS and userScale == "C"):
+        print("Water is a liquid at this temperature")
+    elif (userTemp > FREEZE_KELVIN and userTemp < BOILING_KELVIN and userScale == "K"):
+        print("Water is a liquid at this temperature")
+    elif (userTemp >= BOILING_CELSIUS and userScale == "C"):
+        print("Water is a gas at this temperature")
+    elif (userTemp >= BOILING_KELVIN and userScale == "K"):
+        print("Water is a gas at this temperature")
 main()

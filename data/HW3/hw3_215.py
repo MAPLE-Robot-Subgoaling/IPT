@@ -1,42 +1,22 @@
-
-
-def main ():
-
-    temp     = float(input("Please enther the temperature: "))
-    typeTemp = input("Please enter 'C' for celsius, or 'K' for Kelvin ")
-
-    if temp > 0 and temp < 100 and typeTemp == 'C':
-        print ("At this temperature, water is a liquid")
-   
-    elif temp > 100 and typeTemp == 'C':
-        print ("At this temperature, water is a gas")
-   
-    elif temp < 0 and typeTemp == 'C':
-        print ("At this temperature, water is a solid")
-
-    elif temp == 0 and typeTemp == 'C':
-        print ("At this temperature, water is at its freezing point")
-    
-    elif temp == 100 and typeTemp == 'C':
-        print ("At this temperature, water is at its boiling point")
-
-
-    if temp > 273.16 and temp < 373.16 and typeTemp == 'K':
-        print ("At this temperature, water is a liquid")
-
-    elif temp > 373.16 and typeTemp == 'K':
-        print ("At this temperature, water is a gas")
-
-    elif temp < 273.16 and typeTemp == 'K':
-        print ("At this temperature, water is a solid")
-
-    elif temp == 273.16 and typeTemp == 'K':
-        print ("At this temperature, water is at its freezing point")
-
-    elif temp == 373.16 and typeTemp == 'K':
-        print ("At this temperature, water is at its boiling point") 
-
-
-
-
+def main():
+    CELSIUS_FROZEN = 0
+    CELSIUS_GAS = 100
+    KELVIN_FROZEN = 273
+    KELVIN_GAS = 373
+    temp = float(input("Please enter the temprature: "))
+    scale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin: "))
+    if scale == "C":
+        if temp >= CELSIUS_GAS:
+            print(" At this temperature, water is a gas.")
+        if temp <= CELSIUS_FROZEN:
+            print(" At this temperature, water is a (forzen) solid.")
+        if temp < CELSIUS_GAS and temp >  CELSIUS_FROZEN:
+            print(" At this temperature, water is a liquid.")
+    if scale == "K":
+        if temp >= KELVIN_GAS:
+            print(" At this temperature, water is a gas.")
+        if temp <= KELVIN_FROZEN:
+            print(" At this temperature, water is a (forzen) solid.")
+        if temp < KELVIN_GAS and temp > KELVIN_FROZEN:
+            print(" At this temperature, water is a liquid.")
 main()

@@ -1,0 +1,28 @@
+ --- modulename: hw3_323, funcname: <module>
+hw3_323.py(1): def main ():
+hw3_323.py(16): main ()
+ --- modulename: hw3_323, funcname: main
+hw3_323.py(2):     inpTemp=float(input("What is the temperature?"))
+What is the temperature? --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_323.py(3):     unit=input("What is the unit? (you may either enter C for Celcius or K for Kelvin)")
+What is the unit? (you may either enter C for Celcius or K for Kelvin) --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_323.py(4):     if unit == "C":
+hw3_323.py(6):     elif unit == "K":
+hw3_323.py(7):         temp=inpTemp-273
+hw3_323.py(10):     if temp >= 100:
+hw3_323.py(11):         print ("Water is a gas at this temperature.")
+Water is a gas at this temperature.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

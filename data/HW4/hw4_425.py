@@ -1,16 +1,12 @@
-
-
 def main():
-    heightHail = input("Please enter the starting height of the hailstone: ")
-    heightHail = int(heightHail)
-    
-    while(heightHail != 1):
-        if(heightHail % 2 == 0):
-            heightHail=heightHail/2
-            print("Hail is currently at height", heightHail)
-
-        elif(heightHail % 2 == 1):
-            heightHail=heightHail*3 + 1
-            print("Hail is currently at height", heightHail)
-    print("Hail is stopped at height", heightHail)
+    hailHeight = int(input("Please enter the starting height of the hail: "))
+    while hailHeight != 1:
+        if hailHeight % 2 == 0:
+            hailHeight = int(hailHeight / 2)
+            print("The hail height is currently at", hailHeight)
+        elif hailHeight % 2 != 0:
+            hailHeight = hailHeight * 3 + 1
+            print("The hail height is currently at", hailHeight)
+    if hailHeight == 1:
+        print("Hail stopped at height 1.")
 main()

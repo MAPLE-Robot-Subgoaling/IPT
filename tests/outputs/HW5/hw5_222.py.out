@@ -1,0 +1,102 @@
+ --- modulename: hw5_222, funcname: <module>
+hw5_222.py(1): def main():
+hw5_222.py(20): main()
+ --- modulename: hw5_222, funcname: main
+hw5_222.py(2):     w=int(input("Enter the width: "))
+Enter the width:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_222.py(3):     h=int(input("Enter the height: "))
+Enter the height: hw5_222.py(4):     fill=input("Enter symbol for the fill: ")
+Enter symbol for the fill: hw5_222.py(5):     outline=input("Enter the symbol for the outline: ")
+Enter the symbol for the outline:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_222.py(6):     top=""
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(8):         top=str(top+outline)
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(8):         top=str(top+outline)
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(8):         top=str(top+outline)
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(8):         top=str(top+outline)
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(8):         top=str(top+outline)
+hw5_222.py(7):     for i in range(0,w):
+hw5_222.py(9):     print(top)
+#####
+hw5_222.py(10):     inner=""
+hw5_222.py(11):     for i in range(1,h-1):
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(17):         print(inner)
+#$$$#
+hw5_222.py(18):         inner=""
+hw5_222.py(11):     for i in range(1,h-1):
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(17):         print(inner)
+#$$$#
+hw5_222.py(18):         inner=""
+hw5_222.py(11):     for i in range(1,h-1):
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(16):                inner=str(inner+fill)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(13):            if(u==0 or u==w-1):
+hw5_222.py(14):                inner=str(inner+outline)
+hw5_222.py(12):         for u in range(0,w):
+hw5_222.py(17):         print(inner)
+#$$$#
+hw5_222.py(18):         inner=""
+hw5_222.py(11):     for i in range(1,h-1):
+hw5_222.py(19):     print(top)
+#####
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

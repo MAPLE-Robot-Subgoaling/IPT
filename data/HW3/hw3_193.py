@@ -1,14 +1,9 @@
-
 def main():
-    temperature = float(input("Please enter the temperature: "))
-    temperatureType = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if (temperatureType == 'C' and temperature <= 0) or (temperatureType == 'K' and temperature <= 273.15):
-        print("At this temperature, water is (frozen) a solid")
-        print()
-    elif (temperatureType == 'C' and temperature <= 100) or (temperatureType == 'K' and temperature <= 373.15):
-        print("At this temperature, water is a liquid")
-        print()
+    tempData = float(input("Please enter the temperature:"))
+    tempUnit = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin."))
+    if (tempUnit == "C" and tempData < 0)or(tempUnit == "K" and tempData < 273):       print("At this temperature, water is a (frozen)solid.")
+    elif (tempUnit == "C" and tempData > 0 and tempData < 100) or(tempUnit == "K" and tempData > 273 and tempData < 373):
+            print("At this temperature, water is a liquid")
     else:
         print("At this temperature, water is a gas")
-        print()
 main()

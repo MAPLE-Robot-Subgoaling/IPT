@@ -1,0 +1,9 @@
+A:unnecessary conversion of input to string
+B:statement has no effect
+C:conditional that has no effect
+D:unnecessary print inside of input
+E:statement never reached
+F:unnecessary conversion of a variable type
+G:unnecessary variable
+H:while loop should've been if statement
+I:duplicate code

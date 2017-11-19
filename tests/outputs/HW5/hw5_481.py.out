@@ -1,0 +1,43 @@
+ --- modulename: hw5_481, funcname: <module>
+hw5_481.py(1): def main():
+hw5_481.py(15): main()
+ --- modulename: hw5_481, funcname: main
+hw5_481.py(2):     print("Welcome to my program that will help you make a box")
+Welcome to my program that will help you make a box
+hw5_481.py(3):     width = int(input("Please enter the width of the box:"))
+Please enter the width of the box: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_481.py(4):     height = int(input("Please enter the height of the box:"))
+Please enter the height of the box:hw5_481.py(5):     firstSymbol = input("Please enter a symbol for the box outline:")
+Please enter a symbol for the box outline:hw5_481.py(6):     secondSymbol = input("Please enter a symbol for the box fill:")
+Please enter a symbol for the box fill: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_481.py(7):     for x in range(0,1):
+hw5_481.py(8):         if width and height == 1:
+hw5_481.py(11):             print(firstSymbol*width)
+^^^^^^^^
+hw5_481.py(12):             for x in range(0,height-2):
+hw5_481.py(13):                 print(firstSymbol*1 + secondSymbol*(width-2) + firstSymbol*1)
+^@@@@@@^
+hw5_481.py(12):             for x in range(0,height-2):
+hw5_481.py(13):                 print(firstSymbol*1 + secondSymbol*(width-2) + firstSymbol*1)
+^@@@@@@^
+hw5_481.py(12):             for x in range(0,height-2):
+hw5_481.py(13):                 print(firstSymbol*1 + secondSymbol*(width-2) + firstSymbol*1)
+^@@@@@@^
+hw5_481.py(12):             for x in range(0,height-2):
+hw5_481.py(14):             print(firstSymbol*width)
+^^^^^^^^
+hw5_481.py(7):     for x in range(0,1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

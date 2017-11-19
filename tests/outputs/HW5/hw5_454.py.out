@@ -1,0 +1,51 @@
+ --- modulename: hw5_454, funcname: <module>
+hw5_454.py(1): def main():
+hw5_454.py(13): main()
+ --- modulename: hw5_454, funcname: main
+hw5_454.py(2):     widthNum = int(input("Please enter the width of box:"))
+Please enter the width of box: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_454.py(3):     heightNum = int(input("Please enter the height of box:"))
+Please enter the height of box:hw5_454.py(4):     symOtl = input("Please enter symbol for box outline:")
+Please enter symbol for box outline:hw5_454.py(5):     symFl = input("Please enter symbol for box fill:")
+Please enter symbol for box fill: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+hw5_454.py(7):         if rowNum == 1 or rowNum == heightNum:
+hw5_454.py(8):             print(symOtl * widthNum)
+$$$$$
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+hw5_454.py(7):         if rowNum == 1 or rowNum == heightNum:
+hw5_454.py(10):             printLine = symOtl + symFl * (widthNum - 1)
+hw5_454.py(11):             printLine = printLine[0:widthNum - 1] + symOtl
+hw5_454.py(12):             print(printLine)
+$###$
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+hw5_454.py(7):         if rowNum == 1 or rowNum == heightNum:
+hw5_454.py(10):             printLine = symOtl + symFl * (widthNum - 1)
+hw5_454.py(11):             printLine = printLine[0:widthNum - 1] + symOtl
+hw5_454.py(12):             print(printLine)
+$###$
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+hw5_454.py(7):         if rowNum == 1 or rowNum == heightNum:
+hw5_454.py(10):             printLine = symOtl + symFl * (widthNum - 1)
+hw5_454.py(11):             printLine = printLine[0:widthNum - 1] + symOtl
+hw5_454.py(12):             print(printLine)
+$###$
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+hw5_454.py(7):         if rowNum == 1 or rowNum == heightNum:
+hw5_454.py(8):             print(symOtl * widthNum)
+$$$$$
+hw5_454.py(6):     for rowNum in range(1, heightNum + 1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

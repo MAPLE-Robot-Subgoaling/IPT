@@ -1,25 +1,20 @@
-
 def main():
-
-    theTemp = float(input("Please enter the temperature:"))
-    theScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
-    
-    if theScale == "C":
-        if theTemp <= 0:
-            print("At this temperature, water is a solid.")
-        elif theTemp >= 0 and theTemp <= 100:
-            print("At this temperature, water is a liquid.")
-        elif theTemp >= 100:
-            print("At this temperature, water is a gas.")
-
-    if theScale == "K":
-        if theTemp <= 273:
-            print("At this temperature, water is a solid.")
-        elif theTemp >= 273 and theTemp <= 373:
-            print("At this temperature, water is a liquid.")
-        elif theTemp >= 373:
-            print("At this temperature, water is a gas.")
-    
-
+    temperature = float(input("Please enter the temperature:"))
+    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin")
+    if(tempScale == 'C'):
+        if(temperature <= 0.0):
+            print("At ",temperature,"degrees Celsius, water is a solid")
+        elif(temperature >=100.0):
+            print("At ",temperature,"degrees Celsius, water is a gas")
+        else:
+            print("At ",temperature,"degrees Celsius, water is a liquid")
+    elif(tempScale == 'K'):
+        if(temperature <=273.15):
+            print("At ",temperature,"degrees Kelvin, water is a solid")
+        elif(temperature >= 373.15):
+            print("At ",temperature,"degrees Kelvin, water is a gas")
+        else:
+            print("At ",temperature,"degrees Kelvin, water is a liquid")
+    else:
+        print("Unknown temperature scale")       
 main()
-

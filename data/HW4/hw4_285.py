@@ -1,12 +1,12 @@
-
 def main():
-    height = int(input("Please enter the height of the hail: "))
-    while height != 1:
-        if height % 2 == 0:
-            height = height / 2
-            print("The height is", height)
-        else:
-            height = (height * 3) + 1
-            print("The height is", height)
-    print("The height is 1 and the heilstorm has subsided.")
+     startingHight = int(input('PLease enter the starting hight at the hailstone: '))
+     if startingHight == 1: 
+                         sys. exit()    
+     while startingHight > 1 : 
+                        if  startingHight % 2 == 0:
+                            startingHight = startingHight/2 
+                            print('Hail is currently at hight', startingHight)
+                        else: 
+                            startingHight = (startingHight * 3) + 1 
+                            print('Hail is currently at hight', startingHight)
 main()

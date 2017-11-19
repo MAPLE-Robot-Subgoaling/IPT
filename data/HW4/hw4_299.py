@@ -1,16 +1,11 @@
-
 def main():
-    curHeight = -1
-    while curHeight < 0:
-        curHeight = int(input("Please enter the starting height of the hailstone: "))
-    
-    while curHeight != 1:
-        print("Hail is currently at height",int(curHeight))
-        if curHeight%2 == 0:
-            curHeight = curHeight/2
-        else:
-            curHeight = curHeight*3+1
-        
-    print("Hail stopped at height 1")
-    
+    numberinput = int(input("Please input a postive number with that: "))
+    while numberinput !=1:
+        if numberinput%2 == 0:
+            numberinput=numberinput/2 
+            print("Hail is currently at height",numberinput,"")
+        elif numberinput !=0:
+            numberinput=((numberinput*3)+1)
+            print("Hail is currently at height",numberinput,"")
+    print("Hail is currently at height",numberinput,"")
 main()

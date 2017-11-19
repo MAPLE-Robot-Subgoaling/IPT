@@ -1,0 +1,47 @@
+ --- modulename: hw5_280, funcname: <module>
+hw5_280.py(1): def main():
+hw5_280.py(13): main()
+ --- modulename: hw5_280, funcname: main
+hw5_280.py(2):     w = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_280.py(3):     h = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_280.py(4):     sym1 = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_280.py(5):     sym2 = input("Please enter a symbol for the inside of the box: ")
+Please enter a symbol for the inside of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_280.py(6):     fill = w - 2
+hw5_280.py(7):     end = h - 1
+hw5_280.py(8):     for m in range(h):
+hw5_280.py(9):         if m == 0 or m == end:
+hw5_280.py(10):             print(sym1 * w)
+$$$$$
+hw5_280.py(8):     for m in range(h):
+hw5_280.py(9):         if m == 0 or m == end:
+hw5_280.py(12):             print(sym1 + (sym2 * fill) + sym1)
+$###$
+hw5_280.py(8):     for m in range(h):
+hw5_280.py(9):         if m == 0 or m == end:
+hw5_280.py(12):             print(sym1 + (sym2 * fill) + sym1)
+$###$
+hw5_280.py(8):     for m in range(h):
+hw5_280.py(9):         if m == 0 or m == end:
+hw5_280.py(12):             print(sym1 + (sym2 * fill) + sym1)
+$###$
+hw5_280.py(8):     for m in range(h):
+hw5_280.py(9):         if m == 0 or m == end:
+hw5_280.py(10):             print(sym1 * w)
+$$$$$
+hw5_280.py(8):     for m in range(h):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

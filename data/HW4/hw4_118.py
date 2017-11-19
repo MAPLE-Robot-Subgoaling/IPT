@@ -1,18 +1,13 @@
-
 def main():
-
-    height = int(input("In put a whole number: "))
-    print(height)
-
-    while height != 1:
-        if (height%2 == 0):
-            height = height/2
-        elif (height%2 == 1):
-            height = height *3 + 1
+    posInt = int(input("Please enter a starting positive integer for height of the hailstone: "))
+    while (posInt != 1):
+        if (posInt % 2 == 0) and (posInt - 2 != 0):
+            posInt = posInt // 2
+            print("Hail is currently at height", posInt)
+        elif ((posInt % 2 == 1) and (posInt != 1)):
+            posInt = posInt * 3 + 1
+            print("Hail is currently at height", posInt)
         else:
-            print("There is a horrible error")
-        print(height)
-
-    print("The hail has stopped.")
-
+            posInt = posInt // 2
+    print ("Hail stopped at height 1")
 main()

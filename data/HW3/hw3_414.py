@@ -1,27 +1,24 @@
-
 def main():
-
-    heat = float(input("Please enter the temperature: "))
-    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    
-    if scale == "K":
-        FREEZ_POINT = 273.00
-        BOIL_POINT = 373.00
-        if heat <= FREEZ_POINT:
-            print("At this temperature, water is a (frozen) solid")
-        elif (temperature > FREEZ_POINT) and (temperature < BOIL_POINT):
-            print("At this temperature, water is a liquid")
-        elif temperature >= BOIL_POINT:
-            print("At this temperature, water is a gas")
-
-    elif scale == "C":
-        FREEZ_POINT1 = 0.00
-        BOIL_POINT1 = 100.00
-        if temperature <= FREEZ_POINT1:
-            print("At this temperature, water is a (frozen) solid")
-        elif (temperature > FREEZ_POINT1) and (temperature < BOIL_POINT1):
-            print("At this temperature, water is a liquid")
-        elif temperature >= BOIL_POINT1:
-            print("At this temperature, water is a gas")
-
+    KELVIN = "K"
+    CELSIUS = "C"
+    BOIL = float(373)     
+    FREEZE = float(273)   
+    temperature = float(input("Please enter the temperature: "))
+    unit = input("Please enter 'C' for Celsius or 'K' for Kelvin: ")
+    if unit == CELSIUS:
+        temperature = temperature + FREEZE
+        unit = KELVIN
+    if unit == KELVIN:
+        if temperature < 0:
+            print("At this temperature, water is impossibly cold.")
+        elif 0 <= temperature < FREEZE:
+            print("At this temperature, water is a (frozen) solid.")
+        elif temperature == FREEZE:
+            print("At this temperature, water is in the process of freezing or melting.")
+        elif FREEZE < temperature < BOIL:
+            print("At this temperature, water is a liquid.")
+        elif temperature == BOIL:
+            print("At this temperature, water is in the process of boiling or condensing.")
+        elif temperature > BOIL:
+            print("At this temperature, water is a gas.")
 main()

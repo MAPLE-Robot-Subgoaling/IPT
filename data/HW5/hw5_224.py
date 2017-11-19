@@ -1,13 +1,20 @@
-
 def main():
-
-    width = int(input("Enter the width of the box :: "))
-    height = int(input("Enter the height of the box :: "))
-    outline = input("Enter the box outline symbol :: ")
-    fill = input("enter the symbol for the box filler :: ")
-    
-    for x in range(width):
-        for y in range(height):
-            print(outline if x in [0, height-1] or y in [0, width-1] else fill, end = ' ')
-        print()
+    width = int(input("Width of box? "))
+    hight = int(input("height of box? "))
+    outline = input("Symbol for outline? ")
+    fill = input("symbol for inside of box ")
+    strPrint = ""
+    for i in range (0, width):
+        if (i == 0 or i == hight - 1):
+            for j in range(0, width):
+                strPrint = strPrint + outline
+            print(strPrint)
+            strPrint = ""
+        else:
+            strPrint = outline
+            for j in range(0, width - 2):
+                strPrint = strPrint + fill
+            strPrint = strPrint + outline
+            print(strPrint)
+            strPrint = ""
 main()

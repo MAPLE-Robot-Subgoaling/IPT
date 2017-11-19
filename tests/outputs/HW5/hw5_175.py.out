@@ -1,0 +1,45 @@
+ --- modulename: hw5_175, funcname: <module>
+hw5_175.py(1): def main():
+hw5_175.py(11): main()
+ --- modulename: hw5_175, funcname: main
+hw5_175.py(2):     widthOfBox=int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_175.py(3):     heightOfBox=int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_175.py(4):     symbolOut=input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_175.py(5):     symbolFill=input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_175.py(6):     for i in range (0,heightOfBox):
+hw5_175.py(7):         if i==0 or i==heightOfBox-1:
+hw5_175.py(8):             print(symbolOut*widthOfBox)
+$$$$$
+hw5_175.py(6):     for i in range (0,heightOfBox):
+hw5_175.py(7):         if i==0 or i==heightOfBox-1:
+hw5_175.py(10):             print(symbolOut+(symbolFill*(widthOfBox-2))+symbolOut)
+$###$
+hw5_175.py(6):     for i in range (0,heightOfBox):
+hw5_175.py(7):         if i==0 or i==heightOfBox-1:
+hw5_175.py(10):             print(symbolOut+(symbolFill*(widthOfBox-2))+symbolOut)
+$###$
+hw5_175.py(6):     for i in range (0,heightOfBox):
+hw5_175.py(7):         if i==0 or i==heightOfBox-1:
+hw5_175.py(10):             print(symbolOut+(symbolFill*(widthOfBox-2))+symbolOut)
+$###$
+hw5_175.py(6):     for i in range (0,heightOfBox):
+hw5_175.py(7):         if i==0 or i==heightOfBox-1:
+hw5_175.py(8):             print(symbolOut*widthOfBox)
+$$$$$
+hw5_175.py(6):     for i in range (0,heightOfBox):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

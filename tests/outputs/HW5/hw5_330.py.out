@@ -1,0 +1,177 @@
+ --- modulename: hw5_330, funcname: <module>
+hw5_330.py(1): def main():
+hw5_330.py(19): main()
+ --- modulename: hw5_330, funcname: main
+hw5_330.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_330.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_330.py(4):     outline = input("Please enter the symbol for the box outline : ")
+Please enter the symbol for the box outline : hw5_330.py(5):     fill = input("Please enter the symbol for the box fill : ")
+Please enter the symbol for the box fill :  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_330.py(6):     for i in range(0,height):
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(9):                 print(outline, end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(9):                 print(outline, end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(9):                 print(outline, end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(9):                 print(outline, end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(9):                 print(outline, end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(18):         print("\n")
+
+
+hw5_330.py(6):     for i in range(0,height):
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(11):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(13):                 print(outline)
+$
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(18):         print("\n")
+
+
+hw5_330.py(6):     for i in range(0,height):
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(11):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(13):                 print(outline)
+$
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(18):         print("\n")
+
+
+hw5_330.py(6):     for i in range(0,height):
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(11):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(17):                 print(fill ,end='')
+#hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(13):                 print(outline)
+$
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(18):         print("\n")
+
+
+hw5_330.py(6):     for i in range(0,height):
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(11):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(15):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(15):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(14):             elif i == height-1:
+hw5_330.py(15):                 print(outline,end='')
+$hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(8):             if i == 0:
+hw5_330.py(10):             elif j==0:
+hw5_330.py(12):             elif j == width-1:
+hw5_330.py(13):                 print(outline)
+$
+hw5_330.py(7):         for j in range(0,width):
+hw5_330.py(18):         print("\n")
+
+
+hw5_330.py(6):     for i in range(0,height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

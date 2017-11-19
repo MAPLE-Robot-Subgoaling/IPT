@@ -1,0 +1,24 @@
+ --- modulename: hw3_352, funcname: <module>
+hw3_352.py(1): temp = float(input("What is the temperature?"))
+What is the temperature? --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_352.py(2): scale = input("What is the scale(c or k)?")
+What is the scale(c or k)? --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_352.py(3): if scale == "c":
+hw3_352.py(11):     if temp <= 273.15:
+hw3_352.py(13):     elif temp > 273.15 and temp < 373.15:
+hw3_352.py(16):         print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

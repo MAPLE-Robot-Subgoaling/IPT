@@ -1,0 +1,120 @@
+ --- modulename: hw5_316, funcname: <module>
+hw5_316.py(1): def main():
+hw5_316.py(20): main()
+ --- modulename: hw5_316, funcname: main
+hw5_316.py(2):     boxWidth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_316.py(3):     boxHeight = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_316.py(4):     symOut = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_316.py(5):     symFill = input("Please enter a symbol for the box to fill: ")
+Please enter a symbol for the box to fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_316.py(6):     for i in range(boxHeight):
+hw5_316.py(7):         if i == 0 or i == boxHeight - 1:
+hw5_316.py(8):             line = ""
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(11):             print(line)
+$$$$$
+hw5_316.py(6):     for i in range(boxHeight):
+hw5_316.py(7):         if i == 0 or i == boxHeight - 1:
+hw5_316.py(13):             line = ""
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(19):             print(line)
+$###$
+hw5_316.py(6):     for i in range(boxHeight):
+hw5_316.py(7):         if i == 0 or i == boxHeight - 1:
+hw5_316.py(13):             line = ""
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(19):             print(line)
+$###$
+hw5_316.py(6):     for i in range(boxHeight):
+hw5_316.py(7):         if i == 0 or i == boxHeight - 1:
+hw5_316.py(13):             line = ""
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(18):                     line += symFill
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(15):                 if j == 0 or j == boxWidth - 1:
+hw5_316.py(16):                     line += symOut
+hw5_316.py(14):             for j in range(boxWidth):
+hw5_316.py(19):             print(line)
+$###$
+hw5_316.py(6):     for i in range(boxHeight):
+hw5_316.py(7):         if i == 0 or i == boxHeight - 1:
+hw5_316.py(8):             line = ""
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(10):                 line += symOut
+hw5_316.py(9):             for j in range(boxWidth):
+hw5_316.py(11):             print(line)
+$$$$$
+hw5_316.py(6):     for i in range(boxHeight):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,29 +1,11 @@
-
 def main():
-
-    width = int(input("please enter the width of the box: "))
-    height = int(input("please enter the height of the box: "))
-    outline = input("please enter a symbol for the box outline: ")
-    fill = input("please enter a symbol for the box fill: ")
-    temp = ""
-
-    endRow = list(outline*width)
-    midRow = list((outline) + (fill*(width-2)) + (outline))
-    
-    for i in endRow:
-        temp = temp + i
-    print(temp)
-    temp = ""
-
-    for num in range(0,height-2):
-        for i in midRow:
-             temp = temp + i
-        print(temp)
-        temp = ""
-
-    for i in endRow:
-        temp = temp + i
-    print(temp)
- 
-
+    boxWidth = int(input("Please enter the width of the box: "))
+    boxOutline = input("Please enter a symbol for the box outline: ")
+    boxHeight = int(input("Please enter the height of the box: "))
+    boxFill = input("Please enter the a symbol for the box fill: ")
+    for num in range(boxHeight):
+        if num == 0 or num == (boxHeight-1):
+            print(boxOutline * boxWidth)
+        else:
+            print(boxOutline + (boxFill*(boxWidth-2)) + boxOutline)
 main()

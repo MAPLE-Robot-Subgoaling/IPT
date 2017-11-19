@@ -1,14 +1,16 @@
-
+WALL = 2
+CONDITION = 1
 def main():
-    width = int(input("Please enter the width of the box: "))
-    height = int(input("Please enter the height of the box: "))
-    symboloutside = input("Please enter a symbol for the box outline: ")
-    symbolinside = input("Please enter a symbol for the box fill: ")
-    insidewidth = width - 2
-    fillingheight = height - 2
-    print(symboloutside * width)
-    for i in range(fillingheight):
-        print(symboloutside + symbolinside * insidewidth + symboloutside)
-    print(symboloutside * width)
-
+    width = int(input("Enter the width "))
+    height = int(input("Enter the height "))
+    out_sym = input("enter the outer sym ")
+    fil_sym = input("enter the inner sym ")
+    for i in range(1):
+        outer_shell = width * out_sym
+        print(outer_shell)
+        for i in range(height-WALL):
+            var = out_sym + (fil_sym *(width-WALL))+out_sym
+            print(var)
+        if height != CONDITION:
+            print(outer_shell)
 main()

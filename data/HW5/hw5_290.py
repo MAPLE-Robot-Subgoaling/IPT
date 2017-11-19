@@ -1,13 +1,13 @@
-
-def main():
-
-    width   =  int(input("Please enter the width of the box: "))
-    height  =  int(input("Please enter the width of the box: "))
-    outline =  input("Please enter a symbol for the box outline: ")
-    boxFill =  input("Pleae enter a symbol for the box fill: ")
-    print(width * outline)
-    for n in range(height): 
-        lengthFill = width - 2
-        print(outline + (lengthFill * boxFill) + outline) 
-    print(width * outline)
-main()
+def main ():
+    width = int(input("What is the width of the box: "))
+    height = int(input("What is the height of the box: "))
+    boxOutline = input("What symbol do you want to use for the box's outline: ")
+    boxFill = input("What symbol do you want to use to fill the box: ")
+    upperLimit = height - 1
+    fillWidth = width - 2
+    for x in range (height):
+        if x == 0 or x == upperLimit:
+            print (boxOutline * width)
+        else:
+            print (boxOutline + (boxFill * fillWidth) + boxOutline)
+main ()

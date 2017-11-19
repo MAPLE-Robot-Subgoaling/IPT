@@ -1,24 +1,21 @@
-
-
 def main():
-    theTemp = float(input("Please enter the temperature: "))
-    theMetric = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-
-    if theMetric == "C":
-        if theTemp < 0:
-            print("At this temperature, water is a (frozen) solid.")
-        elif theTemp >= 100:
-            print("At this temperature, water is a gas.")
+    print("This program only accepts temperature in Celcius and Kelvin.")
+    temp = float(input("What is the temperature?"))
+    scale = input("What scale is the temperature measured in? Please enter 'C' for Celcius or 'K' for Kelvin")
+    if scale == "C":
+        if temp > 0:
+            if temp < 100:
+                print("Water is in its normal liquid state")
+            else:
+                print("Water is in its gaseous state, and has become steam")
         else:
-            print("At this temperature, water is a liquid.")
-
-    elif theMetric == "K":
-        if theTemp < 273.2:
-            print("At this temperature, water is a (frozen) solid.")
-        elif theTemp >= 373.2:
-            print("At this temperature, water is a gas.")
+            print("Water is in its solid state, and has become ice")
+    if scale == "K":
+        if temp > 273.16:
+            if temp < 373.16:
+                print("Water is in its normal liquid state")
+            else:
+                print("Water is in its gaseous state, and has become steam")
         else:
-            print("At this temperature, water is a liquid.")
-
-
+            print("Water is in its solid state, and has become ice")
 main()

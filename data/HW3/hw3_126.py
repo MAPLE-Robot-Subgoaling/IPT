@@ -1,18 +1,18 @@
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    letter = input("Please enter 'C' for Celsius or 'K' for Kelvin: ")
-
-    if temp <= 0 and letter == 'C':
-        print("At this temperature, water is a (frozen) solid.")
-    elif temp >= 1 and temp <= 99 and letter == 'C':
-        print("At this temperature, water is a liquid.")
-    elif temp >= 100 and letter == 'C':
-        print("At this temperature, water is a gas.")
-    elif temp >= 0 and temp <= 273 and letter == 'K':
-        print("At this temperature, water is a (frozen) solid.")
-    elif temp > 273 and temp <373 and letter == 'K':
-        print("At this temperature, water is a liquid.")
-    elif temp > 373 and letter == 'K':
-        print("At this temperature, water is a gas.")
+ temp = float(input("Hello. Please enter the temperature:",))
+ form  =str( input("Thanks. Now enter 'C' for Celsius form, or 'K' for Kelvin form:",))
+ if form == "C":
+  if temp >= 100:
+   print("For the current temperature, water is in a gas form.")
+  elif temp <= 0:
+   print("For the current temperature, water is in a solid form.")
+  else:
+   print("For the current temperature, water is in a liquid form.")
+ else:
+  if temp >= 373.16:
+   print("For the current temperature, water is in a gas form.")
+  elif temp <= 273.16:
+   print("For the current temperature, water is in a solid form.")
+  else:
+   print("For the current temperature, water is in a liquid form.")
 main()

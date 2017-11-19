@@ -1,0 +1,167 @@
+ --- modulename: hw5_289, funcname: <module>
+hw5_289.py(1): def main():
+hw5_289.py(22): main()
+ --- modulename: hw5_289, funcname: main
+hw5_289.py(2):     print("Please enter the width of the box:")
+Please enter the width of the box:
+hw5_289.py(3):     width = int(input())
+ --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_289.py(4):     print("Please enter the height of the box:")
+Please enter the height of the box:
+hw5_289.py(5):     height = int(input())
+hw5_289.py(6):     print("Please enter a symbol for the box outline:")
+Please enter a symbol for the box outline:
+hw5_289.py(7):     symbolOut = input()
+hw5_289.py(8):     print("Please enter a symbol for the box fill:")
+Please enter a symbol for the box fill:
+hw5_289.py(9):     symbolIn = input()
+ --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_289.py(10):     for interval in range(height):
+hw5_289.py(11):         currentLine =""
+hw5_289.py(12):         if interval == 0 or interval == height - 1:
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(21):         print(currentLine)
+^^^^^^^^
+hw5_289.py(10):     for interval in range(height):
+hw5_289.py(11):         currentLine =""
+hw5_289.py(12):         if interval == 0 or interval == height - 1:
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(21):         print(currentLine)
+^@@@@@@^
+hw5_289.py(10):     for interval in range(height):
+hw5_289.py(11):         currentLine =""
+hw5_289.py(12):         if interval == 0 or interval == height - 1:
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(21):         print(currentLine)
+^@@@@@@^
+hw5_289.py(10):     for interval in range(height):
+hw5_289.py(11):         currentLine =""
+hw5_289.py(12):         if interval == 0 or interval == height - 1:
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(20):                     currentLine = currentLine + symbolIn
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(17):                 if interval == 0 or interval == width-1:
+hw5_289.py(18):                     currentLine = currentLine + symbolOut
+hw5_289.py(16):             for interval in range(width):
+hw5_289.py(21):         print(currentLine)
+^@@@@@@^
+hw5_289.py(10):     for interval in range(height):
+hw5_289.py(11):         currentLine =""
+hw5_289.py(12):         if interval == 0 or interval == height - 1:
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(14):                 currentLine = currentLine + symbolOut
+hw5_289.py(13):             for interval in range(width):
+hw5_289.py(21):         print(currentLine)
+^^^^^^^^
+hw5_289.py(10):     for interval in range(height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

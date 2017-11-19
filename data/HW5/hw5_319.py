@@ -1,23 +1,12 @@
-
 def main():
-
-    height = int(input("Please enter the height of your box "))
-    width = int(input("Please enter the width of your box "))
-    OUTLINE = input("Please enter a symbol to outline your box ")
-    FILL = input("Please enter a symbol to fill your box ")
-
-    listWidth = list(range(width))
-    listHeight = list(range(0, height - 2)) #In for loop, only need to account for 2 less than the total height
-
-    print(len(listWidth) * OUTLINE)
-
-    for h in listHeight:
-        str(OUTLINE)
-        fillMiddle = str((len(listWidth) - 2) * FILL)
-        print((OUTLINE + fillMiddle +  OUTLINE))
-
-    print(len(listWidth) * OUTLINE)
-
-
-
+    boxWidth = int(input("Please enter the width of the box: "))
+    boxHeight = int(input("Please enter the height of the box: "))
+    boxOutline = str(input("Please enter a symbol for the box outline: "))
+    boxFill = str(input("Please enter a symbol for the box fill: "))
+    yourBox = list(range(0, boxHeight - 2))
+    print((boxOutline) * boxWidth)
+    for boxInsides in yourBox:
+        print(boxOutline + ((boxFill) * ((boxWidth - 2))) + boxOutline)
+    if boxHeight > 1:
+        print((boxOutline) * boxWidth)
 main()

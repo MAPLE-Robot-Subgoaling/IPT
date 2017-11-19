@@ -1,19 +1,17 @@
-
 def main():
-    
-
-    userWidth = int(input("Please enter the width of the box: "))
-    userHeight = int(input("Please enter the height of the box: "))
-    userOutline = input("Please enter a symbol for the box outline: ")
-    userFill = input("Please enter a symol for the box fill: ")
-
-    for n in userOutline:
-        
-
-    for n in userWidth:
-        fill = (n + 1) and len(userHeight[userWidth])
-        
-    
-    
-    
+    width = int(input("Please enter the width of the box: "))
+    height = int(input("Please enter the height of the box: "))
+    outline = input("Please enter a symbol for the box outline: ")
+    fill = input("Please enter a symbol for the box fill: ")
+    def topBottom():
+        row = outline * width
+        print(row)
+    topBottom()
+    def inside():
+        for i in range(1, height):
+            rows = fill * (width - 2)
+            insideRow = outline + rows + outline
+            print(insideRow)
+    inside()
+    topBottom()
 main()

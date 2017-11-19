@@ -1,18 +1,11 @@
-
 def main():
-
-    STOP = 1
-    currentHeight = int(input("What is the height of the hailstone? "))
-    
-    while currentHeight > STOP:
-        print("The hailstone is currently at height", currentHeight)
-        modHeight = currentHeight % 2
-        if modHeight == 1:
-            newHeight = currentHeight * 3 + 1
-        else:
-            newHeight = currentHeight // 2
-        currentHeight = newHeight
-
-    print("Hail stopped at height 1.")
-
+    print("Let's see if we can simulate the movement of a hailstone in a storm.")
+    height = input("Enter a number for the starting height of the hailstone:   ")
+    calcHeight = int(height)
+    while calcHeight != 1:
+          if calcHeight % 2  == 0:
+             calcHeight = int(height) // 2
+          elif calcHeight % 2 > 0:
+             calcHeight = (int(height) * 3) + 1
+    print("Hail stopped at height of 1.")
 main()

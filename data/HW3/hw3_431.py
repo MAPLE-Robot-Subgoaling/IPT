@@ -1,29 +1,13 @@
-''' File: hw3_part3.py 
-    Author: Skye Ortiz 
-    Date: 09/27/2016 
-    Section: 26 
-    E-mail: sortiz1@umbc.edu 
-    Description: This program tells the user what the state of
-    water is at a certain temperature on the temperature scale.
-    Collaboration: I did not collaborate with anyone on this assignment.
-'''
+KELVIN_TO_CELSIUS = 273.15
 def main():
-    temperature = float(input("Please enter the temperature"))
-    degrees = input("Please enter \"C\" for Celcius or \"K\" for Kelvin.")
-
-    if degrees == "C":
-        if temperature <= 0:
-            print("Water is a solid at that temperature.")
-        elif temperature >= 100:
-            print("Water is a gas at that temperature.")
-        else:
-            print("Water is liquid at that temperature.")
-    else:
-        if temperature <= 273.2:
-            print("Water is a solid at that temperature.")
-        elif temperature >= 373.2:
-            print("Water is a gas at that temperature.")
-        else:
-            print("Water is liquid at that temperature.")
-
-main() 
+    temperature = float(input("Please enter the temperature: "))
+    temp_scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if temp_scale == "K":
+        temperature -= KELVIN_TO_CELSIUS
+    if temperature >= 100:
+        print ("At this temperature, water is a gas.")
+    if temperature < 100 and temperature >= 0:
+        print ("At this temperature, water is a liquid.")
+    if temperature < 0:
+        print ("At this temperature, water is a (frozen) solid.")
+main()

@@ -1,29 +1,22 @@
-
 def main():
-
-    userTemp = float(input("Please enter a temperature: "))
-    tempType = input("Is your temperature in Celsius or Kelvin? Please type either 'C' for Celsius or 'K' for Kelvin: ")
-
-    CELS_FP = 0
-    CELS_BP = 100
-    KELV_FP = 273.15
-    KELV_BP = 373.15
-    
-    if tempType == "C":
-        if userTemp <= CELS_FP:
-            print("At this temperature, water is a solid.")
-        elif userTemp < CELS_BP:
-            print("At this temperature, water is a liquid.")
-        elif userTemp >=CELS_BP:
-            print("At this temperature, water is a gas.")
+    KELVIN_BOILING = 373.16
+    KELVIN_FREEZING = 273.16
+    CELCUIS_BOILING = 100
+    CELCIUS_FREEZING = 0
+    temp = float(input("Please enter the temperature:"))
+    unitOfMeasure = input("Please enter 'C' for Celcius or 'K' for Kelvin:")
+    if (unitOfMeasure == "C"):
+        if (temp <= CELCIUS_FREEZING):
+            print("Water's a solid. Ice, Ice, Baby.")
+        elif (temp >= CELCUIS_BOILING):
+            print("Water's a gas. Turn off the tea pot!")
+        else:
+            print("Water's a liquid. Take a shower.")
     else:
-        if userTemp <= KELV_FP:
-            print("At this temperature, water is a solid.")
-        elif userTemp < KELV_BP:
-            print("At this temperature, water is a liquid.")
-        elif userTemp >= KELV_BP:
-            print("At this temperature, water is a gas.")
-
-
-
+        if (temp <= KELVIN_FREEZING):
+            print("Water's a solid. Ice, Ice, Baby.")
+        elif (temp >= KELVIN_BOILING):
+            print("Water's a gas. Turn off the tea pot!")
+        else:
+            print("Water's a liquid. Take a shower.")
 main()

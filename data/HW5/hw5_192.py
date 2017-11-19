@@ -1,19 +1,11 @@
 def main():
-    boxWidth = int(input("Input box width: "))
-    smallaWidth = boxWidth-2
-    if smallaWidth < 1:
-        smallaWidth = 0
-    boxHeight = int(input("Input box height: "))
-    smallaHeight = boxHeight - 2
-    boxOutline = input("Input box outline: ")
-    boxFill = input("Input box filler: ")
-    print(boxOutline*boxWidth)
-    if boxHeight >= 3:
-        for mm in range(smallaHeight):
-           if boxWidth >= 3:
-               print(boxOutline+boxFill*smallaWidth+boxOutline)
-           else:
-               print(boxOutline*boxWidth)
-    if boxHeight >= 2:
-       print(boxOutline*boxWidth)
+    width = int(input("Please enter the width of the box: "))
+    height = int(input("Please enter the height of the box: "))
+    outerSymbol = input("Please enter a symbol for the box outline: ")
+    innerSymbol = input("Please enter a symbol for the box fill: ")
+    for h in range(height):
+        if h == 0 or h == height - 1:
+            print(outerSymbol * width)
+        elif h > 0 and h < height - 1:
+            print(outerSymbol + innerSymbol * (width - 2) + outerSymbol)     
 main()

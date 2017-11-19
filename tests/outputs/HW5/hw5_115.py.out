@@ -1,0 +1,52 @@
+ --- modulename: hw5_115, funcname: <module>
+hw5_115.py(1): def main():
+hw5_115.py(14): main()
+ --- modulename: hw5_115, funcname: main
+hw5_115.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_115.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_115.py(4):     symbol1 = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_115.py(5):     symbol2 = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_115.py(6):     sentinel = 0
+hw5_115.py(7):     inside = width - 2
+hw5_115.py(8):     for s in range(0, height):
+hw5_115.py(9):         if s == 0 or s == (height - 1):
+hw5_115.py(10):             print(symbol1*width)
+$$$$$
+hw5_115.py(13):         sentinel = sentinel + 1
+hw5_115.py(8):     for s in range(0, height):
+hw5_115.py(9):         if s == 0 or s == (height - 1):
+hw5_115.py(12):             print(symbol1 + (symbol2 * inside) + symbol1)
+$###$
+hw5_115.py(13):         sentinel = sentinel + 1
+hw5_115.py(8):     for s in range(0, height):
+hw5_115.py(9):         if s == 0 or s == (height - 1):
+hw5_115.py(12):             print(symbol1 + (symbol2 * inside) + symbol1)
+$###$
+hw5_115.py(13):         sentinel = sentinel + 1
+hw5_115.py(8):     for s in range(0, height):
+hw5_115.py(9):         if s == 0 or s == (height - 1):
+hw5_115.py(12):             print(symbol1 + (symbol2 * inside) + symbol1)
+$###$
+hw5_115.py(13):         sentinel = sentinel + 1
+hw5_115.py(8):     for s in range(0, height):
+hw5_115.py(9):         if s == 0 or s == (height - 1):
+hw5_115.py(10):             print(symbol1*width)
+$$$$$
+hw5_115.py(13):         sentinel = sentinel + 1
+hw5_115.py(8):     for s in range(0, height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,16 +1,19 @@
-
 def main():
-    width = int(input("Please enter the width of the box:"))
-    height = int(input("Please enter the height of the box:"))
-    outline = input("Please enter a symbol for the box outline:")
-    filling =input("Please enter a symbol for the box fill:")
-    for i in range(height):
-        for j in range(width):
-            
-            if i in[0,height-1] or j in [0,width-1] :
-                print ()
-            else:
-                print ()
-
+    length = int(input("Please enter the  length of the box. "))
+    width = int(input("Please enter the width of the box. "))
+    edge = str(input("Please enter what the border of the box should be. "))
+    fill = str(input("Please enter what the fller of the box should be. "))
+    outer = edge * length
+    inner = edge + (fill* (length-2)) + edge 
+    for i in range(1):
+        print(outer)
+    if length != 1:    
+        for j in range(width - 2):
+            print(inner)
+    if length == 1:
+        for k in range(width - 2):
+            print(edge) 
+    if width != 1:
+        for h in range(1):
+            print(outer)
 main()
-    

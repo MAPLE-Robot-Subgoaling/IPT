@@ -1,16 +1,28 @@
-
 def main():
-    x = int(input("Please enter a positive integer: "))
-    if x < 0:
-        x = x * -1
-        print("Your integer was made positive")
-    while x != 1:
-        if x % 2 == 0:
-            x = x/2
-            print(x)
-        elif x % 2 == 1:
-            x = (x*3)+1
-            print(x)
-    print("current height is now one!")
-
+    startHeight = int(input("Please enter the starting height of the hailstone: "))
+    print("Hail is currently at height", startHeight)
+    if startHeight == 1:
+        print("Hail stopped at height 1")
+    elif startHeight % 2 == 0:
+        newHeight = startHeight // 2
+        print("Hail is currently at height", newHeight) 
+        while newHeight != 2:
+            if newHeight % 2 == 1:
+                newHeight = (newHeight * 3) +1
+                print("Hail is currently at height", newHeight)
+            elif newHeight % 2 == 0:
+                newHeight = newHeight // 2
+                print("Hail is currently at height", newHeight)
+        print("Hail stopped at height 1")
+    elif startHeight % 2 == 1:
+        newHeight = (startHeight * 3) + 1
+        print("Hail is currently at height", newHeight)
+        while newHeight != 2:
+            if newHeight % 2 == 1:
+                newHeight = (newHeight * 3) + 1
+                print("Hail is currently at height", newHeight)
+            elif newHeight % 2 == 0:
+                newHeight = newHeight // 2
+                print("Hail is currently at height", newHeight)
+        print("Hail stopped at height 1")
 main()

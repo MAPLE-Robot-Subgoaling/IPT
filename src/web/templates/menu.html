@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose Assignment</title>
+</head>
+<body>
+{% for message in get_flashed_messages() %}
+<h3>{{message}}</h3>
+{% endfor %}
+Choose an assignment to label:
+{% if totals %}
+<ul>
+{% for key, val in totals.items() %}
+	<li>{{key}} -- {{actual[key]}}/{{val}}</li>
+{% endfor%}
+</ul>
+{% else %}
+<h4>Nothing to see here</h4>
+{% endif%}
+</body>
+</html>

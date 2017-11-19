@@ -1,0 +1,31 @@
+ --- modulename: hw3_176, funcname: <module>
+hw3_176.py(1): def main():
+hw3_176.py(19): main()
+ --- modulename: hw3_176, funcname: main
+hw3_176.py(2):     print("Hello!")
+Hello!
+hw3_176.py(3):     waterTemp=int(input("Please enter the temprature:"))
+Please enter the temprature: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_176.py(4):     tempUnit=input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+Please enter 'C' for Celsius, or 'K' for Kelvin: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_176.py(5):     if tempUnit == "C":
+hw3_176.py(12):     if tempUnit == "K":
+hw3_176.py(13):         if waterTemp <= 273:
+hw3_176.py(15):         if 273 < waterTemp < 372:
+hw3_176.py(17):         if 373 <= waterTemp:
+hw3_176.py(18):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

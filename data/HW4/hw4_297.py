@@ -1,10 +1,16 @@
 def main():
-    height = int(input("Please input a positive integer to represent the starting height of the hailstone: "))
-    while(height!=1): #will first check if the hail is at 1, because this ends the program essentially
-        print("Hail height is", height) #the print statment is before the if statments so that the users hail hieght is also displayed
-        if(height%2 == 0): # checks if the number is even
-            height = height//2 # interger division is used so that the ouputs are ints and not decimals/floats
-        else:
-            height = (height*3)+1
-    print("The hail stopped at height", height)
+    odd = 1  
+    even = 0 
+    height = int(input("Please enter the starting height of the hailstone: "))
+    print("Hail is currently at height",height)
+    while height != 1:
+        if (height % 2) == even: 
+            height = height * 0.5
+            height = int(height)
+            print("Hail is currently at height",height)
+        elif (height % 2) == odd: 
+            height = 3 * height + 1
+            height = int(height)
+            print("Hail is currently at height",height)
+    print("Hail stopped at height",height)
 main()

@@ -1,0 +1,28 @@
+ --- modulename: hw3_21, funcname: <module>
+hw3_21.py(1): def main():
+hw3_21.py(19): main()
+ --- modulename: hw3_21, funcname: main
+hw3_21.py(2):     Temperature = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_21.py(3):     kind = input("Enter 'K' for kelvin, or 'C' for celcius.")
+Enter 'K' for kelvin, or 'C' for celcius. --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_21.py(4):     if kind == "C":
+hw3_21.py(11):     if kind == "K":
+hw3_21.py(12):         Temperature = Temperature -  273.15
+hw3_21.py(13):         if Temperature > 100:
+hw3_21.py(14):             print("Water is gas")
+Water is gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

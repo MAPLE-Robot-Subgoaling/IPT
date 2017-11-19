@@ -1,19 +1,24 @@
-
-def main():
-
-    temp = float(input("What is the temperature? "))
-    print ("Please answer with either an C or K")
-    Kelvin_Celsius = input("Is your temperature in Celsius or Kelvin? ")
-    if Kelvin_Celsius == "C" and temp >= 100:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a gas")
-    if Kelvin_Celsius == "C" and temp < 100 and temp > 0:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a liquid")
-    if Kelvin_Celsius == "C" and temp < 0:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a solid")
-    if Kelvin_Celsius == "K" and temp >= 373.2:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a gas")
-    if Kelvin_Celsius == "K" and temp < 373.2 and temp > 273.2:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a liquid")
-    if Kelvin_Celsius == "K" and temp < 273.2:
-        print ("At",temp,"degrees",Kelvin_Celsius,"your water is a solid")
+def main ():
+    temp     = float(input("Please enther the temperature: "))
+    typeTemp = input("Please enter 'C' for celsius, or 'K' for Kelvin ")
+    if temp > 0 and temp < 100 and typeTemp == 'C':
+        print ("At this temperature, water is a liquid")
+    elif temp > 100 and typeTemp == 'C':
+        print ("At this temperature, water is a gas")
+    elif temp < 0 and typeTemp == 'C':
+        print ("At this temperature, water is a solid")
+    elif temp == 0 and typeTemp == 'C':
+        print ("At this temperature, water is at its freezing point")
+    elif temp == 100 and typeTemp == 'C':
+        print ("At this temperature, water is at its boiling point")
+    if temp > 273.16 and temp < 373.16 and typeTemp == 'K':
+        print ("At this temperature, water is a liquid")
+    elif temp > 373.16 and typeTemp == 'K':
+        print ("At this temperature, water is a gas")
+    elif temp < 273.16 and typeTemp == 'K':
+        print ("At this temperature, water is a solid")
+    elif temp == 273.16 and typeTemp == 'K':
+        print ("At this temperature, water is at its freezing point")
+    elif temp == 373.16 and typeTemp == 'K':
+        print ("At this temperature, water is at its boiling point") 
 main()

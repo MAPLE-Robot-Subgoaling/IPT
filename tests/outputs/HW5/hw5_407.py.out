@@ -1,0 +1,51 @@
+ --- modulename: hw5_407, funcname: <module>
+hw5_407.py(1): def main():
+hw5_407.py(14): main()
+ --- modulename: hw5_407, funcname: main
+hw5_407.py(2):     length = int(input("Please enter the length of the box: "))
+Please enter the length of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_407.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_407.py(4):     symb1 = input("Please enter a symbol for the outline of the box: ")
+Please enter a symbol for the outline of the box: hw5_407.py(5):     symb2 = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_407.py(6):     j = 1
+hw5_407.py(7):     for j in range(1,height + 1):
+hw5_407.py(8):         if j == 1 or j == height:
+hw5_407.py(9):             print(symb1 * length)
+$$$$$
+hw5_407.py(10):             j = 1 + j
+hw5_407.py(7):     for j in range(1,height + 1):
+hw5_407.py(8):         if j == 1 or j == height:
+hw5_407.py(12):             print(symb1 + symb2 * (length - 2) + symb1)
+$###$
+hw5_407.py(13):             j = 1 + j
+hw5_407.py(7):     for j in range(1,height + 1):
+hw5_407.py(8):         if j == 1 or j == height:
+hw5_407.py(12):             print(symb1 + symb2 * (length - 2) + symb1)
+$###$
+hw5_407.py(13):             j = 1 + j
+hw5_407.py(7):     for j in range(1,height + 1):
+hw5_407.py(8):         if j == 1 or j == height:
+hw5_407.py(12):             print(symb1 + symb2 * (length - 2) + symb1)
+$###$
+hw5_407.py(13):             j = 1 + j
+hw5_407.py(7):     for j in range(1,height + 1):
+hw5_407.py(8):         if j == 1 or j == height:
+hw5_407.py(9):             print(symb1 * length)
+$$$$$
+hw5_407.py(10):             j = 1 + j
+hw5_407.py(7):     for j in range(1,height + 1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

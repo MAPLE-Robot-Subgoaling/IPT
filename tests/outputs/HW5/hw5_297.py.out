@@ -1,0 +1,57 @@
+ --- modulename: hw5_297, funcname: <module>
+hw5_297.py(1): def main():
+hw5_297.py(15): main()
+ --- modulename: hw5_297, funcname: main
+hw5_297.py(2):     WIDTH = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_297.py(3):     HEIGHT = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_297.py(4):     OUTLINE = input("Please enter the symbol for the outline of the box: ")
+Please enter the symbol for the outline of the box: hw5_297.py(5):     FILLING = input("Please enter the symbol for the inside of the box: ")
+Please enter the symbol for the inside of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_297.py(6):     def edge():
+hw5_297.py(8):     def inside():
+hw5_297.py(10):     for x in range(HEIGHT):
+hw5_297.py(11):         if(x == 0 or x==HEIGHT-1):
+hw5_297.py(12):             edge()
+ --- modulename: hw5_297, funcname: edge
+hw5_297.py(7):         print(OUTLINE*WIDTH)
+$$$$$
+hw5_297.py(10):     for x in range(HEIGHT):
+hw5_297.py(11):         if(x == 0 or x==HEIGHT-1):
+hw5_297.py(14):             inside()
+ --- modulename: hw5_297, funcname: inside
+hw5_297.py(9):         print(OUTLINE + FILLING*(WIDTH-2) + OUTLINE)
+$###$
+hw5_297.py(10):     for x in range(HEIGHT):
+hw5_297.py(11):         if(x == 0 or x==HEIGHT-1):
+hw5_297.py(14):             inside()
+ --- modulename: hw5_297, funcname: inside
+hw5_297.py(9):         print(OUTLINE + FILLING*(WIDTH-2) + OUTLINE)
+$###$
+hw5_297.py(10):     for x in range(HEIGHT):
+hw5_297.py(11):         if(x == 0 or x==HEIGHT-1):
+hw5_297.py(14):             inside()
+ --- modulename: hw5_297, funcname: inside
+hw5_297.py(9):         print(OUTLINE + FILLING*(WIDTH-2) + OUTLINE)
+$###$
+hw5_297.py(10):     for x in range(HEIGHT):
+hw5_297.py(11):         if(x == 0 or x==HEIGHT-1):
+hw5_297.py(12):             edge()
+ --- modulename: hw5_297, funcname: edge
+hw5_297.py(7):         print(OUTLINE*WIDTH)
+$$$$$
+hw5_297.py(10):     for x in range(HEIGHT):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

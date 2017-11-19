@@ -1,23 +1,16 @@
-
-def main():
-
-    tempt = float(input("Please enter the temperature: "))
-    
-    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-
-    if scale == 'C':
-        if tempt <= 0: 
-            print("At this temperature, water is a (frozen) solid.")
-        elif tempt > 0 and tempt < 100:
-            print("At this temperature, water is a liquid.")
-        elif tempt >= 100:
-            print("At this temperature, water is a gas.")
-    if scale == 'K':
-        if tempt <= 273.16:
-            print("At this temperature, water is a (frozen) solid.")
-        elif tempt > 273.16 and tempt < 373.16:
-            print("At this temperature, water is a liquid.")
-        elif tempt >= 373.16:
-            print("At this temperature, water is a gas.")
-
-main()
+def maine():
+   t = int(input("Please enter the tempurature:"))
+   l = str(input("Please enter 'c' for Celsius, or 'k' for Kelvin:"))
+   if t <= 0 and l == "c":
+       print ("At this tempurature, water is a solid (frozen)")
+   if t <273 and l == "k":
+       print ("At this tempurature, water is a solid (frozen)")
+   if t > 0 and t <100 and l =="c":
+       print (" At this tempurature, water is a liquid")
+   if t>= 273 and t <373 and l == "k":
+       print (" At this tempurature, water is a liquid")
+   if t > 100 and l == "c":
+       print ("At this tempureture, water is a gas")
+   if t >= 373 and l == "k":
+       print ("At this tempureture, water is a gas")
+maine()

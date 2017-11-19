@@ -1,27 +1,12 @@
-SOLIDC=0
-GASC=100
-SOLIDK=273.16
-GASK=373.16
 def main():
-      
-    Temp=float(input("Please enter the temperature:"))
-    Scale=input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
-    
-    if Scale=="C":
-        if Temp<=SOLIDC:
-            print("At this temperature, water is a (frozen) solid.")
-        elif Temp>=GASC:
-            print("At this temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid.")
-    elif Scale=="K":
-        if Temp<=SOLIDK:
-            print("At this temperature, water is a (frozen) solid.")
-        elif Temp>=GASK:
-            print("At this temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid.")
+    temperature = float(input("Please enter the temperature: "))
+    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if (temperature <= 0 and tempScale == "C") or (temperature <= 273.15 and tempScale == "K"):
+        print("At this temperature, water is a (frozen) solid.")
+    elif(temperature >= 100 and tempScale == "C") or (temperature >= 373.15 and tempScale == "K"):
+        print("At this temperature, water is a gas.")
+    elif tempScale == "C" or tempScale == "K":
+        print("At this temperature, water is a liquid.")
     else:
-        print("You did not enter a valid scale")
-
-main()
+        print("One of your inputs was incorrect. Please try again.")
+main() 

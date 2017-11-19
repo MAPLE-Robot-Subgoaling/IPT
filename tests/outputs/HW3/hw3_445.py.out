@@ -1,0 +1,29 @@
+ --- modulename: hw3_445, funcname: <module>
+hw3_445.py(1): def main():
+hw3_445.py(18): main()
+ --- modulename: hw3_445, funcname: main
+hw3_445.py(2):     theTemp = float(input("Please enter the temperature:"))
+Please enter the temperature: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_445.py(3):     theScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin:")
+Please enter 'C' for Celsius, or 'K' for Kelvin: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_445.py(4):     if theScale == "C":
+hw3_445.py(11):     if theScale == "K":
+hw3_445.py(12):         if theTemp <= 273:
+hw3_445.py(14):         elif theTemp >= 273 and theTemp <= 373:
+hw3_445.py(16):         elif theTemp >= 373:
+hw3_445.py(17):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

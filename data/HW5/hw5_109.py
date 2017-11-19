@@ -1,13 +1,13 @@
-
 def main():
-    widthBox = int(input("Please enter the width of the box:"))
-    heightBox = int(input("Please enter the height of the box:"))
-    symbolOutlined = input("Please enter a symbol for the box ouline:")
-    symbolFilled = input("Please enter a symbol for the box fill:")
-    combine = symbolOutlined + (symbolFilled * (widthBox -2)) + symbolOutlined
-    for everyline in range(heightBox): #Repeat for each # in range of height
-        if everyline == 0 or everyline == (heightBox - 1):            
-            print(symbolOutlined* widthBox)
-        else:            
-            print(combine)
+    width = int(input("Please enter the width of the box:"))
+    height = int(input("PLease enter the height of the box:"))
+    outline = input("Please enter a symbol for the box outline:")
+    fill = input("Please enter a symbol for the box fill:")
+    for x in range (0,height):
+        for y in range (0,width):
+            if x == 0 or y == 0 or x == height-1 or y == width-1 :
+                print(outline, end="")
+            else:  
+                print(fill,end="")
+        print('')
 main()

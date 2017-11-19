@@ -1,25 +1,16 @@
-
 def main():
-
-    BOTTOM_LIST = 0
-
-    width = int(input("Please enter the width of the box: "))
-    height = int(input("Please enter the height of the box: "))
-    outline = input("Please enter a symbol for the box outline: ")
-    fill = input("Please enter a symbol for the box outline: ")
-    boxString = ""
-
-    for i in list(range(BOTTOM_LIST, height)):
-        if i == BOTTOM_LIST or i == height - 1:
-            boxString = outline * width
-            print(boxString)
-        else:
-            for j in list(range(BOTTOM_LIST, width)):
-                if j == BOTTOM_LIST or j == width - 1:
-                    boxString += outline
-                else:
-                    boxString += fill
-            print(boxString)
-        boxString = ""
-
+    width = int(input("Please enter the width of your box: "))
+    height = int(input("Please enter the height of your box: "))
+    outside = input("Please enter the symbol you'd like as the outline your box: ")
+    inside = input("Please enter the symbol you want to fill your box: ")
+    if height != 1 and width != 1:
+        for x in range(height):
+            if x == 0:
+                print (outside * width)
+            if 0 < x < height:
+                print (outside + inside * (width - 2) + outside)
+            if x == height - 1:
+                print (outside * width)
+    else:
+        print(outside)
 main()

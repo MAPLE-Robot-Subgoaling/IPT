@@ -1,0 +1,79 @@
+ --- modulename: hw5_487, funcname: <module>
+hw5_487.py(1): def main():
+hw5_487.py(19): main()
+ --- modulename: hw5_487, funcname: main
+hw5_487.py(2):     width = int(input("Please enter the width of the box: " ))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_487.py(3):     height = int(input("Please enter the height of the box: " ))
+Please enter the height of the box: hw5_487.py(4):     outline = input("Please enter a symbol for the box outline: " )
+Please enter a symbol for the box outline: hw5_487.py(5):     fill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_487.py(6):     currentWidth = 0
+hw5_487.py(7):     currentHeight = 0
+hw5_487.py(8):     boxHeight = [0, height-1, 1]
+hw5_487.py(9):     boxFill = [1, height-1, 1]
+hw5_487.py(10):     for currentHeight in boxHeight:
+hw5_487.py(11):         if currentHeight == 0:
+hw5_487.py(12):             print(outline * width)
+$$$$$
+hw5_487.py(13):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(10):     for currentHeight in boxHeight:
+hw5_487.py(11):         if currentHeight == 0:
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(10):     for currentHeight in boxHeight:
+hw5_487.py(11):         if currentHeight == 0:
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(15):             print(outline + (fill * (width - 2)) + outline)
+$###$
+hw5_487.py(16):             currentHeight + 1
+hw5_487.py(14):         for currentHeight in boxFill:
+hw5_487.py(10):     for currentHeight in boxHeight:
+hw5_487.py(18):         print(outline * width)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

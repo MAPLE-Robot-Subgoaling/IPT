@@ -1,23 +1,10 @@
-
 def main():
-
-    wideth= int(input("Gib me wide"))
-    longth = int(input("Gibe me long"))
-    border = input("gibe boder pls")
-    filling = input("gib filling pls")
-
-    for a in range(longth):
-        if(a == 0 or longth-a == 1):
-            print(border*wideth)
-        else:
-            for b in range(wideth):
-                if(b == 0):
-                    print(border, end="")
-                elif (wideth-b == 1):
-                    print(border)
-                else:
-                    print(filling, end="")
-
-
-
+    width = int(input("Please enter the width of the box: " , ))
+    height = int(input("Please enter the height of the box: " , ))
+    outline = str(input("Please enter a symbol for the box outline: " , ))
+    fill = str(input("Please enter a symbol for the box outline: " , ))
+    for h in range(height):
+        for w in range(width):
+            print(outline if h in [0, height - 1] or w in [0, width - 1] else fill, end = "")
+        print()
 main()

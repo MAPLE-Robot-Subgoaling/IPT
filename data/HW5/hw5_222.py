@@ -1,23 +1,11 @@
 def main():
-    w=int(input("Enter the width: "))
-    h=int(input("Enter the height: "))
-    fill=input("Enter symbol for the fill: ")
-    outline=input("Enter the symbol for the outline: ")
-    
-    top=""
-    for i in range(0,w):
-        top=str(top+outline)
-    print(top)
-
-    inner=""
-    for i in range(1,h-1):
-        for u in range(0,w):
-           if(u==0 or u==w-1):
-               inner=str(inner+outline)
-           else:
-               inner=str(inner+fill)
-        print(inner)
-        inner=""
-    
-    print(top)
+    width = int(input("Please enter the width of the box: "))
+    height = int(input("Please enter the height of the box: "))
+    outline_symbol = str(input("Please enter a symbol for the box outine: "))
+    filling_symbol = str(input("Please enter a symbol for the box fill: "))
+    for i in range(height):
+        if i == 0 or i == height - 1:
+            print(outline_symbol * width)
+        else:
+            print(outline_symbol + filling_symbol*(width - 2) + outline_symbol)
 main()

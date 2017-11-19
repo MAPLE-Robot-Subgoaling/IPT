@@ -1,0 +1,120 @@
+ --- modulename: hw5_483, funcname: <module>
+hw5_483.py(1): def main():
+hw5_483.py(13): main()
+ --- modulename: hw5_483, funcname: main
+hw5_483.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_483.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_483.py(4):     outlineSym = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_483.py(5):     fillSym = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_483.py(6):     for h in range(0, height):
+hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(12):          print ("")
+
+hw5_483.py(6):     for h in range(0, height):
+hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(12):          print ("")
+
+hw5_483.py(6):     for h in range(0, height):
+hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(12):          print ("")
+
+hw5_483.py(6):     for h in range(0, height):
+hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(11):                 print (fillSym, end="")
+#hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(12):          print ("")
+
+hw5_483.py(6):     for h in range(0, height):
+hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(8):             if (h == 0 or w == 0 or h == (height-1) or w == (width-1)):
+hw5_483.py(9):                 print (outlineSym, end="")
+$hw5_483.py(7):          for w in range(0, width):
+hw5_483.py(12):          print ("")
+
+hw5_483.py(6):     for h in range(0, height):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

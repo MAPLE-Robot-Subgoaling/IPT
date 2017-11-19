@@ -1,0 +1,120 @@
+ --- modulename: hw5_77, funcname: <module>
+hw5_77.py(1): def main():
+hw5_77.py(13): main()
+ --- modulename: hw5_77, funcname: main
+hw5_77.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_77.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_77.py(4):     edge = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_77.py(5):     inside = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_77.py(6):     for i in range(0, width):
+hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(12):         print('')
+
+hw5_77.py(6):     for i in range(0, width):
+hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(12):         print('')
+
+hw5_77.py(6):     for i in range(0, width):
+hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(12):         print('')
+
+hw5_77.py(6):     for i in range(0, width):
+hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(11):                 print(inside, end = '')
+#hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(12):         print('')
+
+hw5_77.py(6):     for i in range(0, width):
+hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(8):             if(i == width-1 or j == height-1 or i == 0 or j == 0):
+hw5_77.py(9):                 print (edge, end = '')
+$hw5_77.py(7):         for j in range(0, height):
+hw5_77.py(12):         print('')
+
+hw5_77.py(6):     for i in range(0, width):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

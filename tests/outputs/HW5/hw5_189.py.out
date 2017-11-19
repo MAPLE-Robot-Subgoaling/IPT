@@ -1,0 +1,51 @@
+ --- modulename: hw5_189, funcname: <module>
+hw5_189.py(1): ZERO = 0
+hw5_189.py(2): START = 0
+hw5_189.py(3): STEP = 1
+hw5_189.py(4): HEIGHT_ADJUST = -1
+hw5_189.py(5): WIDTH_ADJUST = -2
+hw5_189.py(6): def main():
+hw5_189.py(17): main()
+ --- modulename: hw5_189, funcname: main
+hw5_189.py(7):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_189.py(8):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_189.py(9):     outline = input("Please enter a symbol fot the box outline: ")
+Please enter a symbol fot the box outline: hw5_189.py(10):     fill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_189.py(11):     row = START
+hw5_189.py(12):     for row in range(START, height, STEP):
+hw5_189.py(13):         if(row == ZERO or row == (height + HEIGHT_ADJUST)):
+hw5_189.py(14):                print((outline)*(width))
+$$$$$
+hw5_189.py(12):     for row in range(START, height, STEP):
+hw5_189.py(13):         if(row == ZERO or row == (height + HEIGHT_ADJUST)):
+hw5_189.py(16):                print(outline + fill*(width + WIDTH_ADJUST) + outline)
+$###$
+hw5_189.py(12):     for row in range(START, height, STEP):
+hw5_189.py(13):         if(row == ZERO or row == (height + HEIGHT_ADJUST)):
+hw5_189.py(16):                print(outline + fill*(width + WIDTH_ADJUST) + outline)
+$###$
+hw5_189.py(12):     for row in range(START, height, STEP):
+hw5_189.py(13):         if(row == ZERO or row == (height + HEIGHT_ADJUST)):
+hw5_189.py(16):                print(outline + fill*(width + WIDTH_ADJUST) + outline)
+$###$
+hw5_189.py(12):     for row in range(START, height, STEP):
+hw5_189.py(13):         if(row == ZERO or row == (height + HEIGHT_ADJUST)):
+hw5_189.py(14):                print((outline)*(width))
+$$$$$
+hw5_189.py(12):     for row in range(START, height, STEP):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

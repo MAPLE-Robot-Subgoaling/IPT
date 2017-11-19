@@ -1,17 +1,20 @@
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if scale == "K":
-        tempC = temp - 273.15
-    else:
-        tempC = temp
-
-    if tempC <= 0:
-        print("At this temperature, the water is a solid.")
-    elif tempC >  0 and tempC < 100:
-        print("At this temperature, the water is a liquid.")
-    elif tempC >= 100:
-        print("At this temperature, the water is a gas.")
-
-main() 
+    temperature = float(input("Please enter the temperature: "))
+    mode = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    state = ""
+    if (mode == "C"):
+        if (temperature <= 0):
+            state = "solid"
+        elif (temperature >= 100):
+            state = "gas"
+        else:
+            state = "liquid"
+    elif (mode == "K"):
+        if (temperature <= 273.15):
+            state = "solid"
+        elif (temperature >= 373.15):
+            state = "gas"
+        else:
+            state = "liquid"
+    print ("At this temperature, water is a", state)
+main()

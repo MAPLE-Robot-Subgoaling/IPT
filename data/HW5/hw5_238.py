@@ -1,15 +1,13 @@
-
 def main():
-    wDth = int(input("Please enter the width of the box: "))
-    hIth = int(input("Please enter the height of the box: "))
-    outLn = input("Please enter the character you'd like for the"
-                  + " outline of the box: ")
-    fill = input("Please enter the character you'd like for the" 
-                 + " fill of the box: ")
-    print (outLn*wDth)#Top
-    for x in range(hIth-2):#Middle
-        print (outLn,end="")
-        print (fill*(wDth-2),end="")
-        print (outLn)
-    print (outLn*wDth)#Bottom
+    Width = int(input("Please enter the width of the box: "))
+    Height = int(input("Please enter the height of the box: "))
+    Bout = input("Please enter a symbol for the box outline: ")
+    Bfill = input("Please enter a symbol for the box fill: ")
+    for i in range(Height):
+        if i == 0:
+            print(Bout*Width)
+        elif i == Height-1:
+            print(Bout*Width)
+        else: 
+            print((Bout)+(Bfill*(Width-2))+(Bout))
 main()

@@ -1,19 +1,13 @@
-
 def main():
-    
-    hail = int(float(input("Please enter a positive integer: ")))
-
-    print("Hail is currently at "+ str(int(hail)))
-
-    while hail != 1:
-        
-        if hail % 2 == 0:
-            hail = hail /2
+    height = int(input("Please enter the starting height of the hailstone: "))
+    ADD_FACTOR = 1
+    MULTI_FACTOR = 3
+    print(" ")
+    while height != 1:
+        print('Hail is currently at height ',height)
+        if (height % 2) == 0:
+            height = height // 2
         else:
-            hail = (hail*3)+1
-        print ("Hail is currently at " + str(int(hail)))
-    print ("Hail has stopped at height 1.")
-
-
-
+            height = (height * MULTI_FACTOR) + ADD_FACTOR
+    print("Hail stopped at height 1\n")
 main()

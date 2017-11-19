@@ -1,22 +1,11 @@
 def main():
-	print("This program detects the state of matter of water based on the temperature.")
-	temp = float(input("Enter the temperature in Celsius or Kelvin:"))
-	celsius = "C"
-	kelvin = "K"
-	choice = input("Enter 'C' for Celsius or 'K' for Kelvin:")
-	if choice == celsius:
-		if temp < 0:
-			print("Solid")
-		elif 0 < temp < 100:
-			print("Liquid")
-		elif temp > 100:
-			print("Gas")
-	if choice == kelvin:
-                if temp < 273.15:
-                        print("Solid")
-                elif 273.15 < temp < 373.15:
-                        print("Liquid")
-                elif temp > 373.15:
-                        print("Gas")
-
+    KELVIN_IS_CELSIUS=273.15
+    FROZEN=0
+    GAS=100
+    tempNum=float(input("Please enter the temperature: "))
+    tempScale=input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    if(tempScale == "K"):tempNum = tempNum-KELVIN_IS_CELSIUS
+    if(tempNum<=FROZEN):print("At this temperature, water is (frozen) solid.")
+    if(tempNum>FROZEN and tempNum<GAS):print("At this temperature, water is liquid.")
+    if(tempNum>=GAS):print("At this temperature, water is gas.")
 main()

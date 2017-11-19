@@ -1,0 +1,32 @@
+ --- modulename: hw3_19, funcname: <module>
+hw3_19.py(1): def main():
+hw3_19.py(16): main()
+ --- modulename: hw3_19, funcname: main
+hw3_19.py(2):     print("Welcome to the water state questionaire!")
+Welcome to the water state questionaire!
+hw3_19.py(3):     print("This program tells you the state of water based on user input.")
+This program tells you the state of water based on user input.
+hw3_19.py(4):     theTemp=float(input("Enter a temperature: "))
+Enter a temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_19.py(5):     kelvinCelsius=str(input("Please enter C for Celsius and K for Kelvin."))
+Please enter C for Celsius and K for Kelvin. --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_19.py(6):     if (kelvinCelsius == "K"):
+hw3_19.py(7):         actualTemp=theTemp-273.15
+hw3_19.py(10):     if (actualTemp<=0):
+hw3_19.py(12):     elif (actualTemp > 0 and actualTemp < 100):
+hw3_19.py(15):         print("At this temperature, the water is in a gas state.")
+At this temperature, the water is in a gas state.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

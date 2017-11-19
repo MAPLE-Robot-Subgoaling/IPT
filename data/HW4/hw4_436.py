@@ -1,23 +1,9 @@
-
-END = 1
-
 def main():
-    erraticHail = int(input("Please enter the starting height of the hailstone: "))
-
-    while erraticHail < END:
-        print("Invalid height. Please check the height again.")
-        erraticHail = int(input("Enter the starting height: "))
-
-    print ("The erratic hailstone starts out at height", erraticHail)
-
-    while erraticHail != END:
-        if (erraticHail // 2) == (erraticHail / 2):
-            erraticHail = erraticHail // 2
-            print("The erratic hailstone height is currently", erraticHail)
-        else:
-            erraticHail = erraticHail * 3 + 1
-            print("The erratic hailstone height is currently", erraticHail)
-
-    print ("Hailstone stopped at height", END)
-            
+   hailHeight=int(input("Please enter the starting height of the hailstone: "))
+   while(hailHeight!=1):
+       print("Hail is currently at height",hailHeight)
+       if(hailHeight%2==0):
+           hailHeight=int(hailHeight/2)
+       else: hailHeight=int(3*hailHeight+1)
+   print("Hail stopped at height 1")
 main()

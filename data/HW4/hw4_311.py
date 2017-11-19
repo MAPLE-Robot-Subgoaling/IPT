@@ -1,28 +1,11 @@
-x# File: hw4_part4.py
-
-
+EVEN = 2
 def main():
-
-    
-    
-    num= int(input("Please enter the starting height of the hailstone:")
-             
-              while num > 0:
-                  print("Hail is currently at height", num)
-              if num % 2 == 0:
-                  num = n/2
-              else:
-                  num = ((num*3)+1)
-              print ("Hail stopped at 1")
-              count= num+ 1
-
+    height = int(input("What is the initial height of the hailstone? "))
+    while (height > 1):
+        if ((height/EVEN) == int(height/EVEN)):
+            height = int(height/2)
+        else:
+            height = height*3
+            height = int(height + 1)
+        print("Hail is currently at height ", height)
 main()
-
-
-
-
-
-
-
-
-

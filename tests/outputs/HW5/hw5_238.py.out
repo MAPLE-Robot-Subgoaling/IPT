@@ -1,0 +1,46 @@
+ --- modulename: hw5_238, funcname: <module>
+hw5_238.py(1): def main():
+hw5_238.py(14): main()
+ --- modulename: hw5_238, funcname: main
+hw5_238.py(2):     wDth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_238.py(3):     hIth = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_238.py(4):     outLn = input("Please enter the character you'd like for the"
+hw5_238.py(5):                   + " outline of the box: ")
+Please enter the character you'd like for the outline of the box: hw5_238.py(6):     fill = input("Please enter the character you'd like for the" 
+hw5_238.py(7):                  + " fill of the box: ")
+Please enter the character you'd like for the fill of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_238.py(8):     print (outLn*wDth)
+$$$$$
+hw5_238.py(9):     for x in range(hIth-2):
+hw5_238.py(10):         print (outLn,end="")
+$hw5_238.py(11):         print (fill*(wDth-2),end="")
+###hw5_238.py(12):         print (outLn)
+$
+hw5_238.py(9):     for x in range(hIth-2):
+hw5_238.py(10):         print (outLn,end="")
+$hw5_238.py(11):         print (fill*(wDth-2),end="")
+###hw5_238.py(12):         print (outLn)
+$
+hw5_238.py(9):     for x in range(hIth-2):
+hw5_238.py(10):         print (outLn,end="")
+$hw5_238.py(11):         print (fill*(wDth-2),end="")
+###hw5_238.py(12):         print (outLn)
+$
+hw5_238.py(9):     for x in range(hIth-2):
+hw5_238.py(13):     print (outLn*wDth)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

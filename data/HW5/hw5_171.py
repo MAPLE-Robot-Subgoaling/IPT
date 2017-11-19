@@ -1,15 +1,15 @@
-
-width = int(input("Please enter width: "))
-height = int(input("Please enter height: "))
-symbol_outline = input("Please enter a symbol for the outline:") 
-symbol_fill = input("Please enter a symbol for the fill:")
-
 def main():
-    forl_row = symbol_outline*width
-    mid_row = symbol_outline+(symbol_fill*(width-2))+symbol_outline
-    print(forl_row)
-    for x in range(height):
-        print(mid_row)
-    print(forl_row)
-
+    width = int(input("Please enter the width of the box: "))
+    height = int(input("Please enter the hight of the box: "))
+    outline = str(input("Please enter a symbol for the box outline: "))
+    fill = str(input("Please enter a symbol for the box fill: "))
+    box = [""]*height
+    for h in range(height):
+        for w in range(width):
+            if h == 0 or h == height - 1 or w == 0 or w == width - 1:
+                box[h] = box[h] + outline
+            else:
+                box[h] = box[h] + fill
+    for row in box :
+        print ( row )
 main()

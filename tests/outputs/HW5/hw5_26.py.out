@@ -1,0 +1,78 @@
+ --- modulename: hw5_26, funcname: <module>
+hw5_26.py(1): def drawBox(width, height, outline, fill):
+hw5_26.py(8): def main():
+hw5_26.py(17): main()
+ --- modulename: hw5_26, funcname: main
+hw5_26.py(9):     print("Welcome to the 133T ASCII Art Box program! ")
+Welcome to the 133T ASCII Art Box program! 
+hw5_26.py(10):     boxWidth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_26.py(11):     boxHeight = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_26.py(12):     outlineSymbol = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_26.py(13):     fillSymbol = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_26.py(14):     drawBox(boxWidth, boxHeight, outlineSymbol, fillSymbol)
+ --- modulename: hw5_26, funcname: drawBox
+hw5_26.py(2):     print()
+
+hw5_26.py(3):     print(outline * width)
+^^^^^^^^
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+^@@@@@@^
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+^@@@@@@^
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+^@@@@@@^
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(6):     print(outline * width)
+^^^^^^^^
+hw5_26.py(7):     print()
+
+hw5_26.py(15):     print("We flipped it...for funsies. Your height is your width,  your fill is your outline and vice versa! Enjoy.")
+We flipped it...for funsies. Your height is your width,  your fill is your outline and vice versa! Enjoy.
+hw5_26.py(16):     drawBox(boxHeight, boxWidth, fillSymbol, outlineSymbol)
+ --- modulename: hw5_26, funcname: drawBox
+hw5_26.py(2):     print()
+
+hw5_26.py(3):     print(outline * width)
+@@@@@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(5):         print(outline + fill * (width - 2) + outline)
+@^^^@
+hw5_26.py(4):     for i in range(height - 2):
+hw5_26.py(6):     print(outline * width)
+@@@@@
+hw5_26.py(7):     print()
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

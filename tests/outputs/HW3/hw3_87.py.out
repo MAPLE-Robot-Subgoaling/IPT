@@ -1,0 +1,30 @@
+ --- modulename: hw3_87, funcname: <module>
+hw3_87.py(1): def main():
+hw3_87.py(16): main()
+ --- modulename: hw3_87, funcname: main
+hw3_87.py(2):     userTemp = float(input(" Please enter the tempaerature: "))
+ Please enter the tempaerature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_87.py(3):     tempCK = input(" Please enter 'C' for Celsius or 'K' for Kelvin: ")
+ Please enter 'C' for Celsius or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_87.py(4):     if (tempCK == "C") and (userTemp <= 32):
+hw3_87.py(6):     elif (tempCK == "C") and (32 < userTemp < 100):
+hw3_87.py(8):     elif (tempCK == "C") and (userTemp > 100):
+hw3_87.py(10):     elif (tempCK == "K") and (userTemp <= 305.15):
+hw3_87.py(12):     elif (tempCK == "K") and (305.15 < userTemp < 373.15):
+hw3_87.py(14):     elif (tempCK == "K") and (userTemp > 373.15): 
+hw3_87.py(15):         print("At this tempearature water is a gas")
+At this tempearature water is a gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

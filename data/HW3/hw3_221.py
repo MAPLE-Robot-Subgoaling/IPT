@@ -1,21 +1,16 @@
-
 def main():
-    temp = float(input("Please enter the tempreature"))
-    degree = input("Please enter'C' for Celsius or 'K' for Kevin")
-    if degree == "C":
-        if temp <= 0:
-            print("At this tempreature water is (frozen) solid")
-        elif temp < 100:
-            print("at this tempreature, water is liquid")
-        else:
-            print("At this tempreature, water is gas")
-    elif degree == "K":
-        if temp <= 273.16:
-            print("At this tempreature , water is frozen")
-        elif temp < 373.16:
-            print("At this tempreature, water is liquid")
-        else:
-            print("At this tempreature, water is gas")
-    else:
-        print("Please enter uppercase 'C' or 'K'")
+    degreesNum = float(input("please enter the temperature of the water: "))
+    degreesType = str(input("what type of measurement is that temperature in? "))
+    if degreesType == "K" and degreesNum >= 373.0:
+        print("at this temperature, water is a gas")
+    if degreesType == "K" and degreesNum <= 273.0:
+        print("at this temperature, water is a solid")
+    if degreesType == "K" and degreesNum < 373.0 and degreesNum > 273.0:
+        print("at this temperature, water is a liquid")
+    if degreesType == "C" and degreesNum >= 100.0:
+        print("at this temperature, water is a gas")
+    if degreesType == "C" and degreesNum <= 0.0:
+        print("at this temperature, water is a solid")
+    if degreesType == "C" and degreesNum < 100.0 and degreesNum > 0.0:
+        print("at this temperature, water is a liquid")
 main()

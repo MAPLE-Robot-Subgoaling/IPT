@@ -1,0 +1,55 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/main.css") }}>
+</head>
+<body>{% with messages = get_flashed_messages() %}
+{% for message in messages %}<p> {{ message }} </p>{% endfor %}
+{% endwith %}
+<p>Please check the lines that are extraneous in the following code snippet:</p>
+<div class="code" style="font-family: monospace;">
+<form id="lineForm" onsubmit="return handleSubmit(this);" method="post" action={{url_for("handle_submit")}}>
+<select name="1" class="line1" disabled>
+<option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line1" onchange="handleClick(this)">def main():<br>
+<select name="2" class="line2" disabled><option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line2" onchange="handleClick(this)">&nbsp;&nbsp;&nbsp;&nbsp;x = 0<br>
+<select name="3" class="line3" disabled><option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line3" onchange="handleClick(this)">&nbsp;&nbsp;&nbsp;&nbsp;y = 7<br>
+<select name="4" class="line4" disabled><option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line4" onchange="handleClick(this)">&nbsp;&nbsp;&nbsp;&nbsp;val = x + y<br>
+<select name="5" class="line5" disabled><option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line5" onchange="handleClick(this)">&nbsp;&nbsp;&nbsp;&nbsp;print(val)<br>
+<select name="6" class="line6" disabled><option selected disabled hidden value="?">?</option>
+<option value="A">A</option><option value="B">B</option></select><input type="checkbox" class="line6" onchange="handleClick(this)">main()<br>
+
+<select>
+{% for result in results %}
+<option value={{ result['letter'] }}>{{ result['letter'] }} </option>
+{% endfor%}
+</select>
+
+<input type="submit" name="lineForm">
+</form>
+</div>
+<br>
+Enter another type of extraneous line here:
+<form id="typeForm" method="post" action={{url_for("handle_submit")}}>
+	<input type="text" name="letter" placeholder="letter">
+	<input type="text" name="desc" placeholder="description">
+	<input type="submit" name="typeForm">
+</form>
+
+<div class="legend">
+{% if results %}
+<ul>
+{% for result in results %}
+<li>{{result['letter']}} - {{result['description']}}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p> No labels made yet. </p>
+{% endif %}
+</div>
+</body>
+<script type="text/javascript" src={{url_for('static', filename='js/helpers.js')}}></script>
+</html>

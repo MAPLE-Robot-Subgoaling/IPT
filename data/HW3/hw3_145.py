@@ -1,14 +1,18 @@
-
 def main():
-    temp=float(input("Please enter the temperature: "))
-    degree=input("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
-    if degree=="K":
-        temp=temp-273.15
-    if temp>=100:
-        print("At this temperature, water is a gas.")
-    elif temp<=0:
+    tempMag   = float(input("Please enter the temperature: ")) 
+    tempScale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ") 
+    FREEZE = 0 
+    BOIL = 100 
+    KELVIN = "K"
+    CELCIUS = "C"
+    if tempScale == KELVIN:
+        tempConverted = tempMag - 273.15 
+    else:
+        tempConverted = tempMag 
+    if tempConverted <= 0:
         print("At this temperature, water is a (frozen) solid.")
+    elif tempConverted >= 100:
+        print("At this temperature, water is a gas.")
     else:
         print("At this temperature, water is a liquid.")
-
 main()

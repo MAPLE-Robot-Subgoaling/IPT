@@ -1,18 +1,28 @@
-
 def main():
-    waterTemp = float(input("Please enter the temperature: "))
-    tempState = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if tempState == "C" and waterTemp < 0: 
-        print ("At this temperature, water is a (frozen) solid")
-    if waterTemp >= 0 and waterTemp <= 100 and tempState == "C":
-        print ("At this temperature, water is a liquid")
-    if waterTemp > 100 and tempState == "C":
-        print ("At this temperature, water is a gas")
-    
-    if tempState == "K" and waterTemp < 32:
-        print ("At this temperature, water is a (frozen) solid")
-    if waterTemp >= 32 and waterTemp <= 212 and tempState == "K":
-        print ("At this temperature, water is a liquid")
-    if waterTemp > 212 and tempState == "K":
-        print ("At this temperature, water is a gas")
+    temperature = float(input("Please enter temperature here: "))
+    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+    boilingPoint = 100
+    freezingPoint = 0
+    boilngPoint2 = 373
+    freezingPoint2 = 273
+    if scale == "C" :
+        if temperature <= freezingPoint:
+            print("At this temperature, water is a solid.")
+        elif temperature > freezingPoint and temperature < boilingPoint :
+            print("At this temperature, water is a liquid.")
+        elif temperature >= boilingPoint :
+            print("At this temperature, water is a gas.")
+        else:
+            print("That is not a temperature.")
+    elif scale == "K" :
+        if temperature <= freezingPoint2 :
+            print("At this temperature, water is a solid.")
+        elif temperature > freezingPoint2 and temperature < boilingPoint2 :
+            print("At this temperature, water is a liquid.")
+        elif temperature > boilingPoint2 :
+            print("At this temperature, water is a gas.")
+        else:
+            print("That is not a temperature.")
+    else:
+        print("That is not a correct scale")
 main()

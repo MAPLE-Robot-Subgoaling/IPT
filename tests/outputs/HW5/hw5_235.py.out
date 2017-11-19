@@ -1,0 +1,126 @@
+ --- modulename: hw5_235, funcname: <module>
+hw5_235.py(1): def main():
+hw5_235.py(33): main()
+ --- modulename: hw5_235, funcname: main
+hw5_235.py(2):     width = int(input("Please enter the width of the box:"))
+Please enter the width of the box: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_235.py(3):     height = int(input("Please enter the height of the box:"))
+Please enter the height of the box:hw5_235.py(4):     border = input("Please enter the sybol the box will be out lined in:")
+Please enter the sybol the box will be out lined in:hw5_235.py(5):     fill = input("Please enter the symbol the box will be filled in:")
+Please enter the symbol the box will be filled in: --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_235.py(6):     x=0
+hw5_235.py(7):     y=0
+hw5_235.py(8):     printingString=""
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(10):         printingString=printingString+border
+hw5_235.py(11):         x=x+1
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(10):         printingString=printingString+border
+hw5_235.py(11):         x=x+1
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(10):         printingString=printingString+border
+hw5_235.py(11):         x=x+1
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(10):         printingString=printingString+border
+hw5_235.py(11):         x=x+1
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(10):         printingString=printingString+border
+hw5_235.py(11):         x=x+1
+hw5_235.py(9):     while(x!=width):
+hw5_235.py(12):     print(printingString)
+$$$$$
+hw5_235.py(13):     x=0
+hw5_235.py(14):     y=y+2
+hw5_235.py(15):     while(y<height):
+hw5_235.py(16):         printingString=""
+hw5_235.py(17):         printingString=printingString+border
+hw5_235.py(18):         x=x+2
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(22):         x=0
+hw5_235.py(23):         printingString=printingString+border
+hw5_235.py(24):         print(printingString)
+$###$
+hw5_235.py(25):         y=y+1
+hw5_235.py(15):     while(y<height):
+hw5_235.py(16):         printingString=""
+hw5_235.py(17):         printingString=printingString+border
+hw5_235.py(18):         x=x+2
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(22):         x=0
+hw5_235.py(23):         printingString=printingString+border
+hw5_235.py(24):         print(printingString)
+$###$
+hw5_235.py(25):         y=y+1
+hw5_235.py(15):     while(y<height):
+hw5_235.py(16):         printingString=""
+hw5_235.py(17):         printingString=printingString+border
+hw5_235.py(18):         x=x+2
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(20):             printingString=printingString+fill
+hw5_235.py(21):             x=x+1
+hw5_235.py(19):         while(x<width):
+hw5_235.py(22):         x=0
+hw5_235.py(23):         printingString=printingString+border
+hw5_235.py(24):         print(printingString)
+$###$
+hw5_235.py(25):         y=y+1
+hw5_235.py(15):     while(y<height):
+hw5_235.py(26):     x=0
+hw5_235.py(27):     y=0
+hw5_235.py(28):     printingString=""
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(30):         printingString=printingString+border
+hw5_235.py(31):         x=x+1
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(30):         printingString=printingString+border
+hw5_235.py(31):         x=x+1
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(30):         printingString=printingString+border
+hw5_235.py(31):         x=x+1
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(30):         printingString=printingString+border
+hw5_235.py(31):         x=x+1
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(30):         printingString=printingString+border
+hw5_235.py(31):         x=x+1
+hw5_235.py(29):     while(x!=width):
+hw5_235.py(32):     print(printingString)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

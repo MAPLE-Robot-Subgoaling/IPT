@@ -1,32 +1,16 @@
-
 def main():
-
-    userWidth = int(input("Please enter the width of the box: "))
-
-    userHeight = int(input("Please enter the height of the box: "))
-
-    userSymbolOutline = input("Please enter a symbol for the box outline: ")
-
-    userSymbolFill = input("Please enter a symbol for the box fill: ")
-    
-    for n in range(0, userHeight):
-
-        widthOverall = userWidth * userSymbolOutline
- 
-        lastVariable = userHeight - 1
-
-        middleSymbols = userWidth - 2
-
-        symbolFillOverall = middleSymbols * userSymbolFill 
-
-        if n == 0 or n == lastVariable:
-
-           print(widthOverall)
-
-        else :
-      
-           print(userSymbolOutline + symbolFillOverall + userSymbolOutline)
-
-
-
+    BOARDER = 2
+    boxWidth = int(input("Please enter the width of the box: "))
+    boxHeight = int(input("Please enter the height of the box: "))
+    boxOut = input("Please enter a symbol for the box outline: ")
+    boxFill = input("Please enter a symbol for the box fill: ")
+    print(boxOut * boxWidth)
+    fillWidth = boxWidth - BOARDER
+    fillHeight = boxHeight - BOARDER
+    fillList = list(range(fillHeight))
+    for i in fillList:
+        i = (boxOut + (boxFill * fillWidth) + boxOut)
+        print(i)
+    if boxHeight > 1:
+        print(boxOut * boxWidth)
 main()

@@ -1,37 +1,20 @@
-
-
-KELVIN_FREEZING_POINT = 273.16
-KELVIN_BOILING_POINT = 373.16
-CELSIUS_FREEZING_POINT = 0
-CELSIUS_BOILING_POINT = 100
-
-
 def main():
-   
-    temp = float(input("Please enter the temperature: "))
-    scale = str(input("Please enter 'C' for Celsius, or 'K' for Kelvin: "))
-    
-    if scale == "C":
-
-        if temp <= CELSIUS_FREEZING_POINT:
+    userTemp = float(input("Please enter the temperature:"))
+    unitsOfTemp = input("Please enter 'C' for Celsius or 'K' for Kelvin:")
+    if unitsOfTemp == "C":
+        print("The temperature is" , userTemp,"C")
+        if userTemp  == float(0):
             print("At this temperature, water is a (frozen) solid.")
-
-        elif CELSIUS_FREEZING_POINT < temp < CELSIUS_BOILING_POINT:
-            print("At this temperature, water is a liquid.")
-
-        else:
+        if userTemp == float(100):
             print("At this temperature, water is a gas.")
-
-    elif scale == "K":
-
-        if temp <= KELVIN_FREEZING_POINT:
+        if float(0)< userTemp < float(100):
+            print("At this temperature, water is a liquid.")
+    elif unitsOfTemp == "K":
+        print("The temperature is" , userTemp,"K")
+        if userTemp == float(273.15):
             print("At this temperature, water is a (frozen) solid.")
-
-        elif KELVIN_FREEZING_POINT < temp < KELVIN_BOILING_POINT:
-            print("At this temperature, water is a liquid.")
-
-        else:
+        if userTemp == float(373.15):
             print("At this temperature, water is a gas.")
-
-
+        if float(273.15)<userTemp < float(373.15):
+            print("At this temperature, water is a liquid.")
 main()

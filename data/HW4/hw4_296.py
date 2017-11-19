@@ -1,13 +1,11 @@
-
 def main():
-    number = int(input("Enter a positive number: "))
-    print("Hail is currently at height",number)
-    while number!=1:
-        if number % 2 == 0:
-            number = int(number/2)
-            print("Hail is currently at height", number)
+    CUTOFF_HEIGHT = 1
+    height = int(input("Please input a starting height for the hail: "))
+    while height != CUTOFF_HEIGHT:
+        print("The hailstone is currently at height:", int(height))
+        if height % 2 == 0:
+            height = height / 2
         else:
-            number = int((number*3)+1)
-            print("Hail is currently at height", number)
-    print("Hail stopped at height 1.")
+            height = (height * 3) + 1
+    print("The hailstone stopped at", int(height))
 main()

@@ -1,0 +1,42 @@
+ --- modulename: hw5_265, funcname: <module>
+hw5_265.py(1): def main():    
+hw5_265.py(19): main()
+ --- modulename: hw5_265, funcname: main
+hw5_265.py(2):     boxWidth = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_265.py(3):     boxHeight = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_265.py(4):     boxOutline = input("Please enter a symbol for the box outline: ")
+Please enter a symbol for the box outline: hw5_265.py(5):     boxFill = input("Please enter a symbol for the box fill: ")
+Please enter a symbol for the box fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_265.py(6):     insideBox = [boxOutline]*(boxHeight - 2)
+hw5_265.py(7):     if boxWidth == 1 and boxHeight == 1:
+hw5_265.py(9):     elif boxWidth == 2 and boxHeight == 1:
+hw5_265.py(11):     elif boxWidth == 1 and boxHeight == 2:
+hw5_265.py(15):         print(boxOutline * boxWidth)
+$$$$$
+hw5_265.py(16):         for symbol in insideBox:
+hw5_265.py(17):             print(symbol + (boxFill * (boxWidth - 2)) + symbol)
+$###$
+hw5_265.py(16):         for symbol in insideBox:
+hw5_265.py(17):             print(symbol + (boxFill * (boxWidth - 2)) + symbol)
+$###$
+hw5_265.py(16):         for symbol in insideBox:
+hw5_265.py(17):             print(symbol + (boxFill * (boxWidth - 2)) + symbol)
+$###$
+hw5_265.py(16):         for symbol in insideBox:
+hw5_265.py(18):         print(boxOutline * boxWidth)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

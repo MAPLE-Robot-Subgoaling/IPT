@@ -1,32 +1,15 @@
-
 def main():
-    
-    NO_FILL = 0
-    FIRST_LINE = 1
-    SEC_LINE = 2
-    
-    widBox = int(input("Please enter the width of the box: "))
-    heightBox = int(input("Please enter the height of the box: "))
-    symOut = input("Please enter a symbol for the box outline: ")
-    symFill = input("Please enter a symbol for the box fill: ")
-    fillLine = widBox - SEC_LINE
-
-    if fillLine >= NO_FILL  or  heightBox > FIRST_LINE:
-    
-        for p in range(FIRST_LINE):
-            print(symOut * widBox)
-
-        for p in range(SEC_LINE, heightBox):
-            
-            if widBox == FIRST_LINE:
-                print (symOut)
-            else:
-                print(symOut + (symFill * fillLine) + symOut)
-
-        for p in range(heightBox, heightBox + FIRST_LINE):
-            print(symOut * widBox)
-    
-    else:
-        print(symOut)
-
+    print("Welcome to my program that will help you make a box")
+    width = int(input("Please enter the width of the box:"))
+    height = int(input("Please enter the height of the box:"))
+    firstSymbol = input("Please enter a symbol for the box outline:")
+    secondSymbol = input("Please enter a symbol for the box fill:")
+    for x in range(0,1):
+        if width and height == 1:
+            print(firstSymbol)
+        else:
+            print(firstSymbol*width)
+            for x in range(0,height-2):
+                print(firstSymbol*1 + secondSymbol*(width-2) + firstSymbol*1)
+            print(firstSymbol*width)
 main()

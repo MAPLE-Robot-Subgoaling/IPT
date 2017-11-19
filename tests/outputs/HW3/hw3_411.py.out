@@ -1,0 +1,32 @@
+ --- modulename: hw3_411, funcname: <module>
+hw3_411.py(1): def main():
+hw3_411.py(15): main()
+ --- modulename: hw3_411, funcname: main
+hw3_411.py(2):     temperature = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_411.py(3):     tempUnit = input("Please enter 'C' for Celsius, or 'K' for Kevin: ")
+Please enter 'C' for Celsius, or 'K' for Kevin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_411.py(4):     waterState = "No State"
+hw3_411.py(5):     if tempUnit == "K":
+hw3_411.py(6):         temperature = temperature - 273.15
+hw3_411.py(7):     if temperature < 0:
+hw3_411.py(9):     elif temperature < 100:
+hw3_411.py(12):         waterState = "gas."
+hw3_411.py(13):     print("At this temperature, water is a", waterState)
+At this temperature, water is a gas.
+hw3_411.py(14):     print("")
+
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

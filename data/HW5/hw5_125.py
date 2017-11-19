@@ -1,23 +1,13 @@
-
-
 def main():
-
-    width = int(input("Please enter the width of the box:  "))
-    height = int(input("Please enter the height of the box:  "))
-    perimeter  = input("Please enter a symbol for the bout to outline")
-    guts = input("please enter a symbol for the box to fill:  ")
-
-
-    if( height != 1 and width !=1):#it is a box
-        print( width * perimeter)
-        insideWidth =  width - 2
-        insideHeight = height - 2
-        
-        for i in range (insideHeight):
-            print(perimeter + (guts * insideWidth) + perimeter)
-        print(width * perimeter)
-        
-    else:#it is not a box
-        print(perimeter)
-
+    box_width   = int(input("Please enter the width of the box: "))
+    box_height  = int(input("Please enter the height of the box: "))
+    box_outline = input("Please enter a symbol for the box outline: ")
+    box_fill    = input("Please enter a symbol for the box fill: ")
+    for draw in range(box_height):
+        if   draw == 0:
+            print (box_outline * box_width)
+        elif draw == (box_height - 1):
+            print (box_outline * box_width)
+        else:
+            print (box_outline + (box_fill * (box_width - 2)) + box_outline)
 main()

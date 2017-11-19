@@ -1,0 +1,39 @@
+ --- modulename: hw5_111, funcname: <module>
+hw5_111.py(1): def main():
+hw5_111.py(11): main()
+ --- modulename: hw5_111, funcname: main
+hw5_111.py(2):     width = int(input("How many characters wide do you want the box to be? "))
+How many characters wide do you want the box to be?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_111.py(3):     height = int(input("How many characters tall do you want the box to be? "))
+How many characters tall do you want the box to be? hw5_111.py(4):     outline = input("Which character shoud the outline be made of? ")
+Which character shoud the outline be made of? hw5_111.py(5):     fill = input("Which character should the box be filled with? ")
+Which character should the box be filled with?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_111.py(6):     hList = list(range(0, height - 2))
+hw5_111.py(7):     print(outline * width)
+$$$$$
+hw5_111.py(8):     for q in hList:
+hw5_111.py(9):         print(outline + fill * (width - 2) + outline)
+$###$
+hw5_111.py(8):     for q in hList:
+hw5_111.py(9):         print(outline + fill * (width - 2) + outline)
+$###$
+hw5_111.py(8):     for q in hList:
+hw5_111.py(9):         print(outline + fill * (width - 2) + outline)
+$###$
+hw5_111.py(8):     for q in hList:
+hw5_111.py(10):     print(outline * width)
+$$$$$
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

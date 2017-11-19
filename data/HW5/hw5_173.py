@@ -1,22 +1,17 @@
-
+def drawBox(width, height, outline, fill):
+    print()
+    print(outline * width)
+    for i in range(height - 2):
+        print(outline + fill * (width - 2) + outline)
+    print(outline * width)
+    print()
 def main():
-    drawBox()
-
-def drawBox():
-    width = int(input("What is the width of the box? "))
-    height = int(input("What is the height of the box? "))
-    outline = input("What symbol would you like for the outline? ")
-    fill = input("What symbol would you like for the fill? ")
-    row = ""
-    for y in range(height):
-        if(y == 0 or y == range(height)[-1]):
-            print(outline*width)
-        else:
-            for x in range(width):
-                if(x == 0 or x == range(width)[-1]):
-                    row = row + outline
-                else:
-                    row = row + fill
-            print(row)
-            row = ""
+    print("Welcome to the 133T ASCII Art Box program! ")
+    boxWidth = int(input("Please enter the width of the box: "))
+    boxHeight = int(input("Please enter the height of the box: "))
+    outlineSymbol = input("Please enter a symbol for the box outline: ")
+    fillSymbol = input("Please enter a symbol for the box fill: ")
+    drawBox(boxWidth, boxHeight, outlineSymbol, fillSymbol)
+    print("We flipped it...for funsies. Your height is your width,  your fill is your outline and vice versa! Enjoy.")
+    drawBox(boxHeight, boxWidth, fillSymbol, outlineSymbol)
 main()

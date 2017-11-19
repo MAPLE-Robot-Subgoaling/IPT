@@ -1,18 +1,18 @@
 def main():
-    temp = float(input("What is the temperature?"))
-    unit = input("What measurement is being used(C/K)?")
-    if unit == "C":
-        if temp <= 0:
-            print("This water is a solid.")
-        elif temp <= 100:
-            print("This water is a liquid.")
-        else:
-            print("This water is a gas.")
+    temp = float(input("What is the numerical temperature?: "))
+    celOrKel = str(input("Enter a C if it is in Celsius, or a K if it is in Kelvin. "))
+    celOrKel = celOrKel.lower()
+    if (temp <= 0):
+        print("At this temperature, water is frozen solid. Also, if this was actually Kelvin, call NASA or something!")
+    elif ( 0 < temp and temp < 373):
+        if ( 0 < temp and temp < 100 and celOrKel == "c"):
+            print("At this temperature, water is a liquid.")
+        elif ( 100 < temp and celOrKel == "c"):
+            print("At this temperature, water is a gas.")
+        elif ( 0 < temp and temp <= 273 and celOrKel == "k"):
+            print("At this temperature, water is frozen solid.")
+        elif ( 273 < temp and temp < 373 and celOrKel == "k"):
+            print("At this temperature, water is a liquid.")
     else:
-        if temp <= 273.15:
-            print("This water is solid.")
-        elif temp <= 373.15:
-            print("This water is liquid.")
-        else:
-            print("This water is a gas.")
-main()
+        print("At this temperature, water is a gas.")
+main() 

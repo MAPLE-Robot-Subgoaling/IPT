@@ -1,24 +1,19 @@
-
 def main():
-    width  = int(input("Please enter the width of the box: "))
-    length = int(input("Please enter the height of the box: "))
-    outer  = input("Please enter a symbol for the box outline: ")
-    inner  = input("Please enter a symbol for the box fill: ")
-
-    inwid=width-2
-    inlen=length-2
-
-    print(outer*width) #prints the first line of the box
-
-    if length > 2:
-        for n in range(inlen):
-            if width > 1:
-                print(outer + (inner * inwid) + outer)
-            else:
-                print(outer)
-    if length >= 2:
-        print(outer * width)
-
-
-
+    boxWidth = int(input("Input box width: "))
+    smallaWidth = boxWidth-2
+    if smallaWidth < 1:
+        smallaWidth = 0
+    boxHeight = int(input("Input box height: "))
+    smallaHeight = boxHeight - 2
+    boxOutline = input("Input box outline: ")
+    boxFill = input("Input box filler: ")
+    print(boxOutline*boxWidth)
+    if boxHeight >= 3:
+        for mm in range(smallaHeight):
+           if boxWidth >= 3:
+               print(boxOutline+boxFill*smallaWidth+boxOutline)
+           else:
+               print(boxOutline*boxWidth)
+    if boxHeight >= 2:
+       print(boxOutline*boxWidth)
 main()

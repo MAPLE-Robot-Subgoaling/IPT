@@ -1,21 +1,20 @@
-
-temp = float(input("Please enter the temperature: "))
-SI = input("Please enter 'C' for Celcius, or 'K' for Kelvin: ")
-
-if SI == 'C' and temp > 100:
-    print("At this temperature, water is gas. ")
-
-elif SI == 'C' and temp > 0:
-    print("At this temperature, water is liquid")
-
-elif SI == 'C' and temp <= 0:
-    print("At this temperature, water is ice")
-
-elif SI == 'K' and temp > 373.15:
-    print("At this temperature, water is gas")
-
-elif SI == 'K' and temp > 273.15:
-    print("At this temperature, water is liquid")
-
-else:
-    print("At this temperature, water is ice")
+def main():
+    print("Please enter the temperature:")
+    tempIn = float(input())
+    print("Please enter 'C' for Celsius, or 'K' for Kelvin")
+    tempType = input()
+    if(tempType == "C"):
+        if tempIn >= 100:
+            print("At this temperature, water is a gas")
+        elif tempIn <= 0:
+            print("At this temperature, water is a solid")
+        else:
+            print("At this temperature, water is a liquid")
+    if(tempType == "K"):
+        if tempIn >= 373:
+            print("At this temperature, water is a gas")
+        elif tempIn >= 273:
+            print("At this temperature, water is a solid")
+        else:
+            print("At this temperature, water is a liquid")
+main()

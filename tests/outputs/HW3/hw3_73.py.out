@@ -1,0 +1,56 @@
+ --- modulename: hw3_73, funcname: <module>
+hw3_73.py(1): def main():
+hw3_73.py(26): main()
+ --- modulename: hw3_73, funcname: main
+hw3_73.py(2):     def waterState():
+hw3_73.py(23):     waterState()
+ --- modulename: hw3_73, funcname: waterState
+hw3_73.py(3):         print('This program will tell you the molecular phase of water ')
+This program will tell you the molecular phase of water 
+hw3_73.py(4):         print(' ')
+ 
+hw3_73.py(5):         print('at a given temperature in Celsius or Kelvin. ')
+at a given temperature in Celsius or Kelvin. 
+hw3_73.py(6):         print(' ')
+ 
+hw3_73.py(7):         givenTemp = float(input('Please enter a temperature: '))
+Please enter a temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_73.py(8):         print(' ')
+ 
+hw3_73.py(9):         print('Is your temperature measured in Celsius or Kelvin? ')
+Is your temperature measured in Celsius or Kelvin? 
+hw3_73.py(10):         print(' ')
+ 
+hw3_73.py(11):         isCelsius = input('Please enter C for Celsius or K for Kelvin: ')
+Please enter C for Celsius or K for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_73.py(12):         print(' ')
+ 
+hw3_73.py(13):         if isCelsius == 'C':
+hw3_73.py(14):             isCelsius = True
+hw3_73.py(17):         if (isCelsius == True and givenTemp <= 0.0) or (isCelsius == False and givenTemp <= 273.15):
+hw3_73.py(18):             print('Water is solid at the given temperature. Your water is frozen.')
+Water is solid at the given temperature. Your water is frozen.
+hw3_73.py(24):     print(' ')
+ 
+hw3_73.py(25):     input('Enter any key to exit: ')
+Enter any key to exit:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

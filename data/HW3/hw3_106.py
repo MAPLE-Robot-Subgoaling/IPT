@@ -1,18 +1,17 @@
-
 def main():
-    
-    temp = float(input("Please enter the temperature: "))
-    scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
-    if scale == "K":
-        temp = temp - 273.15
-        
-    if temp > 100:
-        state = "gas"
-    elif temp < 0:
-        state = "solid"
+    temp = float(input("WHAT IS TEMP"))
+    if (input("SHELSHIUS OR KELVIN CLEIN") == "K"):
+        if (temp >= 375.15):
+            print("very gassy")
+        elif (temp <= 273.15):
+            print("very solid")
+        else:
+            print("very liquidy")
     else:
-        state = "liquid"
-
-    print("At this temperature, water is a",state)       
-
+        if(temp >= 100):
+            print("very gassy")
+        elif (temp <= 0):
+            print("very solid")
+        else:
+            print("very liquidy")
 main()

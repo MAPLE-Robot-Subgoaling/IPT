@@ -1,22 +1,15 @@
-
 def main():
-
-    print("Welcome to the Hail Height Calculator Program (HHCP)")
-
-    startHeight = int(input("Please enter the starting height: "))
-    print("Hail is currently at height", startHeight)
-
-    while startHeight > 1:
-
-        if startHeight % 2 == 0:
-            startHeight = int(startHeight / 2)
-            print("Hail is currently at height",startHeight)
-        
-        elif startHeight % 2 == 1:
-            startHeight = int((startHeight * 3) + 1)
-            print("Hail is currently at height",startHeight)
-
-    if startHeight == 1:
-        print("Hail stopped at height 1.")
-
+    print() 
+    print("Welcome to hailstone simulator!") 
+    print("The storm outside is howling.") 
+    heightHailstone = int(input("How high do you want to drop your hailstone? ")) 
+    print() 
+    while heightHailstone != 1: 
+        if (heightHailstone % 2) == 0: 
+            heightHailstone = int(heightHailstone / 2)
+        elif (heightHailstone % 2) == 1: 
+            heightHailstone = int((heightHailstone * 3) + 1)
+        print("Hail is currently at height", heightHailstone) 
+    print("Hailstone has landed.") 
+    print() 
 main()

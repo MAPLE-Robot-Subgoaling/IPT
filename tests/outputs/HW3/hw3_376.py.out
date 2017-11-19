@@ -1,0 +1,30 @@
+ --- modulename: hw3_376, funcname: <module>
+hw3_376.py(1): def main():
+hw3_376.py(16): main()
+ --- modulename: hw3_376, funcname: main
+hw3_376.py(2):     tempNum= int(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_376.py(3):     tempType= input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+Please enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_376.py(4):     if tempNum > 0 and tempNum < 100 and tempType == "C":
+hw3_376.py(6):     if tempNum > 273 and tempNum < 373 and tempType == "K":
+hw3_376.py(8):     if tempNum <= 0 and tempType == "C":
+hw3_376.py(10):     if tempNum <= 273 and tempType == "K":
+hw3_376.py(12):     if tempNum >= 100 and tempType == "C":
+hw3_376.py(14):     if tempNum >= 373 and tempType == "K":
+hw3_376.py(15):         print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

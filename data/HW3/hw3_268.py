@@ -1,23 +1,28 @@
-
+CELSIUS_BOILING_POINT = 100
+CELSIUS_FREEZING_POINT = 0
+KELVIN_BOILING_POINT = 373.2
+KELVIN_FREEZING_POINT = 273.2
 def main():
-    
-    tempNum = float(input("Please enter the temperature: "))
-    tempScale = input("Enter 'C' for Celsius and 'K' for Kelvin: ")
-    
-    if tempScale == "C":
-        if tempNum < 0:
-            print("Water is frozen at", tempNum, "degrees Celsius")
-        elif tempNum >= 0 and tempNum < 100:
-            print("Water is in it's liquid state at", tempNum, "degrees Celsius")
-        elif tempNum >= 100:
-            print("Water will boil and turn into a gas at", tempNum, "degrees Celsius")
-            
-    if tempScale == "K":
-        if tempNum < 273.15:
-            print("Water is frozen at", tempNum, "Kelvin")
-        elif tempNum >= 273.15 and tempNum < 373.15:
-            print("Water is in it's liquid state at", tempNum, "Kelvin")
-        elif tempNum >= 373.15:
-            print("Water will boil and turn into a gas at", tempNum, "Kelvin")
-
+    print("This program will determine the state of water at standard")
+    print("pressure (solid, liquid, or gas), based on its temperature.")
+    print()
+    print("What temperature scale should be used?")
+    scale = input("Enter 'C' for Celsius  or 'K' for Kelvin: ")
+    temperature = float(input("Enter the temperature: "))
+    print()
+    if scale == "C":
+        if temperature > CELSIUS_BOILING_POINT:
+            print("At this temperature,  water is a gas.")
+        elif temperature < CELSIUS_FREEZING_POINT:
+            print("At this temperature,  water is a solid.")
+        else: 
+            print("At this temperature, water is a liquid.")
+    elif scale == "K":
+        if temperature > KELVIN_BOILING_POINT:
+            print("At this temperature,  water is a gas.")
+        elif temperature < KELVIN_FREEZING_POINT:
+            print("At this temperature, water is a solid.")
+        else:
+            print("At this temperature, water is a liquid.")
+    print()
 main()

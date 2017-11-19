@@ -1,0 +1,33 @@
+ --- modulename: hw3_473, funcname: <module>
+hw3_473.py(1): def main():
+hw3_473.py(22): main()
+ --- modulename: hw3_473, funcname: main
+hw3_473.py(2):     freezingPointinC = 0
+hw3_473.py(3):     boilingPointinC = 100
+hw3_473.py(4):     freezingPointinK = 273.15
+hw3_473.py(5):     boilingPointinK = 373.15
+hw3_473.py(6):     temperature = float(input("Please enter the temperature: "))
+Please enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_473.py(7):     scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin: ")
+Please enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_473.py(8):     if scale == "C":
+hw3_473.py(15):     elif scale == "K":
+hw3_473.py(16):         if temperature <= freezingPointinK:
+hw3_473.py(18):         elif freezingPointinK < temperature < boilingPointinK:
+hw3_473.py(20):         elif temperature >= boilingPointinK:
+hw3_473.py(21):             print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

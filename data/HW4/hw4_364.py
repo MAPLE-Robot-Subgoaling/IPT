@@ -1,16 +1,14 @@
 def main():
-    FINISH_HEIGHT = 1
-    hailHeight = int(input("It's hailing men! What height is the hailstone? "))
-    while (hailHeight < FINISH_HEIGHT):
-        print("Sorry, men only fall from heights greater than 0.")
-        hailHeight = int(input("What height is the hailstone? "))
-    while (hailHeight != FINISH_HEIGHT):
-        print("Hail is currently at ", hailHeight)
-        if hailHeight % 2 == 0:
-            hailHeight = hailHeight // 2
+    height = int(input("Please enter the starting height of the hailstone: ")) 
+    STOP_HEIGHT = 1 
+    FALLING_DIVIDER = 2 
+    BOUNCE_MULTIPLIER = 3 
+    BOUNCE_CONSTANT = 1 
+    while True:
+        height = height // FALLING_DIVIDER if not height % 2 else height * BOUNCE_MULTIPLIER + BOUNCE_CONSTANT
+        if height != STOP_HEIGHT:
+            print("Hail is currently at height %s" % height)
         else:
-            hailHeight = hailHeight * 3 + 1
-    print("Hail has stopped at 1. You got your man.")
-    
+            break
+    print("Hail stopped at height %s" % STOP_HEIGHT)
 main()
-

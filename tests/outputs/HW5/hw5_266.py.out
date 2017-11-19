@@ -1,0 +1,49 @@
+ --- modulename: hw5_266, funcname: <module>
+hw5_266.py(1): def main():
+hw5_266.py(13): main()
+ --- modulename: hw5_266, funcname: main
+hw5_266.py(2):     width = int(input("Please enter the width of the box: "))
+Please enter the width of the box:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_266.py(3):     height = int(input("Please enter the height of the box: "))
+Please enter the height of the box: hw5_266.py(4):     boxOutline = input("Please enter a symbol for the outline: ")
+Please enter a symbol for the outline: hw5_266.py(5):     boxFill = input("Please enter a symbol for the fill: ")
+Please enter a symbol for the fill:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+hw5_266.py(7):         if i == 1:
+hw5_266.py(8):             print(boxOutline * width)
+$$$$$
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+hw5_266.py(7):         if i == 1:
+hw5_266.py(9):         elif (i > 1) and (i < height):
+hw5_266.py(10):             print(boxOutline + (boxFill * (width - 2)) + boxOutline)
+$###$
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+hw5_266.py(7):         if i == 1:
+hw5_266.py(9):         elif (i > 1) and (i < height):
+hw5_266.py(10):             print(boxOutline + (boxFill * (width - 2)) + boxOutline)
+$###$
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+hw5_266.py(7):         if i == 1:
+hw5_266.py(9):         elif (i > 1) and (i < height):
+hw5_266.py(10):             print(boxOutline + (boxFill * (width - 2)) + boxOutline)
+$###$
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+hw5_266.py(7):         if i == 1:
+hw5_266.py(9):         elif (i > 1) and (i < height):
+hw5_266.py(12):             print(boxOutline * width)
+$$$$$
+hw5_266.py(6):     for i in range(1, height + 1, 1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,16 +1,11 @@
-
 def main():
-    height = int(input("Enter a height for the hailstorm: "))
-    evenOdd = height % 2
+    height = int(input("Please enter the starting height: "))
     while height != 1:
-        while evenOdd == 0:
-            height = int(height / 2)
-            evenOdd = height % 2
-            print("Hail is currently at height",height)
-        while evenOdd == 1 and height != 1:
-            height = int((height * 3) + 1)
-            evenOdd = height % 2
-            print("Hail is currently at height",height)
+        if height % 2 == 1:
+            print("Hail is currently at height", int(height))
+            height =(3* height) + 1
+        elif height % 2 == 0:
+            print("Hail is currently at height", int(height))
+            height = height/2
     print("Hail stopped at height 1")
-    
 main()

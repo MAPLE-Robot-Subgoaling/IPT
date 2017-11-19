@@ -1,23 +1,17 @@
-
 def main():
-    temp = float(input("Please enter the temperature: "))
-    scale = str(input("Please enter 'C' for Celsius or 'K' for Kelvin"))
-    if scale == 'C':
-        if temp <= 0:
-            print("At this temperature, water is a (frozen) solid.")
-        elif temp >= 100:
-            print("At the temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid.")
-    else:
-        if temp <= 273.16:
-            print("At this temperature, water is a (frozen) solid.")
-        elif temp >= 373.16:
-            print("At this temperature, water is a gas.")
-        else:
-            print("At this temperature, water is a liquid")
-
-
-
-
-main()
+    print("please answer yes or no")
+    question1 = input("is it a big dog?!?!?!?!?! ")
+    question2 = input("does it have a fluffy coat? ")
+    question3 = input("does the dog have a curly tail? ")
+    question4 = input("does the dog's ears stick up? ")
+    if question1 == "yes" and question2 == "yes":
+        print("its a samoyed awwwweeeee")
+        if question1 == "no" and question3 == "yes":
+            print("the dog is a shiba :D")
+            if question1 == "no" and question3 == "no":
+                print("the dog is a corgi!")
+                if question2 == "no" and question4 == "no":
+                    print("the doge is a borzi!")
+                    if question2 == "no" and question4 == "yes":
+                        print("the dog is a german shepard")
+main()  

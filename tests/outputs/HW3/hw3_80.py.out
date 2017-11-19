@@ -1,0 +1,32 @@
+ --- modulename: hw3_80, funcname: <module>
+hw3_80.py(1): def main():
+hw3_80.py(27): main()
+ --- modulename: hw3_80, funcname: main
+hw3_80.py(2):     ADDFORKELVIN = 273.13
+hw3_80.py(3):     SUBFORCELIUS = 32
+hw3_80.py(4):     Temperature = float(input("Please enter the temperature "))
+Please enter the temperature  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_80.py(5):     Kelvin = (Temperature +  ADDFORKELVIN)
+hw3_80.py(6):     Celcius = (Temperature - SUBFORCELIUS)
+hw3_80.py(7):     Scale = input("Please enter 'C' for Celsius, or 'K' for Kelvin ")
+Please enter 'C' for Celsius, or 'K' for Kelvin  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_80.py(8):     if Scale == "C":
+hw3_80.py(18):         if Scale == "K":
+hw3_80.py(19):             if Kelvin <= 273.15:
+hw3_80.py(22):                 if Kelvin >= 373.15:
+hw3_80.py(23):                     print("At this temperature, water is a gas")
+At this temperature, water is a gas
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

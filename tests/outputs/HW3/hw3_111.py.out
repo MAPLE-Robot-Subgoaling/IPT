@@ -1,0 +1,27 @@
+ --- modulename: hw3_111, funcname: <module>
+hw3_111.py(1): def main():
+hw3_111.py(12): main()
+ --- modulename: hw3_111, funcname: main
+hw3_111.py(2):  temp = float(input("Enter the temperature: "))
+Enter the temperature:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_111.py(3):  scale = input("Enter C for celcius and K for Kelvin: ")
+Enter C for celcius and K for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_111.py(4):  if scale == "K":
+hw3_111.py(5):      temp = temp - 273.15
+hw3_111.py(6):  if temp >= 100:
+hw3_111.py(7):      print("Water is a gas at this temperature. ")
+Water is a gas at this temperature. 
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

@@ -1,0 +1,61 @@
+ --- modulename: hw5_11, funcname: <module>
+hw5_11.py(1): def main():
+hw5_11.py(15): main()
+ --- modulename: hw5_11, funcname: main
+hw5_11.py(2):     height = (int)(input("What is the height of the box? "))
+What is the height of the box?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_11.py(3):     width = (int)(input("What is the width of the box? "))
+What is the width of the box? hw5_11.py(4):     outline = input("What is the outline symbol of the box? ")
+What is the outline symbol of the box? hw5_11.py(5):     filled = input("What is the filled in symbol of the box? ")
+What is the filled in symbol of the box?  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw5_11.py(6):     for y in range(0, height, 1):
+hw5_11.py(7):         currentLine = "" 
+hw5_11.py(8):         if y == 0 or y == (height-1): 
+hw5_11.py(9):             currentLine = outline*width
+hw5_11.py(14):         print(currentLine) 
+$$$$$
+hw5_11.py(6):     for y in range(0, height, 1):
+hw5_11.py(7):         currentLine = "" 
+hw5_11.py(8):         if y == 0 or y == (height-1): 
+hw5_11.py(11):             currentLine = currentLine + outline 
+hw5_11.py(12):             currentLine = currentLine + filled*(width-2) 
+hw5_11.py(13):             currentLine = currentLine+outline 
+hw5_11.py(14):         print(currentLine) 
+$###$
+hw5_11.py(6):     for y in range(0, height, 1):
+hw5_11.py(7):         currentLine = "" 
+hw5_11.py(8):         if y == 0 or y == (height-1): 
+hw5_11.py(11):             currentLine = currentLine + outline 
+hw5_11.py(12):             currentLine = currentLine + filled*(width-2) 
+hw5_11.py(13):             currentLine = currentLine+outline 
+hw5_11.py(14):         print(currentLine) 
+$###$
+hw5_11.py(6):     for y in range(0, height, 1):
+hw5_11.py(7):         currentLine = "" 
+hw5_11.py(8):         if y == 0 or y == (height-1): 
+hw5_11.py(11):             currentLine = currentLine + outline 
+hw5_11.py(12):             currentLine = currentLine + filled*(width-2) 
+hw5_11.py(13):             currentLine = currentLine+outline 
+hw5_11.py(14):         print(currentLine) 
+$###$
+hw5_11.py(6):     for y in range(0, height, 1):
+hw5_11.py(7):         currentLine = "" 
+hw5_11.py(8):         if y == 0 or y == (height-1): 
+hw5_11.py(9):             currentLine = outline*width
+hw5_11.py(14):         print(currentLine) 
+$$$$$
+hw5_11.py(6):     for y in range(0, height, 1):
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)

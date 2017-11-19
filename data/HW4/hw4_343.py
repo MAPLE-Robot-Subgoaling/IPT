@@ -1,24 +1,12 @@
-
 def main():
-
-    print("\nThis program simulates the movement of a hailstone during a"
-       + " storm.\n")
-
-    print("Enter a positive integer to represent the starting  height of the"
-       + " hailstone: ")
-    height = int(input("<< "))
-
-    if height < 1:
-        print("You must enter a height greater than zero, please try again.")
-
-    else:
-        while height != 1:
-            if height % 2 == 0:
-                height = height / 2
-            else:
-                height = height * 3 + 1
-            print("Hail is currently at height", int(height))
-
-        print("Hail stopped at height", int(height))
-
+    height = int(input("Please enter an integer starting height for the stone."))
+    print("The hail started at height " + str(height))
+    while height != 1:
+        if height % 2 == 0:
+            height = height // 2
+            print("The current height of the hail is " + str(height))
+        elif height % 2 == 1:
+            height = height * 3 + 1
+            print("The current height of the hail is " + str(height))
+    print("The hail stopped at height 1.")
 main()

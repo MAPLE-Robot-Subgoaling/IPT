@@ -1,24 +1,10 @@
-
-
-def main():
-    height = float(input(" enter the starting height of the hail storm"))
-        
-    print("Hail is currently at the height,", height)
-	
-    while height != 1:
-        if (height % 2) == 0:
-            height = (height //2)
-            print(" Hail is currentl at the height,",height)
+def partFour():
+    stoneHeight = int(input("What is the hailstone's height? \n"))
+    while stoneHeight != 1:
+        print("Current stone height: " + str(stoneHeight))
+        if(stoneHeight % 2 == 0) :
+            stoneHeight /= 2
         else:
-            height = (height * 3) + 1
-            print(" hail is currently at the height,", height)
-
-        
-                
-    print(" Hail stopped at height 1")
-  
-
-    
-
-
-main()
+            stoneHeight = stoneHeight * 3 +1
+    print("Stone stopped at height: " + str(stoneHeight))
+partFour()

@@ -1,30 +1,17 @@
-
 def main():
-
-    END_HEIGHT = 1
-
-    FALLING_DIVISOR = 2
-
-    INCREASING_FACTOR = 3
-
-    INCREASING_CONSTANT = 1
-
-    height = int(input("Please enter the starting height of the hailstone: "))
-
-    while height > END_HEIGHT:
-        
-        print("The hailstone is currently at height", height)
-        
-        if (height % 2) == 0:
-            
-            height = height // FALLING_DIVISOR
-
-        else:
-            
-            height = (height * INCREASING_FACTOR) + 1
-
-    print("The hailstone stopped at height", height)
-
-
-
+    print("\nThis program simulates the movement of a hailstone during a"
+       + " storm.\n")
+    print("Enter a positive integer to represent the starting  height of the"
+       + " hailstone: ")
+    height = int(input("<< "))
+    if height < 1:
+        print("You must enter a height greater than zero, please try again.")
+    else:
+        while height != 1:
+            if height % 2 == 0:
+                height = height / 2
+            else:
+                height = height * 3 + 1
+            print("Hail is currently at height", int(height))
+        print("Hail stopped at height", int(height))
 main()

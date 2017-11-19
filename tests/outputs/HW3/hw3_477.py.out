@@ -1,0 +1,26 @@
+ --- modulename: hw3_477, funcname: <module>
+hw3_477.py(1): def main():
+hw3_477.py(10): main()
+ --- modulename: hw3_477, funcname: main
+hw3_477.py(2):     Temp = float(input("Enter the temperature:  "))
+Enter the temperature:   --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_477.py(3):     Type = input("Enter 'C' for Celsius, or 'K' for Kelvin: ")
+Enter 'C' for Celsius, or 'K' for Kelvin:  --- modulename: codecs, funcname: getstate
+codecs.py(332):         return (self.buffer, 0)
+ --- modulename: codecs, funcname: decode
+codecs.py(320):         data = self.buffer + input
+codecs.py(321):         (result, consumed) = self._buffer_decode(data, self.errors, final)
+codecs.py(323):         self.buffer = data[consumed:]
+codecs.py(324):         return result
+hw3_477.py(4):     if Temp <= 273.15 and Type == "K" or Temp <= 0 and Type == "C":
+hw3_477.py(6):     elif Temp >= 373.15 and Type == "K" or Temp >= 100 and Type == "C": 
+hw3_477.py(7):         print("At this temperature, water is a gas.")
+At this temperature, water is a gas.
+ --- modulename: trace, funcname: _unsettrace
+trace.py(77):         sys.settrace(None)
