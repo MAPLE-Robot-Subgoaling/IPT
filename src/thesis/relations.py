@@ -1,12 +1,21 @@
 from kanren import conde, Relation, var
 
-# declaration of the relations
-has_id = Relation()
-is_before = Relation()
-assigns = Relation()
-uses = Relation()
-hasOutput = Relation()  # line L has output of value V
+class ResetableRelation(Relation):
+    def reset(self):
+        self.facts = set()
+        self.index = dict()
 
+# declaration of the relations
+has_id = ResetableRelation("has_id")
+is_before = ResetableRelation("is_before")
+assigns = ResetableRelation("assigns")
+uses = ResetableRelation("uses")
+hasOutput = ResetableRelation("hasOutput")  # line L has output of value V
+relations = [has_id, is_before, assigns, uses, hasOutput]
+
+def reset_all_relations():
+    for relation in relations:
+        relation.reset()
 
 def depends(a, b):
     '''there is a dependency between two lines {A, B} if:

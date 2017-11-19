@@ -4,6 +4,7 @@ from itertools import combinations
 # TODO: what about empty lines?
 # probably skip them
 
+# relation.facts is the dict that contains all the things that relation is true for
 
 def dependent(line1, line2, name):
     """
