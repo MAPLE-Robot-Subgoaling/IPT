@@ -10,8 +10,8 @@ has_id = ResetableRelation("has_id")
 is_before = ResetableRelation("is_before")
 assigns = ResetableRelation("assigns")
 uses = ResetableRelation("uses")
-hasOutput = ResetableRelation("hasOutput")  # line L has output of value V
-relations = [has_id, is_before, assigns, uses, hasOutput]
+has_output = ResetableRelation("has_output")  # line L has output of value V
+relations = [has_id, is_before, assigns, uses, has_output]
 
 def reset_all_relations():
     for relation in relations:

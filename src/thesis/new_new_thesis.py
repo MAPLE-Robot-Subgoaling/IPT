@@ -4,12 +4,12 @@ from kanren import facts, run
 from itertools import combinations
 
 import ast
-import astor
 import networkx as nx
 import regex as re
 import os
 from thesis.config import *
 from thesis.relations import *
+
 
 def run_thesis(path_to_file, inputs, goals, **kwargs):
 
