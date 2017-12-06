@@ -69,7 +69,12 @@ class ExtraneousLineFinder:
         # get the assignments and usages to determine the data dependencies
         # get the structural dependencies
         assignments, usages, outputs, dependencies = ast_visitor.get_data()
+
         results = []
+
+        # add the is_before fact for every valid pair of lines
+        # this is necessary for the dependency relation to work, so it must happen first
+        facts(is_before, *combinations(range(1, len(self.src_lines) + 1), 2))
 
         # add assignment facts to the KB
         for variable in assignments:
@@ -90,9 +95,6 @@ class ExtraneousLineFinder:
                 thing = zip([key] * len(val), val)
                 for t in thing:
                     results.append(t)
-
-        # add the is_before fact for every valid pair of lines
-        facts(is_before, *combinations(range(1, len(self.src_lines) + 1), 2))
 
         return results
 
@@ -138,6 +140,7 @@ class ExtraneousLineFinder:
 
     def __enter__(self):
         print("Entering the context...")
+        print("File being tested: {}".format(self.file))
         results_so_far = self._bootstrap_facts()
 
         # find the output and determine its correctness for each input file
@@ -238,6 +241,5 @@ class ExtraneousLineFinder:
         print("Extraneous lines: {}".format(extraneous_lines))
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        # reset every relation
         reset_all_relations()
         print("Exiting the context...")

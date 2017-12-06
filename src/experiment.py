@@ -1,7 +1,6 @@
 import os
 from thesis import ExtraneousLineFinder
 
-import importlib
 DATA_SRC  = "/Users/mneary1/Desktop/IPT/data"
 INPUT_SRC = "/Users/mneary1/Desktop/IPT/tests/inputs"
 GOALS_SRC = "/Users/mneary1/Desktop/IPT/tests/goals"
@@ -16,5 +15,5 @@ inputs = [os.path.join(INPUT_SRC, hw, "input{}.txt").format(i) for i in range(1,
 goals = os.path.join(GOALS_SRC, hw, "goals.txt")
 output_path = os.path.join(OUTPUT_SRC, hw)
 
-with ExtraneousLineFinder(file, inputs, goals, output_path, True, True, True) as finder:
+with ExtraneousLineFinder(file, inputs, goals, output_path, False, True, True) as finder:
     print("In context")
