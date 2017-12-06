@@ -5,7 +5,6 @@ import regex as re
 from itertools import combinations
 from kanren import facts, run
 
-from thesis.config import *
 from thesis.relations import *
 from thesis.visitors import *
 from thesis.errors import *
@@ -23,22 +22,21 @@ class ExtraneousLineFinder:
                :goals:  a file containing the expected output of :file: given :inputs:"""
 
         # sanity check to make sure that the given files exist before moving on
-        if not os.path.isfile(file):
-            raise ValueError("The assignment file {} doesn't exist.".format(file))
-        elif not os.path.isfile(goals):
-            raise ValueError("The goals file {} doesn't exist.".format(goals))
+        assert os.path.isfile(file), "The assignment file {} doesn't exist.".format(file)
+        assert os.path.isfile(goals), "The goals file {} doesn't exist.".format(goals)
+
         for input_file in inputs:
-            if not os.path.isfile(input_file):
-                raise ValueError("The input file {} doesn't exist.".format(input_file))
+            assert os.path.isfile(input_file), "The input file {} doesn't exist.".format(input_file)
 
         self.file = file
         self.inputs = inputs
 
-        # TODO: read in goals file, turn into list of goals
+        # TODO: turn single goals file into multiple files, one for each input. Read in the goals according to the current input being tested
         with open(goals) as g:
             self.goals = [line.strip() for line in g.readlines()]
 
         self.extraneous = {}
+        self.extraneous_lines = []
 
         self.with_execute = with_execute
         self.with_structure = with_structure
@@ -233,12 +231,12 @@ class ExtraneousLineFinder:
             has_output.reset()
 
         # An extraneous line is one that appears as extraneous for all given inputs
-        extraneous_lines = []
         for key, val in self.extraneous.items():
             if val == len(self.inputs):
-                extraneous_lines.append(key)
+                self.extraneous_lines.append(key)
 
-        print("Extraneous lines: {}".format(extraneous_lines))
+        #print("Extraneous lines: {}".format(self.extraneous_lines))
+        return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         reset_all_relations()
