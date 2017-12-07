@@ -1,5 +1,6 @@
 import os, sys
 from thesis import ExtraneousLineFinder
+from thesis.errors import GoalNotFoundError
 
 DATA_SRC = "/Users/mneary1/Desktop/IPT/data"
 INPUT_SRC = "/Users/mneary1/Desktop/IPT/tests/inputs"
@@ -20,6 +21,9 @@ io = dict(zip(inputs, goals))
 
 for assignment in assignments:
     with ExtraneousLineFinder(assignment, io, output_path, with_execute, with_structure, with_semantic) as finder:
-        ex = finder.extraneous_lines
-        print(ex)
+        try:
+            ex = finder.run()
+        except Exception as e:
+            print("[!] Something with wrong for assignment {}".format(assignment))
+            print("\t[+] {}".format(e))
 

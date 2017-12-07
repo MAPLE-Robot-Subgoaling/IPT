@@ -71,9 +71,9 @@ class ExtraneousLineFinder:
 
         # get the assignments and usages to determine the data dependencies
         # get the structural dependencies
+        # TODO: catch error when the file has bad syntax, perhaps throw a new error
         assignments, usages, outputs, dependencies = ast_visitor.get_data()
-
-        results = []
+        self.dependencies = dependencies
 
         # add the is_before fact for every valid pair of lines
         # this is necessary for the dependency relation to work, so it must happen first
@@ -86,20 +86,6 @@ class ExtraneousLineFinder:
         # add usage facts to the KB
         for variable in usages:
             facts(uses, *[(lineno, variable) for lineno in usages[variable]])
-
-        # add the semantic dependencies of the target program
-        if self.with_semantic:
-            a, b = var(), var()
-            results += list(run(0, (a, b), depends(a, b)))
-
-        # add structural dependencies of the target program
-        if self.with_structure:
-            for key, val in dependencies.items():
-                thing = zip([key] * len(val), val)
-                for t in thing:
-                    results.append(t)
-
-        return results
 
     def _run_trace(self, input_name):
         file_name = os.path.splitext(os.path.basename(self.file))[0]
@@ -141,9 +127,20 @@ class ExtraneousLineFinder:
         outf.close()
         return executed_lines
 
-    def __enter__(self):
-        print("File being tested: {}".format(self.file))
-        results_so_far = self._bootstrap_facts()
+    def run(self):
+        results = []
+
+        # add the semantic dependencies of the target program
+        if self.with_semantic:
+            a, b = var(), var()
+            results += list(run(0, (a, b), depends(a, b)))
+
+        # add structural dependencies of the target program
+        if self.with_structure:
+            for key, val in self.dependencies.items():
+                thing = zip([key] * len(val), val)
+                for t in thing:
+                    results.append(t)
 
         # find the output and determine its correctness for each input file
         for input_file, goal_file in self.io.items():
@@ -182,7 +179,7 @@ class ExtraneousLineFinder:
             # add edges to the directed dependency graph from the semantic and structural depedencies found so far
             # edges between line pairs flipped so it can look from the goal line(s) to the beginning
             # adding an edge that already exists with not add a double edge to the graph
-            self.ddg.add_edges_from([(b, a) for a, b in results_so_far])
+            self.ddg.add_edges_from([(b, a) for a, b in results])
             # TODO: make sure that the graph nodes are actually working
 
 
@@ -242,6 +239,10 @@ class ExtraneousLineFinder:
                 self.extraneous_lines.append(key)
 
         # print("Extraneous lines: {}".format(self.extraneous_lines))
+        return self.extraneous_lines
+
+    def __enter__(self):
+        self._bootstrap_facts()
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
