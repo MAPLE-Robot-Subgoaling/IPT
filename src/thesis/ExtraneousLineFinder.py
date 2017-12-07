@@ -165,7 +165,7 @@ class ExtraneousLineFinder:
             # get all the lines that output something for this particular run
             l1, val = var(), var()
             result_outputs = run(0, (l1, val), has_output(l1, val))
-
+            print("\t outputs:", result_outputs)
             # get the lines that give correct output
             correct_lines = []
             for line, output in result_outputs:
