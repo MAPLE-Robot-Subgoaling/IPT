@@ -1,6 +1,8 @@
+import logging
 import os
 import networkx
 import regex as re
+import subprocess
 
 from itertools import combinations
 from kanren import facts, run
@@ -9,7 +11,9 @@ from thesis.relations import *
 from thesis.visitors import *
 from thesis.errors import *
 
-DEBUG = True
+DEBUG = not True
+logger = logging.getLogger("experiment.ExtraneousLineFinder")
+
 
 class ExtraneousLineFinder:
 
@@ -61,6 +65,8 @@ class ExtraneousLineFinder:
         self.ddg = networkx.DiGraph()
         self.ddg.add_nodes_from(list(range(1, len(self.src_lines) + 1)))
 
+        logger.info("Created ExtraneousLineFinder for {}".format(self.file))
+
     def _bootstrap_facts(self):
         ast_visitor = Visitor()
         ast_visitor.visit(self.src_ast)
@@ -86,12 +92,28 @@ class ExtraneousLineFinder:
     def _run_trace(self, input_name):
         file_name = os.path.splitext(os.path.basename(self.file))[0]
         output_path = os.path.join(self.output, file_name + ".out")
-        cmd = "python3 -m trace --trace {} < {} > {}".format(self.file, input_name, output_path)
-        cmd_result = os.system(cmd)
+        #cmd = "python3 -m trace --trace {} < {} > {}".format(self.file, input_name, output_path)
+        # cmd_result = os.system(cmd)
 
         # TODO: maybe I don't want to raise an exception here
-        if cmd_result != 0:
-            raise RuntimeError("Failed to execute a trace of <" + self.file + ">")
+        # if cmd_result != 0:
+        #    raise TraceError("Failed to execute a trace of <" + self.file + ">")
+
+        with open(input_name) as inFile, open(output_path, "w") as outFile:
+
+            res = subprocess.Popen(['python3', '-m', 'trace', '--trace', self.file],
+                                   stderr=subprocess.PIPE,
+                                   stdout=outFile,
+                                   stdin=inFile)
+
+            if res.wait() != 0:
+                output, error = res.communicate()
+                error_split = error.decode("utf-8").strip().split("\n")
+                error = error_split[-1].split(":")
+                exception = error[0]
+                details = "".join(error[1:])
+                err_lineno = error_split[-3].split(",")[1]
+                raise TraceError("Unable to trace due to error: " + exception + '("' + details + '") around' + err_lineno)
 
         # determine the line number of each line that was executed
         # also determines which print statements are responsible for what output
@@ -190,7 +212,6 @@ class ExtraneousLineFinder:
             self.ddg.add_edges_from([(b, a) for a, b in results])
             # TODO: make sure that the graph nodes are actually working
 
-
             # add execution dependencies to the results
             # again, adding edges "backwards" so we can search from the goal forward
             if self.with_execute:
@@ -201,7 +222,7 @@ class ExtraneousLineFinder:
                 print("\t\t{}".format(self.ddg.edges()))
                 print()
 
-            #initialize unused nodes to all nodes in the graph currently
+            # initialize unused nodes to all nodes in the graph currently
             unused_nodes = list(self.ddg.nodes())
 
             for correct_line in correct_lines:
