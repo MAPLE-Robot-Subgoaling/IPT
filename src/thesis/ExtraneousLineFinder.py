@@ -9,6 +9,7 @@ from thesis.relations import *
 from thesis.visitors import *
 from thesis.errors import *
 
+DEBUG = True
 
 class ExtraneousLineFinder:
 
@@ -34,12 +35,6 @@ class ExtraneousLineFinder:
 
         self.file = file
         self.io = io
-
-        # TODO: turn single goals file into multiple files, one for each input. Read in the goals
-        # according to the current input being tested
-        #with open(goals) as g:
-        #    self.goals = [line.strip() for line in g.readlines()]
-
         self.extraneous = {}
         self.extraneous_lines = []
 
@@ -54,6 +49,7 @@ class ExtraneousLineFinder:
 
         with open(file) as f:
             self.src_lines = f.readlines()
+            # if the src_lines are not proper python 3, the following breaks
             self.src_ast = ast.parse("".join(self.src_lines))
 
             # set parent nodes for everything in the AST
@@ -144,8 +140,8 @@ class ExtraneousLineFinder:
 
         # find the output and determine its correctness for each input file
         for input_file, goal_file in self.io.items():
-
-            print("Iteration <{}> <{}>".format(input_file, goal_file))
+            if DEBUG:
+                print("Iteration <{}> <{}>".format(input_file, goal_file))
 
             # read in the corresponding goal file
             with open(goal_file) as f:
@@ -153,6 +149,11 @@ class ExtraneousLineFinder:
 
             # determine the execution dependency pairs
             executed_lines = self._run_trace(input_file)
+            if DEBUG:
+                print("\tExecuted lines:", executed_lines)
+                x, y = var(), var()
+                print("\t", run(0, (x, y), has_output(x, y)))
+
             execution_dependencies = []
             for i in range(len(executed_lines) - 1):
                 a = executed_lines[i]
@@ -162,19 +163,26 @@ class ExtraneousLineFinder:
             # get all the lines that output something for this particular run
             l1, val = var(), var()
             result_outputs = run(0, (l1, val), has_output(l1, val))
-            print("\t outputs:", result_outputs)
+            if DEBUG:
+                print("\toutputs:", result_outputs)
+
             # get the lines that give correct output
             correct_lines = []
             for line, output in result_outputs:
                 for goal in goals:
                     found_goal = re.findall(re.escape(goal), output, overlapped=True)
-                    if line in executed_lines and len(found_goal) == 1:
+                    if DEBUG:
+                        print("\tgoal: {} | found_goal: {}".format(repr(goal), repr(found_goal)))
+                    if line in executed_lines and len(found_goal) >= 1:
                         correct_lines.append((line, output))
 
             # if no matches were found, terminate execution
             # TODO: might want to rethink throwing an exception here...
             if len(correct_lines) == 0:
                 raise GoalNotFoundError("Correct output not found with input {}".format(input_file))
+
+            if DEBUG:
+                print("\tCorrect output found in trace!")
 
             # add edges to the directed dependency graph from the semantic and structural depedencies found so far
             # edges between line pairs flipped so it can look from the goal line(s) to the beginning
@@ -184,15 +192,17 @@ class ExtraneousLineFinder:
 
 
             # add execution dependencies to the results
-            # again, ading edges "backwards" so we can search from the goal forward
+            # again, adding edges "backwards" so we can search from the goal forward
             if self.with_execute:
                 self.ddg.add_edges_from([(v, u) for u, v in execution_dependencies])
 
-            print("\t edges: {}".format(self.ddg.edges()))
-            print()
+            if DEBUG:
+                print("\tDDG for this iteration:")
+                print("\t\t{}".format(self.ddg.edges()))
+                print()
 
             #initialize unused nodes to all nodes in the graph currently
-            unused_nodes = self.ddg.nodes()
+            unused_nodes = list(self.ddg.nodes())
 
             for correct_line in correct_lines:
 
@@ -208,7 +218,6 @@ class ExtraneousLineFinder:
                         pass
 
             extraneous_lines = list(unused_nodes)
-
             # thinks that empty lines, and function defs are extraneous
             for i in range(len(unused_nodes)):
                 node = unused_nodes[i]
@@ -238,7 +247,9 @@ class ExtraneousLineFinder:
             if val == len(self.io):
                 self.extraneous_lines.append(key)
 
-        # print("Extraneous lines: {}".format(self.extraneous_lines))
+        if DEBUG:
+            print("Extraneous lines: {}".format(self.extraneous_lines))
+
         return self.extraneous_lines
 
     def __enter__(self):
